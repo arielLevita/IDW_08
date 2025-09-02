@@ -122,14 +122,60 @@ header, article {
 h2, h3, h4 {
     margin: 0.5em 0;
     text-align: center;
+    color: var(--color-texto);
 }
 
-article:nth-child(4n) {
-    background-color: rgba(var(--color-uno-rgb), 0.2);
+
+/* -------------------- */
+/* ------ INICIO ------ */
+/* -------------------- */
+
+
+.seccion-doble {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-article:nth-child(4n-2) {
-    background-color: rgba(var(--color-tres-rgb), 0.2);
+.seccion-doble:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.seccion-doble > div {
+    width: 50%;
+    padding: 2rem;
+    min-width: 500px;
+}
+
+.seccion-doble img {
+    width: 100%;
+    height: auto;
+}
+
+.home-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.home-box button {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* -------------------- */
+/* -- INSTITUCIONAL --- */
+/* -------------------- */
+
+#institucional article:nth-child(4n) {
+    background-color: rgba(var(--color-uno-rgb), 0.3);
+}
+
+#institucional article:nth-child(4n-2) {
+    background-color: rgba(var(--color-tres-rgb), 0.3);
 }
 
 article p, header p {
@@ -151,6 +197,112 @@ article p, header p {
 }
 
 
+/* -------------------- */
+/* ----- CONTACTO ----- */
+/* -------------------- */
+
+#contact-form {
+    padding-top: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cajas {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem 3rem;
+}
+
+.cajas h3 {
+    margin: 0.5em 0 2em;
+    color: var(--color-texto);
+}
+
+.canales, .formulario {
+    background-color: var(--color-seis);
+    padding: 1rem;
+    width: 40%;
+    border-radius: 20px;
+    min-width: 350px;
+}
+
+.canales ul {
+    list-style-type: none;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.canales > ul > li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 1em 0;
+    color: var(--color-texto);
+}
+
+.canales > ul > li > span {
+    display: flex;
+    align-items: center;
+}
+
+.canales > ul > li > a {
+    color: var(--color-texto);
+}
+
+.canales svg {
+    width: 25px;
+    height: 20px; 
+    fill: var(--color-texto);
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    fill: var(--color-texto);
+    border: 1px solid rgba(var(--color-dos-rgb), 0.4);
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid rgba(var(--color-dos-rgb), 0.4);
+    border-radius: 10px;
+}
+
+button[type='submit'], .home-box button {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 0.6em 2em;
+    border-radius: 10px;
+    /* border: 2px solid rgba(var(--color-dos-rgb), 1); */
+    border: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: var(--color-dos);
+    color: var(--color-cinco);
+}
+
+.formulario:hover, .canales:hover {
+    /* background-color: var(--color-cinco); */
+    background: linear-gradient(45deg, rgba(var(--color-tres-rgb), 0.2), rgba(var(--color-dos-rgb), 0.2));
+}
+
+/* -------------------- */
+/* ------ FOOTER ------ */
+/* -------------------- */
 
 footer {
     background-color: var(--color-cinco);
@@ -194,59 +346,4 @@ footer ul a {
 .footer-copy {
     text-align: center;
     padding: 20px 0;
-}
-
-
-/* HTML CONTACTO */
-
-.cajas {
-    display: flex;
-    margin: 10px 15px;
-    gap: 10px;
-}
-
-.canales, .formulario {
-    background-color: var(--color-seis);
-    padding: 2rem 3rem;
-    width: 50%;
-}
-
-.canales a {
-    display: block;
-    margin-bottom: 10px;
-}
-
-svg {
-    width: 25px;
-    height: 20px; 
-    fill: black;
-}
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input {
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 10px;
-}
-
-textarea {
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 10px;
-}
-
-.boton-enviar {
-    display: inline-block;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.formulario:hover, .canales:hover {
-    background-color: var(--color-cinco);
 }

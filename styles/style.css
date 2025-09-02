@@ -195,3 +195,58 @@ footer ul a {
     text-align: center;
     padding: 20px 0;
 }
+
+
+/* HTML CONTACTO */
+
+.cajas {
+    display: flex;
+    margin: 10px 15px;
+    gap: 10px;
+}
+
+.canales, .formulario {
+    background-color: var(--color-seis);
+    padding: 2rem 3rem;
+    width: 50%;
+}
+
+.canales a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+svg {
+    width: 25px;
+    height: 20px; 
+    fill: black;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+.boton-enviar {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.formulario:hover, .canales:hover {
+    background-color: var(--color-cinco);
+}

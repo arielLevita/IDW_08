@@ -19,21 +19,22 @@
                 </div>
             </a>
             <ul>
-                <a href="#" class="nav-link nav-link-active">Inicio</a>
-                <a href="institucional.html" class="nav-link">Intitucional</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+                <li><a href="#" class="nav-link nav-link-active">Inicio</a></li>
+                <li><a href="institucional.html" class="nav-link">Intitucional</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
-            <button class="login-button">Portal de pacientes</button>
+            <button class="login-button" role="button">Portal de pacientes</button>
         </div>
     </nav>
 
     <header>
-
+        <h1>Bienestar Integral</h1>
+        <h2>Clínica médica</h2>
     </header>
 
     <main>
-        <section>
-            <article class="seccion-doble">
+        <section id="servicios">
+            <article>
                 <div>
                     <img src="images/doc1.webp" alt="Profesionales de la salud">
                 </div>
@@ -42,11 +43,11 @@
                     <p>En Bienestar Integral contamos con un equipo de profesionales de primer nivel, tecnología de
                         avanzada y instalaciones modernas para brindarle la mejor atención médica. Nuestra prioridad es
                         su salud y bienestar.</p>
-                    <button class="btn-primario">Conozca más</button>
+                    <button role="button">Conozca más</button>
                 </div>
             </article>
 
-            <article class="seccion-doble">
+            <article>
                 <div>
                     <img src="images/doc2.webp" alt="Nuestros servicios">
                 </div>
@@ -55,11 +56,11 @@
                     <p>Ofrecemos una amplia gama de servicios médicos que incluyen consultorios externos, prácticas
                         ambulatorias, internación general y terapia intensiva. También contamos con un moderno centro de
                         diagnóstico por imágenes.</p>
-                    <button class="btn-primario">Nuestros servicios</button>
+                    <button role="button">Nuestros servicios</button>
                 </div>
             </article>
 
-            <article class="seccion-doble">
+            <article>
                 <div>
                     <img src="images/doc3.webp" alt="Servicio de emergencias">
                 </div>
@@ -68,26 +69,43 @@
                     <p>Nuestro servicio de guardia está disponible las 24 horas, los 365 días del año, con profesionales
                         capacitados para atender urgencias y emergencias. Contamos con todas las especialidades
                         necesarias para resolver cualquier situación crítica.</p>
-                    <button class="btn-primario">Más información</button>
+                    <button role="button">Más información</button>
                 </div>
             </article>
         </section>
 
-        <section class="seccion-centrada">
-            <div>
-                <h2>Obras sociales</h2>
-                <p>Trabajamos con la mayoría de las obras sociales y prepagas del país</p>
+        <section class="obras-sociales">
+            <h2>Obras sociales</h2>
+            <p>Trabajamos con la mayoría de las obras sociales y prepagas del país</p>
+            <div class="logos-obras-sociales">
+                <img src="images/obras_sociales/logo-construir-salud.webp" alt="logo-construir-salud">
+                <img src="images/obras_sociales/logo-cover-salud.webp" alt="logo-cover-salud">
+                <img src="images/obras_sociales/logo-dasuten.webp" alt="logo-dasuten">
+                <img src="images/obras_sociales/logo-dosuba.webp" alt="logo-dosuba">
+                <img src="images/obras_sociales/logo-elevar-pasteleros.webp" alt="logo-elevar-pasteleros">
+                <img src="images/obras_sociales/logo-femeba.webp" alt="logo-femeba">
+                <img src="images/obras_sociales/logo-iosfa.webp" alt="logo-iosfa">
+                <img src="images/obras_sociales/logo-obra-social-bancarios.webp" alt="logo-obra-social-bancarios">
+                <img src="images/obras_sociales/logo-obra-social-ferroviarios.webp" alt="logo-obra-social-ferroviarios">
+                <img src="images/obras_sociales/logo-osecac.webp" alt="logo-osecac">
+                <img src="images/obras_sociales/logo-osjera.webp" alt="logo-osjera">
+                <img src="images/obras_sociales/logo-ospat.webp" alt="logo-ospat">
+                <img src="images/obras_sociales/logo-ospe-200x50-1.webp" alt="">
+                <img src="images/obras_sociales/logo-ospic.webp" alt="logo-ospic">
+                <img src="images/obras_sociales/logo-ospim.webp" alt="logo-ospim">
+                <img src="images/obras_sociales/logo-osplad.webp" alt="logo-osplad">
+                <img src="images/obras_sociales/logo-ospm.webp" alt="logo-ospm">
+                <img src="images/obras_sociales/logo-osseg.webp" alt="logo-osseg">
+                <img src="images/obras_sociales/logo-osuthgra.webp" alt="logo-osuthgra">
             </div>
         </section>
 
-        <section class="seccion-destacada">
-            <div class="container">
-                <h2>Tu salud es nuestra prioridad</h2>
-                <p>En Bienestar Integral nos preocupamos por brindarte la mejor atención en un ambiente cálido y
-                    confortable. Contamos con tecnología de punta y profesionales altamente capacitados para cuidar de
-                    vos y tu familia.</p>
-                <button class="btn-primario">Solicitar turno</button>
-            </div>
+        <section class="solicitar-turno">
+            <h2>Tu salud es nuestra prioridad</h2>
+            <p>En Bienestar Integral nos preocupamos por brindarte la mejor atención en un ambiente cálido y
+                confortable. Contamos con tecnología de punta y profesionales altamente capacitados para cuidar de
+                vos y tu familia.</p>
+            <button role="button">Solicitar turno</button>
         </section>
     </main>
 
@@ -131,9 +149,9 @@
             <div>
                 <h3>Enlaces rápidos</h3>
                 <ul>
-                    <a href="index.html">Inicio</a>
-                    <a href="institucional.html">Institucional</a>
-                    <a href="contacto.html">Contacto</a>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="institucional.html">Institucional</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
         </div>

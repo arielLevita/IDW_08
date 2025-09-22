@@ -4,41 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
     <title>Bienestar Integral | Portada</title>
 </head>
 
 <body>
-    <nav>
-        <div class="wrapper">
-            <a href="index.html">
-                <img src="assets/logo-sitio.webp" alt="logo medico">
-                <div>
+    <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/logo-sitio.webp" alt="Logo" class="me-2">
+                <div class="d-none d-md-block">
                     <p>Bienestar</p>
                     <p>Integral</p>
                 </div>
             </a>
-            <ul>
-                <li><a href="#" class="nav-link nav-link-active">Inicio</a></li>
-                <li><a href="institucional.html" class="nav-link">Intitucional</a></li>
-                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-            </ul>
-            <button class="login-button" role="button">Portal de pacientes</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-underline mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Institucional</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Especialidades
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Todas las especialidades</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Cardiología</a></li>
+                            <li><a class="dropdown-item" href="#">Traumatología</a></li>
+                            <li><a class="dropdown-item" href="#">Neurología</a></li>
+                            <li><a class="dropdown-item" href="#">Ginecología</a></li>
+                            <li><a class="dropdown-item" href="#">Pediatría</a></li>
+                            <li><a class="dropdown-item" href="#">Dermatología</a></li>
+                            <li><a class="dropdown-item" href="#">Oftalmología</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+                <div class="d-flex d-md-inline-flex mx-auto m-md-0 justify-content-md-end">
+                    <button class="login-button" type="button">Portal de Pacientes</button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <header>
+    <header class="d-flex flex-column justify-content-center align-items-center text-center">
         <h1>Bienestar Integral</h1>
         <h2>Clínica médica</h2>
     </header>
 
     <main>
-        <section id="servicios">
-            <article>
-                <div>
-                    <img src="images/doc1.webp" alt="Profesionales de la salud">
+        <section id="servicios" class="container-fluid">
+            <article class="row">
+                <div class="col-12 col-md-6">
+                    <img src="images/doc1.webp" alt="Profesionales de la salud" class="img-fluid">
                 </div>
-                <div class="home-box">
+                <div class="home-box col-12 col-md-6">
                     <h2>Atención médica de excelencia</h2>
                     <p>En Bienestar Integral contamos con un equipo de profesionales de primer nivel, tecnología de
                         avanzada y instalaciones modernas para brindarle la mejor atención médica. Nuestra prioridad es
@@ -46,12 +79,12 @@
                     <button role="button">Conozca más</button>
                 </div>
             </article>
-
-            <article>
-                <div>
-                    <img src="images/doc2.webp" alt="Nuestros servicios">
+    
+            <article class="row">
+                <div class="col-12 col-md-6 order-md-2">
+                    <img src="images/doc2.webp" alt="Nuestros servicios" class="img-fluid">
                 </div>
-                <div class="home-box">
+                <div class="home-box col-12 col-md-6 order-md-1">
                     <h2>Servicios especializados</h2>
                     <p>Ofrecemos una amplia gama de servicios médicos que incluyen consultorios externos, prácticas
                         ambulatorias, internación general y terapia intensiva. También contamos con un moderno centro de
@@ -59,12 +92,12 @@
                     <button role="button">Nuestros servicios</button>
                 </div>
             </article>
-
-            <article>
-                <div>
-                    <img src="images/doc3.webp" alt="Servicio de emergencias">
+    
+            <article class="row">
+                <div class="col-12 col-md-6">
+                    <img src="images/doc3.webp" alt="Servicio de emergencias" class="img-fluid">
                 </div>
-                <div class="home-box">
+                <div class="home-box col-12 col-md-6">
                     <h2>Guardia y emergencias 24/7</h2>
                     <p>Nuestro servicio de guardia está disponible las 24 horas, los 365 días del año, con profesionales
                         capacitados para atender urgencias y emergencias. Contamos con todas las especialidades
@@ -74,33 +107,33 @@
             </article>
         </section>
 
-        <section class="obras-sociales">
+        <section class="obras-sociales container-fluid text-center">
             <h2>Obras sociales</h2>
             <p>Trabajamos con la mayoría de las obras sociales y prepagas del país</p>
-            <div class="logos-obras-sociales">
-                <img src="images/obras_sociales/logo-construir-salud.webp" alt="logo-construir-salud">
-                <img src="images/obras_sociales/logo-cover-salud.webp" alt="logo-cover-salud">
-                <img src="images/obras_sociales/logo-dasuten.webp" alt="logo-dasuten">
-                <img src="images/obras_sociales/logo-dosuba.webp" alt="logo-dosuba">
-                <img src="images/obras_sociales/logo-elevar-pasteleros.webp" alt="logo-elevar-pasteleros">
-                <img src="images/obras_sociales/logo-femeba.webp" alt="logo-femeba">
-                <img src="images/obras_sociales/logo-iosfa.webp" alt="logo-iosfa">
-                <img src="images/obras_sociales/logo-obra-social-bancarios.webp" alt="logo-obra-social-bancarios">
-                <img src="images/obras_sociales/logo-obra-social-ferroviarios.webp" alt="logo-obra-social-ferroviarios">
-                <img src="images/obras_sociales/logo-osecac.webp" alt="logo-osecac">
-                <img src="images/obras_sociales/logo-osjera.webp" alt="logo-osjera">
-                <img src="images/obras_sociales/logo-ospat.webp" alt="logo-ospat">
-                <img src="images/obras_sociales/logo-ospe-200x50-1.webp" alt="">
-                <img src="images/obras_sociales/logo-ospic.webp" alt="logo-ospic">
-                <img src="images/obras_sociales/logo-ospim.webp" alt="logo-ospim">
-                <img src="images/obras_sociales/logo-osplad.webp" alt="logo-osplad">
-                <img src="images/obras_sociales/logo-ospm.webp" alt="logo-ospm">
-                <img src="images/obras_sociales/logo-osseg.webp" alt="logo-osseg">
-                <img src="images/obras_sociales/logo-osuthgra.webp" alt="logo-osuthgra">
+            <div class="logos-obras-sociales d-flex flex-wrap justify-content-center">
+                <img src="images/obras_sociales/logo-construir-salud.webp" alt="logo-construir-salud" class="img-fluid"> 
+                <img src="images/obras_sociales/logo-cover-salud.webp" alt="logo-cover-salud" class="img-fluid">
+                <img src="images/obras_sociales/logo-dasuten.webp" alt="logo-dasuten" class="img-fluid">
+                <img src="images/obras_sociales/logo-dosuba.webp" alt="logo-dosuba" class="img-fluid">
+                <img src="images/obras_sociales/logo-elevar-pasteleros.webp" alt="logo-elevar-pasteleros" class="img-fluid">
+                <img src="images/obras_sociales/logo-femeba.webp" alt="logo-femeba" class="img-fluid">
+                <img src="images/obras_sociales/logo-iosfa.webp" alt="logo-iosfa" class="img-fluid">
+                <img src="images/obras_sociales/logo-obra-social-bancarios.webp" alt="logo-obra-social-bancarios" class="img-fluid">
+                <img src="images/obras_sociales/logo-obra-social-ferroviarios.webp" alt="logo-obra-social-ferroviarios" class="img-fluid">
+                <img src="images/obras_sociales/logo-osecac.webp" alt="logo-osecac" class="img-fluid">
+                <img src="images/obras_sociales/logo-osjera.webp" alt="logo-osjera" class="img-fluid">
+                <img src="images/obras_sociales/logo-ospat.webp" alt="logo-ospat" class="img-fluid">
+                <img src="images/obras_sociales/logo-ospe-200x50-1.webp" alt="" class="img-fluid">
+                <img src="images/obras_sociales/logo-ospic.webp" alt="logo-ospic" class="img-fluid">
+                <img src="images/obras_sociales/logo-ospim.webp" alt="logo-ospim" class="img-fluid">
+                <img src="images/obras_sociales/logo-osplad.webp" alt="logo-osplad" class="img-fluid">
+                <img src="images/obras_sociales/logo-ospm.webp" alt="logo-ospm" class="img-fluid">
+                <img src="images/obras_sociales/logo-osseg.webp" alt="logo-osseg" class="img-fluid">
+                <img src="images/obras_sociales/logo-osuthgra.webp" alt="logo-osuthgra" class="img-fluid">
             </div>
         </section>
 
-        <section class="solicitar-turno">
+        <section class="solicitar-turno container-fluid text-center">
             <h2>Tu salud es nuestra prioridad</h2>
             <p>En Bienestar Integral nos preocupamos por brindarte la mejor atención en un ambiente cálido y
                 confortable. Contamos con tecnología de punta y profesionales altamente capacitados para cuidar de
@@ -159,6 +192,10 @@
             <p>2025 Bienestar Integral - Desarrollado por el Grupo 08 para tu salud &hearts;</p>
         </div>
     </footer>
-</body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
+</body>
 </html>

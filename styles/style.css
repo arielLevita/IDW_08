@@ -303,6 +303,25 @@ header p {
     max-width: 350px;
 }
 
+.valores-contenedor {
+  background-color: #0E7C9D;   /* color inicial (blanco) */
+  border: 2px solid #333;      /* borde gris oscuro fijo */
+  border-radius: 10px;         /* bordes redondeados */
+  transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+/* Estado hover */
+.valores-contenedor:hover {  /* cambia al color-uno de tu paleta */
+  color: #000;              /* texto blanco para contraste */
+  transform: translateY(-5px); /* se eleva un poquito */
+}
+
+/* Asegurar que títulos y párrafos cambien bien */
+.valores-contenedor:hover h3,
+.valores-contenedor:hover p {
+  color: var(--color-dos);
+}
+
 
 
 /* -------------------- */

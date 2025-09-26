@@ -205,9 +205,15 @@ header h2 {
     margin: 0 auto;
 }
 
+#servicios .row {
+    min-height: 450px;
+    align-items: stretch;
+}
+
 #servicios img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 .home-box {
@@ -253,21 +259,21 @@ header h2 {
 .home-box h2,
 .obras-sociales h2,
 .solicitar-turno h2 {
-    font-size: 1.5rem !important;  
-    font-weight: 700 !important;   
-    color: var(--color-texto) !important;
-    margin-bottom: 1rem !important;
-    line-height: 1rem !important;
+    margin: 1.5em 0 1rem 0; 
+    font-size: 1.5rem ;  
+    font-weight: 700 ;   
+    color: var(--color-texto) ;
+    line-height: 1.2rem ;
 }
 
 .home-box p, 
 .obras-sociales p,
 .solicitar-turno p {
-    font-size: 1rem !important;
-    font-weight: 400 !important;
-    color: var(--color-texto) !important;
-    line-height: 1.5 !important;
-    margin-bottom: 2rem !important;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-texto);
+    line-height: 1.5;
+    margin-bottom: 2rem;
 }
 
 

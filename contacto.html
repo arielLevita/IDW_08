@@ -114,10 +114,14 @@
                 <div class="formulario col-12 col-sm-6 col-md-6 pb-3">
                     <h3>Completa el formulario</h3>
                     <form class="form fs-6 pt-3" action="#" method="post" autocomplete="on">
-                        <input type="text" name="Nombre" placeholder="Nombre" class="campo-contacto">
-                        <input type="text" name="Correo" placeholder="Correo" class="campo-contacto">
-                        <input type="text" name="Telefono" placeholder="Teléfono" class="campo-contacto">
-                        <textarea name="mensaje" rows="6" placeholder="Escriba aquí su consulta..."></textarea>
+                        <label for="validationDefault01" class="form-label"></label>
+                        <input type="text" name="Nombre" placeholder="Nombre" class="campo-contacto" id="validationDefault01" required>
+                        <label for="validationDefault02" class="form-label"></label>
+                        <input type="text" name="Correo" placeholder="Correo" class="campo-contacto" id="validationDefault02" required>
+                        <label for="validationDefault03" class="form-label"></label>
+                        <input type="text" name="Telefono" placeholder="Teléfono" class="campo-contacto" id="validationDefault03" required>
+                        <label for="validationDefault04" class="form-label"></label>
+                        <textarea name="mensaje" rows="6" placeholder="Escriba aquí su consulta..." id="validationDefault03" required></textarea>
                         <button type="submit" class="boton-enviar" role="button">Enviar</button>
                     </form>
                 </div>

@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return data.administradores;
         } catch (error) {
             console.error("Fallo en la carga de datos:", error);
-            // Mostrar un mensaje de error genérico si no se pueden cargar los datos
             errorMessage.textContent = "Error interno del sistema. No se pudo cargar la configuración.";
             errorMessage.classList.remove('d-none');
             return [];

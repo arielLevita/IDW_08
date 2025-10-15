@@ -27,6 +27,9 @@
 
 - **HTML:** Para estructurar el contenido de las páginas.
 - **CSS:** Para definir estilos y conectar con los documentos HTML.
+- **Bootstrap:** Para agregar responsividad en el sitio web.
+- **JS:** Para aportar funcionalidad.
+
 
 ---
 

@@ -5476,5 +5476,49 @@
             "hora": "12:30",
             "disponible": true
         }
+    ],
+    "administradores": [
+        {
+            "id": 1,
+            "name": "Ariel Levita",
+            "role": "desarrollador",
+            "email": "levita.ariel@gmail.com",
+            "password": "ariel123"
+        },
+        {
+            "id": 2,
+            "name": "Elisa Beltramone",
+            "role": "desarrollador",
+            "email": "elisabeltramone@hotmail.com",
+            "password": "elisa123"
+        },
+        {
+            "id": 3,
+            "name": "Gabriel Osvaldo Roman",
+            "role": "desarrollador",
+            "email": "gabrielroman100@gmail.com",
+            "password": "gabriel123"
+        },
+        {
+            "id": 4,
+            "name": "Walter Osvaldo Cuesta",
+            "role": "desarrollador",
+            "email": "waltercuesta83@gmail.com",
+            "password": "walter123"
+        },
+        {
+            "id": 5,
+            "name": "Nerina Bonnin",
+            "role": "desarrollador",
+            "email": "nerinabonnin07@gmail.com",
+            "password": "nerina123"
+        },
+        {
+            "id": 6,
+            "name": "Maria Alejandra Olivares Contreras",
+            "role": "desarrollador",
+            "email": "mariaolivares0119@gmail.com",
+            "password": "maria123"
+        }
     ]
 }

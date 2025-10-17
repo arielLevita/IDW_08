@@ -6,7 +6,7 @@
 ### Trabajo Final Integrador - Grupo: IDW_08
 
 > [!IMPORTANT]
-**Estado: Primera Entrega - 9 de Septiembre 2025**
+**Estado: Tercera Entrega - 23 de Octubre 2025**
 
 ---
 
@@ -29,13 +29,14 @@
 - **CSS:** Para definir estilos y conectar con los documentos HTML.
 - **Bootstrap:** Para agregar responsividad en el sitio web.
 - **JS:** Para aportar funcionalidad.
+- **LocalStorage:** Para la persistencia local de datos (CRUD de médicos y turnos) sin necesidad de servidor.
 
 
 ---
 
 ## Próximos Pasos (Etapas Futuras)
 
-El proyecto está diseñado para evolucionar. Las siguientes etapas del desarrollo se enfocarán en la implementación de las funcionalidades clave para la clínica, las cuales serán marcadas como completadas a medida que se avancen:
+El proyecto está diseñado para evolucionar. Las siguientes etapas del desarrollo se enfocarán en la implementación de las funcionalidades clave para la clínica, las cuales serán marcadas como completadas a medida que se avancen, En esta **tercera entrega** se implementaron las principales funcionalidades del **rol Administrador**, centradas en el manejo de datos persistentes mediante `LocalStorage`.
 
 ### Funcionalidades del Rol Visitante
 
@@ -44,10 +45,10 @@ El proyecto está diseñado para evolucionar. Las siguientes etapas del desarrol
 
 ### Funcionalidades del Rol Administrador (CRUD)
 
--   [ ] **Médicos:** Registrar, editar y eliminar médicos.
+-   [ ] **Médicos:** Registrar, editar y eliminar médicos con almacenamiento en LocalStorage.
 -   [ ] **Especialidades:** Registrar, editar y eliminar especialidades.
 -   [ ] **Obras Sociales:** Registrar, editar y eliminar obras sociales.
--   [ ] **Turnos:** Registrar, editar y eliminar turnos.
+-   [ ] **Turnos:** Registrar, editar y eliminar turnos con filtros por fecha, especialidad, médico y estado, y exportación a CSV.
 
 ---
 

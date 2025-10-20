@@ -70,17 +70,22 @@
                         <h2 class="mb-4">Portal de Administración</h2>
                         <form id="login-form">
                             <div class="mb-3">
-                                <label for="email" class="form-label">Usuario</label>
-                                <input type="email" class="form-control" id="email" required autocomplete="email">
+                               <label for="username" class="form-label">Nombre de Usuario</label> 
+                               <input type="text" class="form-control" id="username" required> 
                             </div>
                             <div class="mb-4">
                                 <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" required>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" required>
+                                    <button class="btn btn-outline-secondary mb-2 border-0" type="button" id="togglePassword" aria-label="Mostrar/Ocultar Contraseña">
+                                        🔒
+                                    </button>
+                                </div>
                             </div>
                             <div id="error-message" class="alert alert-danger d-none" role="alert">
                                 Usuario o contraseña incorrectos.
                             </div>
-                            <button type="submit" class="w-30">Ingresar</button>
+                            <button type="submit" class="btn btn-primary w-30">Ingresar</button>
                         </form>
                     </div>
                 </div>

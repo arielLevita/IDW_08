@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         errorMessage.classList.add('d-none'); 
 
-        try {x 
+        try { 
             const response = await fetch('https://dummyjson.com/auth/login', { 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

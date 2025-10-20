@@ -1,0 +1,33 @@
+:root {
+    --color-uno: #0E7C9D;
+    --color-dos: #044166;
+    --color-tres: #1CA481;
+    --color-cuatro: #045a29;
+    --color-cinco: #e8e8e8;
+    --color-seis: #FCFCFC;
+    --color-texto: #222222;
+
+    --color-uno-rgb: 14, 124, 157;
+    --color-dos-rgb: 4, 65, 102;
+    --color-tres-rgb: 28, 164, 129;
+    --color-cuatro-rgb: 4, 90, 41;
+    --color-cinco-rgb: 232, 232, 232;
+    --color-seis-rgb: 252, 252, 252;
+    --color-texto-rgb: 34, 34, 34;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid var(--color-dos);
+}
+
+.nav-tabs .nav-link.active {
+    border-left: 2px solid var(--color-dos);
+    border-top: 2px solid var(--color-dos);
+    border-right: 2px solid var(--color-dos);
+    background-color: rgba(var(--color-tres-rgb), 0.1);
+}
+
+
+.nav-link {
+    color: var(--color-texto);
+}

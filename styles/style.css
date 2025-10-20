@@ -120,37 +120,6 @@ nav button:hover {
     background-color: rgba(var(--color-tres-rgb), 0.15) !important; 
 }
 
-/* .navbar .dropdown-menu {
-    border: 2px solid var(--color-cinco) !important;
-    border-radius: 10px !important;
-    margin-top: 10px !important;
-}
-
-.navbar .dropdown-item {
-    color: var(--color-dos) !important;
-    font-weight: 500 !important;
-    padding: 10px 20px !important;
-    transition: all 0.3s ease;
-}
-
-.navbar .dropdown-divider {
-    border-color: var(--color-cinco) !important;
-}
-
-.navbar .dropdown-item:hover,
-.navbar .dropdown-item:focus {
-    background-color: var(--color-cinco) !important;
-    color: var(--color-tres) !important;
-}
-
-.navbar .dropdown-toggle:hover {
-    color: var(--color-dos) !important;
-}
-
-.navbar .nav-underline .dropdown-toggle:focus {
-    border-bottom: none !important;
-} */
-
 
 
 /* -------------------- */

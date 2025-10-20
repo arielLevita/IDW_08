@@ -1,95 +1,146 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="icon" href="/logo-sitio.webp" type="image/x-icon">
-    <title>Bienestar Integral | Login Administrador</title>
+    <title>Bienestar Integral | Admin Dashboard</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-sm">
         <div class="container-xxl">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/logo-sitio.webp" alt="Logo" class="me-2">
-                <div class="d-none d-lg-block">
+                <img src="../assets/logo-sitio.webp" alt="Logo" class="me-2">
+                <div class="d-none d-sm-block">
                     <p>Bienestar</p>
                     <p>Integral</p>
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-underline justify-content-center align-items-center mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link px-0" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-0" href="institucional.html">Institucional</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-0" href="profesionales.html">Profesionales</a>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profesionales
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="profesionales.html">Todas las especialidades</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="profesionales.html#cardiologia">Cardiología</a></li>
-                            <li><a class="dropdown-item" href="profesionales.html#traumatologia">Traumatología</a></li>
-                            <li><a class="dropdown-item" href="profesionales.html#neurologia">Neurología</a></li>
-                            <li><a class="dropdown-item" href="profesionales.html#ginecologia">Ginecología</a></li>
-                            <li><a class="dropdown-item" href="profesionales.html#pediatria">Pediatría</a></li>
-                            <li><a class="dropdown-item" href="profesionales.html#dermatologia">Dermatología</a></li>
-                            <li><a class="dropdown-item" href="profesionales.html#oftalmologia">Oftalmología</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link px-0" href="contacto.html">Contacto</a>
-                    </li>
-                </ul>
-                <div class="d-flex d-lg-inline-flex m-lg-0 justify-content-lg-end mb-3 mb-lg-0">
-                    <button class="login-button mx-auto" type="button">Portal de Pacientes</button>
-                </div>
-            </div>
+            <button class="btn btn-outline-success" type="button" onclick="cerrarSesion()">Cerrar sesión</button>
         </div>
     </nav>
 
-    <main>
-        <section class="container my-5 px-2">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6">
-                    <div class="formulario p-4 p-md-5">
-                        <h2 class="mb-4">Portal de Administración</h2>
-                        <form id="login-form">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="username" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="password" required>
-                                </div>
-                            </div>
-                            <div id="error-message" class="alert alert-danger d-none" role="alert">
-                                Usuario o contraseña incorrectos.
-                            </div>
-                            <button type="submit" class="btn btn-primary w-30">Ingresar</button>
-                        </form>
+    <main class="container-xxl p-2">
+        <h2>Panel de Administración</h2>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-semibold" id="medicos-tab" data-bs-toggle="tab"
+                    data-bs-target="#medicos-tab-pane" type="button" role="tab" aria-controls="medicos-tab-pane"
+                    aria-selected="true">Médicos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-semibold" id="especialidades-tab" data-bs-toggle="tab"
+                    data-bs-target="#especialidades-tab-pane" type="button" role="tab"
+                    aria-controls="especialidades-tab-pane" aria-selected="false" disabled>Especialidades</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-semibold" id="turnos-tab" data-bs-toggle="tab"
+                    data-bs-target="#turnos-tab-pane" type="button" role="tab" aria-controls="turnos-tab-pane"
+                    aria-selected="false" disabled>Turnos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-semibold" id="obras-sociales-tab" data-bs-toggle="tab"
+                    data-bs-target="#obras-sociales-tab-pane" type="button" role="tab"
+                    aria-controls="obras-sociales-tab-pane" aria-selected="false" disabled>Obras sociales</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-semibold" id="reservas-tab" data-bs-toggle="tab"
+                    data-bs-target="#reservas-tab-pane" type="button" role="tab" aria-controls="reservas-tab-pane"
+                    aria-selected="false" disabled>Reservas</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="medicos-tab-pane" role="tabpanel" aria-labelledby="medicos-tab"
+                tabindex="0">
+                <!-- FORMULARIO -->
+                <form id="medicoForm" class="p-3 mb-4">
+                    <input type="hidden" id="medicoId">
+
+                    <div class="row g-3">
+                        <div class="col-md-2">
+                            <label class="form-label m-0">Título</label>
+                            <select id="titulo" class="form-select">
+                                <option>Dr.</option>
+                                <option>Dra.</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Nombre</label>
+                            <input id="nombreMedico" type="text" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Apellido</label>
+                            <input id="apellidoMedico" type="text" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label m-0">Matrícula</label>
+                            <input id="matricula" type="number" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label m-0">Consulta ($)</label>
+                            <input id="valorConsulta" type="number" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label m-0">Especialidad</label>
+                            <select id="idEspecialidad" class="form-select" required></select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label m-0">Imagen</label>
+                            <input id="imagenMedico" type="file" accept="image/*" class="form-control">
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label m-0">Descripción</label>
+                            <textarea id="descripcionMedico" class="form-control" rows="2" required></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-labelm-0">Obras Sociales que acepta</label>
+                            <div id="obrasSocialesContainer" class="d-flex flex-wrap gap-3 w-100 bg-body-tertiary border rounded-2 p-3"></div>
+                        </div>
+
+                        <div class="col-12 text-end">
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                            <button type="reset" class="btn btn-secondary">Cancelar</button>
+                        </div>
                     </div>
-                </div>
+                </form>
+
+                <!-- TABLA -->
+                <table class="table table-striped align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Especialidad</th>
+                            <th>Valor</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="medicosTable"></tbody>
+                </table>
             </div>
-        </section>
+            <div class="tab-pane fade" id="especialidades-tab-pane" role="tabpanel" aria-labelledby="especialidades-tab"
+                tabindex="0"></div>
+            <div class="tab-pane fade" id="turnos-tab-pane" role="tabpanel" aria-labelledby="turnos-tab" tabindex="0">
+            </div>
+            <div class="tab-pane fade" id="obras-sociales-tab-pane" role="tabpanel" aria-labelledby="obras-sociales-tab"
+                tabindex="0"></div>
+            <div class="tab-pane fade" id="reservas-tab-pane" role="tabpanel" aria-labelledby="reservas-tab"
+                tabindex="0"></div>
+        </div>
     </main>
 
     <footer class="py-5">
@@ -166,7 +217,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="scripts/login.js"></script>
+    <script src="../scripts/dashboard.js"></script>
 </body>
 
 </html>

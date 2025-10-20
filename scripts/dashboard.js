@@ -8,16 +8,15 @@ function cerrarSesion() {
     window.location.href = "../index.html";
 }
 
-// 
-// CRUD MÉDICOS
-// 
-
+/* -------------------- */
+/* --- CRUD Médicos --- */
+/* -------------------- */
 async function iniciarPagina() {
     try {
         await cargarDatos();
-        renderEspecialidades();
-        renderObrasSociales();
-        renderTable();
+        generarOpcionesEspecialidades();
+        generarCheckboxesObrasSociales();
+        generarTablaMedicos();
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
     }
@@ -25,67 +24,62 @@ async function iniciarPagina() {
 
 iniciarPagina();
 
-// Cargar datos desde localStorage o mock
 async function cargarDatos() {
     if (localStorage.getItem("data")) {
         data = JSON.parse(localStorage.getItem("data"));
     } else {
-        const resp = await fetch("mock_data.json");
-        data = await resp.json();
+        const response = await fetch("mock_data.json");
+        data = await response.json();
         localStorage.setItem("data", JSON.stringify(data));
     }
 }
 
-// 🩺 Renderizar tabla de médicos
-function renderTable() {
-    const tbody = document.getElementById("medicosTable");
+function generarTablaMedicos() {
+    const tbody = document.getElementById("tablaMedicos");
     tbody.innerHTML = "";
 
-    data.medicos.forEach(m => {
-        const esp = data.especialidades.find(e => e.idEspecialidad === m.idEspecialidad);
+    data.medicos.forEach(medico => {
+        const especialidad = data.especialidades.find(especialidad => especialidad.idEspecialidad === medico.idEspecialidad);
         const tr = document.createElement("tr");
         tr.innerHTML = `
-      <td><img src="${m.imagenMedico}" alt="foto" style="width:60px;height:60px;object-fit:cover;border-radius:50%"></td>
-      <td>${m.titulo} ${m.nombreMedico} ${m.apellidoMedico}</td>
-      <td>${esp ? esp.nombreEspecialidad : "—"}</td>
-      <td>$${m.valorConsulta}</td>
-      <td>
-        <button class="btn btn-sm btn-warning me-1" onclick="editMedico(${m.idMedico})">Editar</button>
-        <button class="btn btn-sm btn-danger" onclick="deleteMedico(${m.idMedico})">Eliminar</button>
-      </td>
-    `;
+            <td><img src="${medico.imagenMedico}" alt="foto de ${medico.apellidoMedico}"></td>
+            <td>${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}</td>
+            <td>${especialidad ? especialidad.nombreEspecialidad : "—"}</td>
+            <td>$${medico.valorConsulta}</td>
+            <td>
+                <button class="btn btn-sm btn-editar fw-semibold me-1" onclick="editarMedico(${medico.idMedico})">Editar</button>
+                <button class="btn btn-sm btn-eliminar fw-semibold" onclick="eliminarMedico(${medico.idMedico})">Eliminar</button>
+            </td>
+            `;
         tbody.appendChild(tr);
     });
 }
 
-// 🎓 Renderizar select de especialidades
-function renderEspecialidades() {
+function generarOpcionesEspecialidades() {
     const select = document.getElementById("idEspecialidad");
     select.innerHTML = '<option value="">Seleccione...</option>';
-    data.especialidades.forEach(e => {
-        const opt = document.createElement("option");
-        opt.value = e.idEspecialidad;
-        opt.textContent = e.nombreEspecialidad;
-        select.appendChild(opt);
+    data.especialidades.forEach(especialidad => {
+        const option = document.createElement("option");
+        option.value = especialidad.idEspecialidad;
+        option.textContent = especialidad.nombreEspecialidad;
+        select.appendChild(option);
     });
 }
 
-// 🏥 Renderizar checkboxes de obras sociales
-function renderObrasSociales() {
-    const cont = document.getElementById("obrasSocialesContainer");
-    cont.innerHTML = "";
-    data.obrasSociales.forEach(o => {
+function generarCheckboxesObrasSociales() {
+    const container = document.getElementById("obrasSocialesContainer");
+    container.innerHTML = "";
+    data.obrasSociales.forEach(os => {
         const div = document.createElement("div");
         div.classList.add("form-check");
         div.innerHTML = `
-      <input class="form-check-input" type="checkbox" id="obra${o.idObraSocial}" value="${o.idObraSocial}">
-      <label class="form-check-label" for="obra${o.idObraSocial}">${o.nombreObraSocial}</label>
-    `;
-        cont.appendChild(div);
+            <input class="form-check-input" type="checkbox" id="obra${os.idObraSocial}" value="${os.idObraSocial}">
+            <label class="form-check-label text-uppercase" for="obra${os.idObraSocial}">${os.nombreObraSocial}</label>
+            `;
+        container.appendChild(div);
     });
 }
 
-// 🧾 Convertir imagen a Base64
 function toBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -95,11 +89,36 @@ function toBase64(file) {
     });
 }
 
-// 🧍‍♂️ Crear o editar médico
+function generarTurnosParaMedico(idMedico) {
+    const dias = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+    const turnos = [];
+
+    let idTurno = data.turnos.length > 0
+        ? Math.max(...data.turnos.map(t => t.idTurno)) + 1
+        : 1;
+
+    dias.forEach(dia => {
+        for (let hora = 9; hora <= 12; hora++) {
+            for (let minutos of [0, 30]) {
+                const horaStr = `${hora.toString().padStart(2, "0")}:${minutos === 0 ? "00" : "30"}`;
+                turnos.push({
+                    idTurno: idTurno++,
+                    idMedico,
+                    día: dia,
+                    hora: horaStr,
+                    disponible: true
+                });
+            }
+        }
+    });
+
+    return turnos;
+}
+
 document.getElementById("medicoForm").addEventListener("submit", async e => {
     e.preventDefault();
 
-    const id = document.getElementById("medicoId").value || Date.now();
+    const id = document.getElementById("idMedico").value || Date.now();
     const titulo = document.getElementById("titulo").value;
     const nombreMedico = document.getElementById("nombreMedico").value;
     const apellidoMedico = document.getElementById("apellidoMedico").value;
@@ -109,7 +128,7 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     const idEspecialidad = parseInt(document.getElementById("idEspecialidad").value);
 
     const obrasSeleccionadas = [...document.querySelectorAll("#obrasSocialesContainer input:checked")]
-        .map(c => parseInt(c.value));
+        .map(checked => parseInt(checked.value));
 
     const imagenInput = document.getElementById("imagenMedico");
     let imagenMedico = "";
@@ -117,7 +136,7 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     if (imagenInput.files[0]) {
         imagenMedico = await toBase64(imagenInput.files[0]);
     } else {
-        const existente = data.medicos.find(m => m.idMedico == id);
+        const existente = data.medicos.find(medico => medico.idMedico == id);
         imagenMedico = existente ? existente.imagenMedico : "";
     }
 
@@ -134,44 +153,54 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
         valorConsulta
     };
 
-    const index = data.medicos.findIndex(m => m.idMedico == id);
+    const index = data.medicos.findIndex(medico => medico.idMedico == id);
     if (index > -1) {
-        data.medicos[index] = nuevoMedico; // update
+        data.medicos[index] = nuevoMedico;
     } else {
-        data.medicos.push(nuevoMedico); // add
+        data.medicos.push(nuevoMedico);
+
+        const nuevosTurnos = generarTurnosParaMedico(nuevoMedico.idMedico);
+        if (!data.turnos) data.turnos = [];
+        data.turnos.push(...nuevosTurnos);
     }
 
     localStorage.setItem("data", JSON.stringify(data));
-    renderTable();
+    generarTablaMedicos();
     e.target.reset();
-    document.getElementById("medicoId").value = "";
+    document.getElementById("idMedico").value = "";
 });
 
-// ✏️ Editar médico
-function editMedico(id) {
-    const m = data.medicos.find(m => m.idMedico == id);
-    if (!m) return;
+function editarMedico(id) {
+    const medico = data.medicos.find(medico => medico.idMedico == id);
+    if (!medico) return;
 
-    document.getElementById("medicoId").value = m.idMedico;
-    document.getElementById("titulo").value = m.titulo;
-    document.getElementById("nombreMedico").value = m.nombreMedico;
-    document.getElementById("apellidoMedico").value = m.apellidoMedico;
-    document.getElementById("matricula").value = m.matricula;
-    document.getElementById("valorConsulta").value = m.valorConsulta;
-    document.getElementById("descripcionMedico").value = m.descripcionMedico;
-    document.getElementById("idEspecialidad").value = m.idEspecialidad;
+    document.getElementById("idMedico").value = medico.idMedico;
+    document.getElementById("titulo").value = medico.titulo;
+    document.getElementById("nombreMedico").value = medico.nombreMedico;
+    document.getElementById("apellidoMedico").value = medico.apellidoMedico;
+    document.getElementById("matricula").value = medico.matricula;
+    document.getElementById("valorConsulta").value = medico.valorConsulta;
+    document.getElementById("descripcionMedico").value = medico.descripcionMedico;
+    document.getElementById("idEspecialidad").value = medico.idEspecialidad;
 
-    // Obras sociales
-    document.querySelectorAll("#obrasSocialesContainer input").forEach(c => {
-        c.checked = m.obrasSocialesQueAcepta.includes(parseInt(c.value));
+    document.querySelectorAll("#obrasSocialesContainer input").forEach(checkbox => {
+        checkbox.checked = medico.obrasSocialesQueAcepta.includes(parseInt(checkbox.value));
     });
 }
 
-// 🗑️ Eliminar médico
-function deleteMedico(id) {
+function eliminarMedico(id) {
     if (confirm("¿Desea eliminar este médico?")) {
-        data.medicos = data.medicos.filter(m => m.idMedico != id);
+        if (data.turnos && Array.isArray(data.turnos)) {
+            data.turnos = data.turnos.map(turno => {
+                if (turno.idMedico == id) {
+                    return { ...turno, disponible: false };
+                }
+                return turno;
+            });
+        }
+
+        data.medicos = data.medicos.filter(medico => medico.idMedico != id);
         localStorage.setItem("data", JSON.stringify(data));
-        renderTable();
+        generarTablaMedicos();
     }
 }

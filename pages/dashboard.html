@@ -22,7 +22,7 @@
                     <p>Integral</p>
                 </div>
             </a>
-            <button class="btn btn-outline-success" type="button" onclick="cerrarSesion()">Cerrar sesión</button>
+            <button class="btn-salir" type="button" onclick="cerrarSesion()">Cerrar sesión</button>
         </div>
     </nav>
 
@@ -58,9 +58,8 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="medicos-tab-pane" role="tabpanel" aria-labelledby="medicos-tab"
                 tabindex="0">
-                <!-- FORMULARIO -->
                 <form id="medicoForm" class="p-3 mb-4">
-                    <input type="hidden" id="medicoId">
+                    <input type="hidden" id="idMedico">
 
                     <div class="row g-3">
                         <div class="col-md-2">
@@ -118,9 +117,8 @@
                     </div>
                 </form>
 
-                <!-- TABLA -->
                 <table class="table table-striped align-middle">
-                    <thead class="table-dark">
+                    <thead class="table-success">
                         <tr>
                             <th>Foto</th>
                             <th>Nombre</th>
@@ -129,7 +127,7 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody id="medicosTable"></tbody>
+                    <tbody id="tablaMedicos"></tbody>
                 </table>
             </div>
             <div class="tab-pane fade" id="especialidades-tab-pane" role="tabpanel" aria-labelledby="especialidades-tab"

@@ -101,8 +101,9 @@ nav .nav-link.active {
     -webkit-filter: drop-shadow(1px 1px 1px rgba(var(--color-tres-rgb), 0.3)); 
 }
 
-nav .login-button {
-    padding: 0.3em 0.8em 0.4em !important;   
+nav .login-button,
+.btn-salir {
+    padding: 0.3em 0.8em !important;   
     font-size: 0.9rem !important;
     font-weight: 700 !important;            
     text-transform: uppercase !important;   

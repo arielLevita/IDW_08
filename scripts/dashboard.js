@@ -14,7 +14,8 @@ async function iniciarPagina() {
         generarOpcionesEspecialidades();
         generarCheckboxesObrasSociales();
         generarTablaMedicos();
-        generarTablaEspecialidades()
+        generarTablaEspecialidades();
+        generarMedicoSelect();
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
     }
@@ -292,3 +293,97 @@ function eliminarEspecialidad(idEspecialidad) {
         }
     }
 }
+
+
+/* --------------------------- */
+/* ------- CRUD Turnos ------- */
+/* --------------------------- */
+
+const tablaTurnos = document.getElementById("tablaTurnos");
+const btnGuardar = document.getElementById("guardarCambios");
+
+const dias = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+
+function generarMedicoSelect() {
+    data.medicos.forEach(medico => {
+        const option = document.createElement("option");
+        option.value = medico.idMedico;
+        option.textContent = `${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}`;
+        medicoSelect.appendChild(option);
+    });
+};
+
+document.getElementById("medicoSelect").addEventListener("change", () => {
+    const idMedico = parseInt(medicoSelect.value);
+    if (!idMedico) {
+        tablaTurnos.innerHTML = "";
+        btnGuardar.disabled = true;
+        return;
+    }
+
+    const turnosMedico = data.turnos.filter(turno => turno.idMedico === idMedico);
+
+    if (turnosMedico.length === 0) {
+        tablaTurnos.innerHTML = `
+            <tr><td colspan="6" class="text-muted">No hay turnos registrados para este médico.</td></tr>
+            `;
+        btnGuardar.disabled = true;
+        return;
+    }
+
+    generarTablaTurnos(turnosMedico);
+    btnGuardar.disabled = false;
+
+    btnGuardar.onclick = () => guardarCambios(idMedico);
+});
+
+function generarTablaTurnos(turnosMedico) {
+    tablaTurnos.innerHTML = "";
+
+    const horarios = [...new Set(turnosMedico.map(turno => turno.hora))].sort();
+
+    horarios.forEach(hora => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `<td><strong>${hora}</strong></td>`;
+
+        dias.forEach(dia => {
+            const turno = turnosMedico.find(turno => turno.día === dia && turno.hora === hora);
+            const disponible = turno ? turno.disponible : false;
+
+            const celda = document.createElement("td");
+            celda.innerHTML = `
+                <div class="form-check form-switch d-flex justify-content-center">
+                <input
+                    class="form-check-input turno-switch"
+                    type="checkbox"
+                    data-dia="${dia}"
+                    data-hora="${hora}"
+                    ${disponible ? "checked" : ""}
+                >
+                </div>
+            `;
+            fila.appendChild(celda);
+        });
+
+        tablaTurnos.appendChild(fila);
+    });
+
+    document.querySelectorAll(".turno-switch").forEach(input => {
+        input.addEventListener("change", e => {
+            const dia = e.target.dataset.dia;
+            const hora = e.target.dataset.hora;
+            const idMedico = parseInt(medicoSelect.value);
+
+            const turno = data.turnos.find(turno => turno.idMedico === idMedico && turno.día === dia && turno.hora === hora);
+            if (turno) {
+                turno.disponible = e.target.checked;
+            }
+        });
+    });
+}
+
+function guardarCambios(idMedico) {
+    localStorage.setItem("data", JSON.stringify(data));
+    alert("Los cambios se guardaron correctamente.")
+}
+

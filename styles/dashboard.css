@@ -1,0 +1,91 @@
+:root {
+    --color-uno: #0E7C9D;
+    --color-dos: #044166;
+    --color-tres: #1CA481;
+    --color-cuatro: #045a29;
+    --color-cinco: #e8e8e8;
+    --color-seis: #FCFCFC;
+    --color-texto: #222222;
+
+    --color-uno-rgb: 14, 124, 157;
+    --color-dos-rgb: 4, 65, 102;
+    --color-tres-rgb: 28, 164, 129;
+    --color-cuatro-rgb: 4, 90, 41;
+    --color-cinco-rgb: 232, 232, 232;
+    --color-seis-rgb: 252, 252, 252;
+    --color-texto-rgb: 34, 34, 34;
+}
+
+.tab-content {
+    background: linear-gradient(180deg, rgba(var(--color-tres-rgb), 0.1), transparent 20%);
+}
+
+.nav-tabs {
+    border-bottom: 1px solid var(--color-dos);
+}
+
+.nav-tabs .nav-link.active {
+    border-left: 2px solid var(--color-dos);
+    border-top: 2px solid var(--color-dos);
+    border-right: 2px solid var(--color-dos);
+    background-color: rgba(var(--color-tres-rgb), 0.1);
+}
+
+.nav-link {
+    color: var(--color-texto);
+}
+
+.form-check-input,
+input,
+select,
+textarea {
+    border: 1px solid rgba(var(--color-texto-rgb), 0.3) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--color-dos);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+input[type="checkbox"]:focus-visible {
+    outline: none;
+}
+
+th, td {
+    text-align: center;
+}
+
+#tablaMedicos img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.btn-editar {
+    border: 2px solid rgb(226, 226, 0);
+    background-color: rgb(250, 250, 130);
+}
+
+.btn-editar:hover {
+    background-color: rgb(226, 226, 0);
+}
+
+.btn-eliminar {
+    border: 2px solid rgb(212, 1, 1);
+    background-color: rgb(255, 175, 175);
+}
+
+.btn-eliminar:hover {
+    background-color: rgb(212, 1, 1);
+    color: var(--color-seis);
+}

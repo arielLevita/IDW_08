@@ -1,50 +1,74 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const errorMessage = document.getElementById('error-message');
+const loginForm = document.getElementById('login-form');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const errorMessage = document.getElementById('error-message');
+const togglePassword = document.getElementById('togglePassword');
 
-    const MOCK_DATA_URL = 'mockData.json'; 
-
-    async function cargarDatos() {
-        try {
-            const response = await fetch(MOCK_DATA_URL);
-            if (!response.ok) {
-                throw new Error(`Error al cargar ${MOCK_DATA_URL}: ${response.statusText}`);
-            }
-            const data = await response.json();
-            return data.administradores;
-        } catch (error) {
-            console.error("Fallo en la carga de datos:", error);
-            errorMessage.textContent = "Error interno del sistema. No se pudo cargar la configuración.";
-            errorMessage.classList.remove('d-none');
-            return [];
-        }
+const ADMIN = [
+    {
+        username: "admin1",
+        // Contraseña: admin123
+        password: "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        rol: "admin"
+    },
+    {
+        username: "admin2",
+        // Contraseña: 12345
+        password: "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
+        rol: "admin"
     }
+];
 
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const usuarios = await cargarDatos();
-        
-        const emailIngresado = emailInput.value.trim();
-        const passwordIngresada = passwordInput.value.trim();
-        
-        errorMessage.classList.add('d-none'); 
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-        const usuarioEncontrado = usuarios.find(admin => 
-            admin.email === emailIngresado && admin.password === passwordIngresada
+    const usernameIngresado = usernameInput.value.trim();
+    const passwordIngresada = passwordInput.value.trim();
+
+    errorMessage.classList.add('d-none');
+
+    try {
+        const passHash = await hashPassword(passwordIngresada);
+        const usuario = ADMIN.find(admin =>
+            admin.username === usernameIngresado && admin.password === passHash
         );
 
-        if (usuarioEncontrado) {
-            console.log(`Bienvenido, ${usuarioEncontrado.name}!`);
+        // * ESTO LO VAMOS A UTILIZAR CUNADO PASEMOS A LA API.
+        // const response = await fetch('https://dummyjson.com/auth/login', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({
+        //         username: usernameIngresado,
+        //         password: passwordIngresada
+        //     }),
+        // });
+
+        // const data = await response.json();
+        // console.log('API Response Data:', data.message);
+
+        if (usuario) {
+            alert(`¡Ingreso exitoso! Bienvenido, ${usuario.username}.`);
+            localStorage.setItem("auth", JSON.stringify({
+                username: usuario.username,
+                rol: usuario.rol,
+                isAdmin: usuario.rol === "admin",
+                loginTime: new Date().getTime()
+            })); 
             window.location.href = 'dashboard.html';
-            alert(`¡Ingreso exitoso! Bienvenido, ${usuarioEncontrado.name}.`);
-            loginForm.reset();
         } else {
-            errorMessage.textContent = "Usuario o contraseña incorrectos.";
             errorMessage.classList.remove('d-none');
-            passwordInput.value = ''; 
+            passwordInput.value = '';
         }
-    });
+    } catch (error) {
+        console.error("Ha ocurrido el siguiente error:", error);
+    }
 });
+
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, "0"))
+        .join("");
+}

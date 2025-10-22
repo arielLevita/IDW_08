@@ -347,12 +347,12 @@ button[type='submit'],
     display: block;
     margin: 10px auto;
     padding: 0.6em 2em 0.7em;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
     font-weight: 600;
     font-size: 16px;
     text-transform: uppercase;
@@ -427,83 +427,83 @@ footer svg {
 /* ---ESPECIALIDADES--- */
 /* -------------------- */
 
-.fieldset-personalizado {
+/* .fieldset-personalizado {
     border: none;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 6px;
     background-color: transparent;
-}
+} */
 
-.especialidades-container {
+/* .especialidades-container {
     max-width: 1400px;
     margin: 0 auto;
-}
+} */
 
-.formulario-especialidades {
+/* .formulario-especialidades {
     background-color: rgba(232, 232, 232, 0.4);
     border-radius: 20px;
     padding: 1.5rem 2rem 2rem;
     min-width: 350px;
     margin-bottom: 2.5rem;
-}
+} */
 
-.formulario-especialidades h2 {
+/* .formulario-especialidades h2 {
     margin-top: 0;
     margin-bottom: 1.5rem;
-}
+} */
 
-.formulario-especialidades:hover {
+/* .formulario-especialidades:hover {
     background: linear-gradient(45deg, rgba(28, 164, 129, 0.2), rgba(4, 65, 102, 0.2));
 }
-
-.formulario-especialidades:hover .fieldset-personalizado {
+ */
+/* .formulario-especialidades:hover .fieldset-personalizado {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(232, 232, 232, 0.7));
-}
+} */
 
-.tabla-especialidades {
+/* .tabla-especialidades {
     background-color: rgba(232, 232, 232, 0.4);
     border-radius: 20px;
     padding: 1.5rem 2rem 2rem;
     margin-bottom: 2rem;
     overflow-x: auto;
-}
+} */
 
-.tabla-especialidades h3 {
+/* .tabla-especialidades h3 {
     margin-top: 0;
     margin-bottom: 1.5rem;
-}
+} */
 
-.tabla-especialidades:hover {
+/* .tabla-especialidades:hover {
     background: linear-gradient(45deg, rgba(28, 164, 129, 0.2), rgba(4, 65, 102, 0.2));
-}
+} */
 
-.tabla-especialidades table {
+/* .tabla-especialidades table {
     margin-bottom: 0;
-}
+} */
 
-.tabla-especialidades thead tr {
+/* .tabla-especialidades thead tr {
     background-color: var(--color-uno) !important;
-}
+} */
 
-.tabla-especialidades thead th {
+/* .tabla-especialidades thead th {
     background-color: var(--color-uno) !important;
     color: var(--color-seis) !important;
     font-weight: 600;
     border: none;
     padding: 15px;
     text-align: center !important;
-}
+} */
 
-.tabla-especialidades tbody td {
+/* .tabla-especialidades tbody td {
     padding: 12px 15px;
     vertical-align: middle;
     color: var(--color-texto);
-}
+} */
 
-.tabla-especialidades tbody tr:hover {
+/* .tabla-especialidades tbody tr:hover {
     background-color: rgba(28, 164, 129, 0.1);
-}
+} */
 
 .btn-editar-esp {
     padding: 0.4em 0.8em;
@@ -545,7 +545,7 @@ footer svg {
     box-shadow: 0 4px 8px rgba(4, 65, 102, 0.3);
 }
 
-.btn-guardar-esp {
+/* .btn-guardar-esp {
     padding: 0.6em 2em 0.7em;
     border-radius: 10px;
     border: none;
@@ -560,11 +560,11 @@ footer svg {
     width: 100%;
     max-width: 200px;
     text-align: center;
-}
+} */
 
-.btn-guardar-esp:hover {
+/* .btn-guardar-esp:hover {
     background-color: var(--color-uno);
-}
+} */
 
 @media (max-width: 768px) {
     .formulario-especialidades,

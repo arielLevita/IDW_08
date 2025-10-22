@@ -16,6 +16,10 @@
     --color-texto-rgb: 34, 34, 34;
 }
 
+.tab-content {
+    background: linear-gradient(180deg, rgba(var(--color-tres-rgb), 0.1), transparent 20%);
+}
+
 .nav-tabs {
     border-bottom: 1px solid var(--color-dos);
 }
@@ -29,6 +33,31 @@
 
 .nav-link {
     color: var(--color-texto);
+}
+
+.form-check-input,
+input,
+select,
+textarea {
+    border: 1px solid rgba(var(--color-texto-rgb), 0.3) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--color-dos);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+input[type="checkbox"]:focus-visible {
+    outline: none;
+}
+
+th, td {
+    text-align: center;
 }
 
 #tablaMedicos img {

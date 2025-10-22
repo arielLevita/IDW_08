@@ -8,7 +8,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="icon" href="/logo-sitio.webp" type="image/x-icon">
+    <link rel="icon" href="../logo-sitio.webp" type="image/x-icon">
     <title>Bienestar Integral | Admin Dashboard</title>
 </head>
 
@@ -26,9 +26,9 @@
         </div>
     </nav>
 
-    <main class="container-xxl p-2">
+    <main class="container-xxl p-0">
         <h2>Panel de Administración</h2>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs px-2" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active fw-semibold" id="medicos-tab" data-bs-toggle="tab"
                     data-bs-target="#medicos-tab-pane" type="button" role="tab" aria-controls="medicos-tab-pane"
@@ -37,7 +37,7 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link fw-semibold" id="especialidades-tab" data-bs-toggle="tab"
                     data-bs-target="#especialidades-tab-pane" type="button" role="tab"
-                    aria-controls="especialidades-tab-pane" aria-selected="false" disabled>Especialidades</button>
+                    aria-controls="especialidades-tab-pane" aria-selected="false">Especialidades</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link fw-semibold" id="turnos-tab" data-bs-toggle="tab"
@@ -58,6 +58,7 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="medicos-tab-pane" role="tabpanel" aria-labelledby="medicos-tab"
                 tabindex="0">
+                <h4 class="pt-5 mt-0">Agregar / Editar médico</h4>
                 <form id="medicoForm" class="p-3 mb-4">
                     <input type="hidden" id="idMedico">
 
@@ -97,7 +98,7 @@
 
                         <div class="col-md-6">
                             <label class="form-label m-0">Imagen</label>
-                            <input id="imagenMedico" type="file" accept="image/*" class="form-control">
+                            <input id="imagenMedico" type="file" accept="image/*" class="form-control" required>
                         </div>
 
                         <div class="col-12">
@@ -106,32 +107,64 @@
                         </div>
 
                         <div class="col-12">
-                            <label class="form-labelm-0">Obras Sociales que acepta</label>
-                            <div id="obrasSocialesContainer" class="d-flex flex-wrap gap-3 w-100 bg-body-tertiary border rounded-2 p-3"></div>
+                            <label class="form-label m-0">Obras Sociales que acepta</label>
+                            <div id="obrasSocialesContainer"
+                                class="d-flex flex-wrap gap-3 w-100 bg-body-secondary border rounded-2 p-3"></div>
                         </div>
 
-                        <div class="col-12 text-end">
-                            <button class="btn btn-primary" type="submit">Guardar</button>
-                            <button type="reset" class="btn btn-secondary">Cancelar</button>
+                        <div class="col-12 d-flex justify-content-center gap-2">
+                            <button class="btn btn-primary m-0" type="submit">Guardar</button>
+                            <button type="reset" class="btn btn-secondary rounded-3 text-uppercase">Cancelar</button>
                         </div>
                     </div>
                 </form>
 
-                <table class="table table-striped align-middle">
-                    <thead class="table-success">
-                        <tr>
-                            <th>Foto</th>
-                            <th>Nombre</th>
-                            <th>Especialidad</th>
-                            <th>Valor</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaMedicos"></tbody>
-                </table>
+                <div class="table-responsive col-12 col-md-10 col-lg-8 mb-4 mx-auto">
+                    <table class="table table-striped align-middle">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nombre</th>
+                                <th>Especialidad</th>
+                                <th>Valor</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaMedicos"></tbody>
+                    </table>
+                </div>
             </div>
             <div class="tab-pane fade" id="especialidades-tab-pane" role="tabpanel" aria-labelledby="especialidades-tab"
-                tabindex="0"></div>
+                tabindex="0">
+                <h4 class="pt-5 mt-0">Agregar / Editar especialidad</h4>
+                <form id="especialidadesForm" class="col-12 col-sm-10 col-md-8 col-lg-6 p-3 mb-4 mx-auto">
+                    <input type="hidden" id="idEspecialidad">
+
+                    <label for="nombreEspecialidad" class="form-label m-0">Nombre de la especialidad</label>
+                    <input id="nombreEspecialidad" class="form-control mb-3" type="text" size="50" maxlength="50"
+                        name="nombre" placeholder="Ej: Cardiología" required autocomplete="off" />
+
+                    <div class="col-12 d-flex justify-content-center gap-2">
+                        <button class="btn btn-primary m-0" type="submit">Guardar</button>
+                        <button type="reset" class="btn btn-secondary rounded-3 text-uppercase">Cancelar</button>
+                    </div>
+                </form>
+
+                <div class="table-responsive col-12 col-sm-10 col-md-8 col-lg-6 mb-4 mx-auto">
+                    <table class="table table-striped align-middle">
+                        <thead class="table-success">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaEspecialidades">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="tab-pane fade" id="turnos-tab-pane" role="tabpanel" aria-labelledby="turnos-tab" tabindex="0">
             </div>
             <div class="tab-pane fade" id="obras-sociales-tab-pane" role="tabpanel" aria-labelledby="obras-sociales-tab"

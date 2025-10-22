@@ -8,15 +8,13 @@ function cerrarSesion() {
     window.location.href = "../index.html";
 }
 
-/* -------------------- */
-/* --- CRUD Médicos --- */
-/* -------------------- */
 async function iniciarPagina() {
     try {
         await cargarDatos();
         generarOpcionesEspecialidades();
         generarCheckboxesObrasSociales();
         generarTablaMedicos();
+        generarTablaEspecialidades()
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
     }
@@ -33,6 +31,10 @@ async function cargarDatos() {
         localStorage.setItem("data", JSON.stringify(data));
     }
 }
+
+/* -------------------------- */
+/* ------ CRUD Médicos ------ */
+/* -------------------------- */
 
 function generarTablaMedicos() {
     const tbody = document.getElementById("tablaMedicos");
@@ -202,5 +204,91 @@ function eliminarMedico(id) {
         data.medicos = data.medicos.filter(medico => medico.idMedico != id);
         localStorage.setItem("data", JSON.stringify(data));
         generarTablaMedicos();
+    }
+}
+
+
+/* --------------------------- */
+/* --- CRUD Especialidades --- */
+/* --------------------------- */
+
+function generarTablaEspecialidades() {
+    const tbody = document.getElementById("tablaEspecialidades");
+    tbody.innerHTML = "";
+
+    data.especialidades.forEach((especialidad, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${especialidad.nombreEspecialidad}</td>
+            <td>
+                <button class="btn btn-sm btn-editar fw-semibold me-1" onclick="editarEspecialidad(${especialidad.idEspecialidad})">Editar</button>
+                <button class="btn btn-sm btn-eliminar fw-semibold" onclick="eliminarEspecialidad(${especialidad.idEspecialidad})">Eliminar</button>
+            </td>
+            `;
+        tbody.appendChild(tr);
+    });
+}
+
+document.getElementById("especialidadesForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const idEspecialidad = document.getElementById("idEspecialidad").value
+        ? parseInt(document.getElementById("idEspecialidad").value)
+        : Date.now();
+    const nombreEspecialidad = document.getElementById("nombreEspecialidad").value.trim();
+
+    if (!nombreEspecialidad) {
+        alert("Debe ingresar un nombre para la especialidad.");
+        return;
+    }
+
+    const index = data.especialidades.findIndex(especialidad => especialidad.idEspecialidad === idEspecialidad);
+
+    if (index > -1) {
+        data.especialidades[index].nombreEspecialidad = nombreEspecialidad;
+    } else {
+        data.especialidades.push({ idEspecialidad, nombreEspecialidad });
+    }
+
+    localStorage.setItem("data", JSON.stringify(data));
+    generarTablaEspecialidades();
+    generarOpcionesEspecialidades();
+
+    e.target.reset();
+    document.getElementById("idEspecialidad").value = "";
+});
+
+function editarEspecialidad(idEspecialidad) {
+    const especialidad = data.especialidades.find(especialidades => especialidades.idEspecialidad === idEspecialidad);
+    if (!especialidad) return;
+
+    document.getElementById("idEspecialidad").value = especialidad.idEspecialidad;
+    document.getElementById("nombreEspecialidad").value = especialidad.nombreEspecialidad;
+}
+
+function eliminarEspecialidad(idEspecialidad) {
+    if (confirm("¿Desea eliminar esta especialidad?")) {
+        data.especialidades = data.especialidades.filter(e => e.idEspecialidad !== idEspecialidad);
+
+        let medicosAfectados = 0;
+        data.medicos.forEach(medico => {
+            if (medico.idEspecialidad === idEspecialidad) {
+                medico.idEspecialidad = 0;
+                medicosAfectados++;
+            }
+        });
+
+        localStorage.setItem("data", JSON.stringify(data));
+
+        generarTablaEspecialidades();
+        generarTablaMedicos();
+        generarOpcionesEspecialidades();
+
+        if (medicosAfectados > 0) {
+            alert(
+                `La especialidad fue eliminada. ${medicosAfectados} médico(s) quedaron sin especialidad asignada.`
+            );
+        }
     }
 }

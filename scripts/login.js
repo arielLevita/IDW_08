@@ -4,11 +4,20 @@ const passwordInput = document.getElementById('password');
 const errorMessage = document.getElementById('error-message');
 const togglePassword = document.getElementById('togglePassword');
 
-const ADMIN = [{
-    username: "admin",
-    password: "ac9689e2272427085e35b9d3e3e8bed88cb3434828b43b86fc0596cad4c6e270"
-    // La contraseña es "admin1234".
-}]
+const ADMIN = [
+    {
+        username: "admin1",
+        // Contraseña: admin123
+        password: "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        rol: "admin"
+    },
+    {
+        username: "admin2",
+        // Contraseña: 12345
+        password: "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
+        rol: "admin"
+    }
+];
 
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -39,7 +48,12 @@ loginForm.addEventListener('submit', async (e) => {
 
         if (usuario) {
             alert(`¡Ingreso exitoso! Bienvenido, ${usuario.username}.`);
-            localStorage.setItem("auth", JSON.stringify({ username, isAdmin: true }));
+            localStorage.setItem("auth", JSON.stringify({
+                username: usuario.username,
+                rol: usuario.rol,
+                isAdmin: usuario.rol === "admin",
+                loginTime: new Date().getTime()
+            })); 
             window.location.href = 'dashboard.html';
         } else {
             errorMessage.classList.remove('d-none');
@@ -54,7 +68,6 @@ async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
     const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    console.log(Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join(""))
     return Array.from(new Uint8Array(hashBuffer))
         .map(b => b.toString(16).padStart(2, "0"))
         .join("");

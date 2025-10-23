@@ -168,9 +168,9 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     }
 
     localStorage.setItem("data", JSON.stringify(data));
-    generarTablaMedicos();
     e.target.reset();
     document.getElementById("idMedico").value = "";
+    iniciarPagina();
 });
 
 function editarMedico(id) {
@@ -189,6 +189,7 @@ function editarMedico(id) {
     document.querySelectorAll("#obrasSocialesContainer input").forEach(checkbox => {
         checkbox.checked = medico.obrasSocialesQueAcepta.includes(parseInt(checkbox.value));
     });
+    iniciarPagina();
 }
 
 function eliminarMedico(id) {
@@ -204,8 +205,8 @@ function eliminarMedico(id) {
 
         data.medicos = data.medicos.filter(medico => medico.idMedico != id);
         localStorage.setItem("data", JSON.stringify(data));
-        generarTablaMedicos();
     }
+    iniciarPagina();
 }
 
 
@@ -253,11 +254,10 @@ document.getElementById("especialidadesForm").addEventListener("submit", e => {
     }
 
     localStorage.setItem("data", JSON.stringify(data));
-    generarTablaEspecialidades();
-    generarOpcionesEspecialidades();
 
     e.target.reset();
     document.getElementById("idEspecialidad").value = "";
+    iniciarPagina();
 });
 
 function editarEspecialidad(idEspecialidad) {
@@ -266,6 +266,8 @@ function editarEspecialidad(idEspecialidad) {
 
     document.getElementById("idEspecialidad").value = especialidad.idEspecialidad;
     document.getElementById("nombreEspecialidad").value = especialidad.nombreEspecialidad;
+
+    iniciarPagina();
 }
 
 function eliminarEspecialidad(idEspecialidad) {
@@ -282,15 +284,13 @@ function eliminarEspecialidad(idEspecialidad) {
 
         localStorage.setItem("data", JSON.stringify(data));
 
-        generarTablaEspecialidades();
-        generarTablaMedicos();
-        generarOpcionesEspecialidades();
-
         if (medicosAfectados > 0) {
             alert(
                 `La especialidad fue eliminada. ${medicosAfectados} médico(s) quedaron sin especialidad asignada.`
             );
         }
+
+        iniciarPagina();
     }
 }
 

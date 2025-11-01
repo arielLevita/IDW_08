@@ -72,9 +72,61 @@ async function obtenerDatos() {
     if (localStorage.getItem("data")) {
         return JSON.parse(localStorage.getItem("data"));
     } else {
-        const response = await fetch("../mock_data/mockData.json"); 
+        const response = await fetch("../mockData.json"); 
         const data = await response.json();
         localStorage.setItem("data", JSON.stringify(data));
         return data;
+    }
+}
+
+async function cargarHorariosDisponibles() {
+    const data = await obtenerDatos();
+    const idMedico = document.getElementById('medico').value;
+    const fechaInput = document.getElementById('fecha').value;
+    const selectHora = document.getElementById('hora');
+
+    selectHora.innerHTML = '<option selected disabled value="">Seleccionar un horario...</option>';
+
+    if (!idMedico || !fechaInput) {
+        return;
+    }
+
+    const fechaSeleccionada = new Date(fechaInput + 'T00:00:00');
+    const diasSemana = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    const nombreDia = diasSemana[fechaSeleccionada.getUTCDay()];
+
+    const turnosDelMedico = data.turnos.filter(turno => 
+        turno.idMedico == idMedico &&
+        turno.día === nombreDia &&
+        turno.disponible === true
+    );
+
+    if (turnosDelMedico.length === 0) {
+        selectHora.innerHTML = '<option disabled value="">No hay turnos disponibles</option>';
+        return;
+    }
+
+    const solicitudes = JSON.parse(localStorage.getItem('solicitudesDeTurno')) || [];
+    let horariosAgregados = 0;
+
+    turnosDelMedico.forEach(turno => {
+        
+        const estaSolicitado = solicitudes.some(sol => 
+            sol.idMedico == turno.idMedico &&
+            sol.fecha === fechaInput &&
+            sol.hora === turno.hora
+        );
+
+        if (!estaSolicitado) {
+            const option = document.createElement('option');
+            option.value = turno.hora;
+            option.textContent = turno.hora;
+            selectHora.appendChild(option);
+            horariosAgregados++;
+        }
+    });
+
+    if (horariosAgregados === 0) {
+         selectHora.innerHTML = '<option disabled value="">No hay turnos disponibles para este día</option>';
     }
 }

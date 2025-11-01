@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (botonSolicitarTurno) {
         botonSolicitarTurno.addEventListener('click', function() {
-            window.location.href = 'turnos.html';
+            // CORRECCIÓN: La ruta debe apuntar a la carpeta 'pages'
+            window.location.href = 'pages/turnos.html';
         });
     }
 

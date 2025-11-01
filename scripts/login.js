@@ -25,8 +25,6 @@ loginForm.addEventListener('submit', async (e) => {
     const usernameIngresado = usernameInput.value.trim();
     const passwordIngresada = passwordInput.value.trim();
 
-    errorMessage.classList.add('d-none');
-
     try {
         const passHash = await hashPassword(passwordIngresada);
         const usuario = ADMIN.find(admin =>
@@ -47,19 +45,39 @@ loginForm.addEventListener('submit', async (e) => {
         // console.log('API Response Data:', data.message);
 
         if (usuario) {
-            alert(`¡Ingreso exitoso! Bienvenido, ${usuario.username}.`);
-            localStorage.setItem("auth", JSON.stringify({
-                username: usuario.username,
-                rol: usuario.rol,
-                isAdmin: usuario.rol === "admin",
-                loginTime: new Date().getTime()
-            })); 
-            window.location.href = 'dashboard.html';
+            Swal.fire({
+                title: "¡Ingreso exitoso!",
+                text: `Bienvenido, ${usuario.username}.`,
+                icon: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#044166",
+            }).then(() => {
+                localStorage.setItem("auth", JSON.stringify({
+                    username: usuario.username,
+                    rol: usuario.rol,
+                    isAdmin: usuario.rol === "admin",
+                    loginTime: new Date().getTime()
+                }));
+                window.location.href = 'dashboard.html';
+            });
         } else {
-            errorMessage.classList.remove('d-none');
-            passwordInput.value = '';
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Usuario y/o contraseña incorrectos",
+                confirmButtonText: "Ok",
+                confirmButtonColor: "#044166",
+            });
         }
-    } catch (error) {
+    } catch(error) {
+        Swal.fire({
+                icon: "error",
+                title: "Ha ocurrido un error",
+                text: "Por favor, haga una captura de pantalla de este error y póngase en contacto con la Clínica.",
+                footer: `Error: ${error}`,
+                confirmButtonText: "Ok",
+                confirmButtonColor: "#044166",
+            });
         console.error("Ha ocurrido el siguiente error:", error);
     }
 });

@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const selectObraSocial = document.getElementById('obraSocial');
     const selectMedico = document.getElementById('medico');
     const formulario = document.getElementById('turno-form');
+    const fechaInput = document.getElementById('fecha');
+    const selectHora = document.getElementById('hora');
 
     data.especialidades.forEach(especialidad => {
         const option = document.createElement('option');
@@ -34,6 +36,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             selectMedico.appendChild(option);
         });
     });
+
+    selectMedico.addEventListener('change', cargarHorariosDisponibles);
+    fechaInput.addEventListener('change', cargarHorariosDisponibles);
 
     formulario.addEventListener('submit', (event) => {
         event.preventDefault();

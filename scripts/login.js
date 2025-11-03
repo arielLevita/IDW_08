@@ -65,7 +65,6 @@ loginForm.addEventListener('submit', async (e) => {
                 icon: "error",
                 title: "Oops...",
                 text: "Usuario y/o contraseña incorrectos",
-                confirmButtonText: "Ok",
                 confirmButtonColor: "#044166",
             });
         }
@@ -75,7 +74,6 @@ loginForm.addEventListener('submit', async (e) => {
                 title: "Ha ocurrido un error",
                 text: "Por favor, haga una captura de pantalla de este error y póngase en contacto con la Clínica.",
                 footer: `Error: ${error}`,
-                confirmButtonText: "Ok",
                 confirmButtonColor: "#044166",
             });
         console.error("Ha ocurrido el siguiente error:", error);

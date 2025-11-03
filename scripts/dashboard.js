@@ -147,7 +147,8 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
         Swal.fire({
             title: "Advertencia",
             text: "Debe completar todos los campos.",
-            icon: "warning"
+            icon: "warning",
+            confirmButtonColor: "#044166"
         });
         return;
     }
@@ -234,7 +235,8 @@ function eliminarMedico(id) {
             Swal.fire({
                 title: "Eliminado!",
                 text: "El médico ha sido eliminado con éxito.",
-                icon: "success"
+                icon: "success",
+                confirmButtonColor: "#044166"
             });
 
             iniciarPagina();
@@ -277,7 +279,8 @@ document.getElementById("especialidadesForm").addEventListener("submit", e => {
         Swal.fire({
             title: "Advertencia",
             text: "Debe ingresar un nombre para la especialidad.",
-            icon: "warning"
+            icon: "warning",
+            confirmButtonColor: "#044166"
         });
         return;
     }
@@ -310,8 +313,6 @@ function editarEspecialidad(idEspecialidad) {
 
     document.getElementById("idEspecialidad").value = especialidad.idEspecialidad;
     document.getElementById("nombreEspecialidad").value = especialidad.nombreEspecialidad;
-
-    iniciarPagina();
 }
 
 function eliminarEspecialidad(idEspecialidad) {
@@ -342,14 +343,16 @@ function eliminarEspecialidad(idEspecialidad) {
                 Swal.fire({
                     title: "Advertencia",
                     text: `La especialidad fue eliminada. ${medicosAfectados} médico(s) quedaron sin especialidad asignada.`,
-                    icon: "warning"
+                    icon: "warning",
+                    confirmButtonColor: "#044166"
                 });
             }
             
             Swal.fire({
                 title: "Eliminada!",
                 text: "La especialidad ha sido eliminada con éxito.",
-                icon: "success"
+                icon: "success",
+                confirmButtonColor: "#044166"
             });
 
             iniciarPagina();
@@ -364,7 +367,6 @@ function eliminarEspecialidad(idEspecialidad) {
 
 const tablaTurnos = document.getElementById("tablaTurnos").querySelector("tbody");
 const btnGuardar = document.getElementById("guardarCambios");
-
 const dias = ["lunes", "martes", "miércoles", "jueves", "viernes"];
 
 function generarMedicoSelect() {
@@ -449,7 +451,113 @@ function guardarCambios(idMedico) {
     localStorage.setItem("data", JSON.stringify(data));
     Swal.fire({
         title: "Los cambios se guardaron correctamente.",
-        icon: "success"
+        icon: "success",
+        confirmButtonColor: "#044166"
     });
 }
 
+
+/* --------------------------- */
+/* --- CRUD Obras Sociales --- */
+/* --------------------------- */
+
+function generarTablaObrasSociales() {
+    const tbody = document.getElementById("tablaObrasSociales").querySelector("tbody");
+    tbody.innerHTML = "";
+
+    data.obrasSociales.forEach((os, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${os.nombreObraSocial}</td>
+            <td>
+                <button class="btn btn-sm btn-editar fw-semibold me-1" onclick="editarObraSocial(${os.idObraSocial})">Editar</button>
+                <button class="btn btn-sm btn-eliminar fw-semibold" onclick="eliminarObraSocial(${os.idObraSocial})">Eliminar</button>
+            </td>
+            `;
+        tbody.appendChild(tr);
+    });
+}
+
+document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const idObraSocial = document.getElementById("idObraSocial").value
+        ? parseInt(document.getElementById("idObraSocial").value)
+        : Date.now();
+    const nombreObraSocial = document.getElementById("nombreObraSocial").value.trim();
+
+    if (!nombreObraSocial) {
+        Swal.fire({
+            title: "Advertencia",
+            text: "Debe ingresar un nombre para la Obra Social.",
+            icon: "warning",
+            confirmButtonColor: "#044166"
+        });
+        return;
+    }
+
+    const index = data.obrasSociales.findIndex(os => os.idObraSocial === idObraSocial);
+
+    if (index > -1) {
+        data.obrasSociales[index].nombreObraSocial = nombreObraSocial;
+    } else {
+        data.obrasSociales.push({ idObraSocial, nombreObraSocial });
+    }
+
+    localStorage.setItem("data", JSON.stringify(data));
+
+    e.target.reset();
+    document.getElementById("idObraSocial").value = "";
+
+    Swal.fire({
+        title: "Guardado!",
+        text: "El registro ha sido modificado con éxito",
+        icon: "success",
+        confirmButtonColor: "#044166"
+    });
+    iniciarPagina();
+});
+
+function editarObraSocial(idObraSocial) {
+    const obraSocial = data.obrasSociales.find(os => os.idObraSocial === idObraSocial);
+    if (!obraSocial) return;
+
+    document.getElementById("idObraSocial").value = obraSocial.idObraSocial;
+    document.getElementById("nombreObraSocial").value = obraSocial.nombreObraSocial;
+}
+
+function eliminarObraSocial(idObraSocial) {
+    Swal.fire({
+        title: "¿Desea eliminar esta Obra Social?",
+        text: "La eliminación no puede ser revertida.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#045a29",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No, cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            data.obrasSociales = data.obrasSociales.filter(os => os.idObraSocial !== idObraSocial);
+
+            data.medicos.forEach(medico => {
+                osIndex = medico.obrasSocialesQueAcepta.indexOf(idObraSocial);
+                if (index > -1) {
+                    medico.obrasSocialesQueAcepta.splice(osIndex, 1);
+                }
+            });
+
+            localStorage.setItem("data", JSON.stringify(data));
+
+            Swal.fire({
+                title: "Eliminada!",
+                text: "La obra social ha sido eliminada con éxito.",
+                icon: "success",
+                confirmButtonColor: "#044166"
+            });
+
+            iniciarPagina();
+        }
+    });
+};

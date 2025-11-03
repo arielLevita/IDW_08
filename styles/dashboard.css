@@ -73,7 +73,7 @@ th, td {
 
 .btn-editar {
     border: 2px solid rgb(226, 226, 0);
-    background-color: rgb(250, 250, 130);
+    background-color: rgb(250, 250, 130) !important;
 }
 
 .btn-editar:hover {
@@ -82,7 +82,7 @@ th, td {
 
 .btn-eliminar {
     border: 2px solid rgb(212, 1, 1);
-    background-color: rgb(255, 175, 175);
+    background-color: rgb(255, 175, 175) !important;
 }
 
 .btn-eliminar:hover {

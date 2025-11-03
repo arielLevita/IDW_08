@@ -5477,44 +5477,87 @@
             "disponible": true
         }
     ],
-
-"reservas": [
-    {
-        "idReserva": 1,
-        "documentoPaciente": "DNI 35648902",
-        "nombrePaciente": "González, Laura",
-        "idTurno": 721,
-        "idEspecialidad": 1,
-        "idObraSocial": 2,
-        "valorTotal": 12000
-    },
-    {
-        "idReserva": 2,
-        "documentoPaciente": "PAS 987654321",
-        "nombrePaciente": "Smith, John",
-        "idTurno": 722,
-        "idEspecialidad": 2,
-        "idObraSocial": 1,
-        "valorTotal": 13500
-    },
-    {
-        "idReserva": 3,
-        "documentoPaciente": "DNI 40256123",
-        "nombrePaciente": "Pérez, Mariano",
-        "idTurno": 723,
-        "idEspecialidad": 1,
-        "idObraSocial": 3,
-        "valorTotal": 11000
-    },
-    {
-        "idReserva": 4,
-        "documentoPaciente": "DNI 37222440",
-        "nombrePaciente": "Fernández, Julia",
-        "idTurno": 724,
-        "idEspecialidad": 3,
-        "idObraSocial": 2,
-        "valorTotal": 9800
-    }
-]
-   
+    "reservas": [
+        {
+            "idReserva": 1,
+            "documento": 35648902,
+            "nombrePaciente": "González, Laura",
+            "idTurno": 721,
+            "idEspecialidad": 1,
+            "idObraSocial": 2,
+            "valorConsulta": 12000
+        },
+        {
+            "idReserva": 2,
+            "documento": 987654321,
+            "nombrePaciente": "Smith, John",
+            "idTurno": 722,
+            "idEspecialidad": 2,
+            "idObraSocial": 1,
+            "valorConsulta": 13500
+        },
+        {
+            "idReserva": 3,
+            "documento": 40256123,
+            "nombrePaciente": "Pérez, Mariano",
+            "idTurno": 723,
+            "idEspecialidad": 1,
+            "idObraSocial": 3,
+            "valorConsulta": 11000
+        },
+        {
+            "idReserva": 4,
+            "documento": 37222440,
+            "nombrePaciente": "Fernández, Julia",
+            "idTurno": 724,
+            "idEspecialidad": 3,
+            "idObraSocial": 2,
+            "valorConsulta": 9800
+        },
+        {
+            "idReserva": 5,
+            "documento": 12345678,
+            "nombreCompletoPaciente": "José Gómez",
+            "idTurno": 22,
+            "idEspecialidad": 1,
+            "idObraSocial": 2,
+            "valorConsulta": 10680
+        },
+        {
+            "idReserva": 6,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 41,
+            "idEspecialidad": 1,
+            "idObraSocial": 5,
+            "valorConsulta": 13340
+        },
+        {
+            "idReserva": 7,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 122,
+            "idEspecialidad": 2,
+            "idObraSocial": 5,
+            "valorConsulta": 15254
+        },
+        {
+            "idReserva": 8,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 544,
+            "idEspecialidad": 2,
+            "idObraSocial": 6,
+            "valorConsulta": 17052
+        },
+        {
+            "idReserva": 9,
+            "documento": 34567890,
+            "nombreCompletoPaciente": "María López",
+            "idTurno": 465,
+            "idEspecialidad": 5,
+            "idObraSocial": "",
+            "valorConsulta": 19800
+        }
+    ]
 }

@@ -25,8 +25,6 @@ loginForm.addEventListener('submit', async (e) => {
     const usernameIngresado = usernameInput.value.trim();
     const passwordIngresada = passwordInput.value.trim();
 
-    errorMessage.classList.add('d-none');
-
     try {
         const passHash = await hashPassword(passwordIngresada);
         const usuario = ADMIN.find(admin =>
@@ -47,19 +45,40 @@ loginForm.addEventListener('submit', async (e) => {
         // console.log('API Response Data:', data.message);
 
         if (usuario) {
-            alert(`¡Ingreso exitoso! Bienvenido, ${usuario.username}.`);
-            localStorage.setItem("auth", JSON.stringify({
-                username: usuario.username,
-                rol: usuario.rol,
-                isAdmin: usuario.rol === "admin",
-                loginTime: new Date().getTime()
-            })); 
-            window.location.href = 'dashboard.html';
+            Swal.fire({
+                title: "¡Ingreso exitoso!",
+                theme: 'material-ui',
+                text: `Bienvenido, ${usuario.username}.`,
+                icon: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#044166",
+            }).then(() => {
+                localStorage.setItem("auth", JSON.stringify({
+                    username: usuario.username,
+                    rol: usuario.rol,
+                    isAdmin: usuario.rol === "admin",
+                    loginTime: new Date().getTime()
+                }));
+                window.location.href = 'dashboard.html';
+            });
         } else {
-            errorMessage.classList.remove('d-none');
-            passwordInput.value = '';
+            Swal.fire({
+                title: "Oops...",
+                theme: 'material-ui',
+                text: "Usuario y/o contraseña incorrectos",
+                icon: "error",
+                confirmButtonColor: "#044166",
+            });
         }
     } catch (error) {
+        Swal.fire({
+            title: "Ha ocurrido un error",
+            theme: 'material-ui',
+            text: "Por favor, haga una captura de pantalla de este error y póngase en contacto con la Clínica.",
+            icon: "error",
+            footer: `Error: ${error}`,
+            confirmButtonColor: "#044166",
+        });
         console.error("Ha ocurrido el siguiente error:", error);
     }
 });

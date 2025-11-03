@@ -5476,5 +5476,45 @@
             "hora": "12:30",
             "disponible": true
         }
-    ]
+    ],
+
+"reservas": [
+    {
+        "idReserva": 1,
+        "documentoPaciente": "DNI 35648902",
+        "nombrePaciente": "González, Laura",
+        "idTurno": 721,
+        "idEspecialidad": 1,
+        "idObraSocial": 2,
+        "valorTotal": 12000
+    },
+    {
+        "idReserva": 2,
+        "documentoPaciente": "PAS 987654321",
+        "nombrePaciente": "Smith, John",
+        "idTurno": 722,
+        "idEspecialidad": 2,
+        "idObraSocial": 1,
+        "valorTotal": 13500
+    },
+    {
+        "idReserva": 3,
+        "documentoPaciente": "DNI 40256123",
+        "nombrePaciente": "Pérez, Mariano",
+        "idTurno": 723,
+        "idEspecialidad": 1,
+        "idObraSocial": 3,
+        "valorTotal": 11000
+    },
+    {
+        "idReserva": 4,
+        "documentoPaciente": "DNI 37222440",
+        "nombrePaciente": "Fernández, Julia",
+        "idTurno": 724,
+        "idEspecialidad": 3,
+        "idObraSocial": 2,
+        "valorTotal": 9800
+    }
+]
+   
 }

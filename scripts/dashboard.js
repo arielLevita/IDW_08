@@ -146,6 +146,7 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     if (!matricula || !apellidoMedico || !nombreMedico || !idEspecialidad || !descripcionMedico || !valorConsulta) {
         Swal.fire({
             title: "Advertencia",
+            theme: 'material-ui',
             text: "Debe completar todos los campos.",
             icon: "warning",
             confirmButtonColor: "#044166"
@@ -180,6 +181,7 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     localStorage.setItem("data", JSON.stringify(data));
     Swal.fire({
         title: "Guardado!",
+        theme: 'material-ui',
         text: "El registro ha sido modificado con éxito",
         icon: "success",
         confirmButtonColor: "#044166"
@@ -211,6 +213,7 @@ function editarMedico(id) {
 function eliminarMedico(id) {
     Swal.fire({
         title: "¿Desea eliminar este médico?",
+        theme: 'material-ui',
         text: "La eliminación no puede ser revertida.",
         icon: "warning",
         showCancelButton: true,
@@ -234,6 +237,7 @@ function eliminarMedico(id) {
 
             Swal.fire({
                 title: "Eliminado!",
+                theme: 'material-ui',
                 text: "El médico ha sido eliminado con éxito.",
                 icon: "success",
                 confirmButtonColor: "#044166"
@@ -278,6 +282,7 @@ document.getElementById("especialidadesForm").addEventListener("submit", e => {
     if (!nombreEspecialidad) {
         Swal.fire({
             title: "Advertencia",
+            theme: 'material-ui',
             text: "Debe ingresar un nombre para la especialidad.",
             icon: "warning",
             confirmButtonColor: "#044166"
@@ -300,6 +305,7 @@ document.getElementById("especialidadesForm").addEventListener("submit", e => {
 
     Swal.fire({
         title: "Guardado!",
+        theme: 'material-ui',
         text: "El registro ha sido modificado con éxito",
         icon: "success",
         confirmButtonColor: "#044166"
@@ -318,6 +324,7 @@ function editarEspecialidad(idEspecialidad) {
 function eliminarEspecialidad(idEspecialidad) {
     Swal.fire({
         title: "¿Desea eliminar esta especialidad?",
+        theme: 'material-ui',
         text: "La eliminación no puede ser revertida.",
         icon: "warning",
         showCancelButton: true,
@@ -342,14 +349,16 @@ function eliminarEspecialidad(idEspecialidad) {
             if (medicosAfectados > 0) {
                 Swal.fire({
                     title: "Advertencia",
+                    theme: 'material-ui',
                     text: `La especialidad fue eliminada. ${medicosAfectados} médico(s) quedaron sin especialidad asignada.`,
                     icon: "warning",
                     confirmButtonColor: "#044166"
                 });
             }
-            
+
             Swal.fire({
                 title: "Eliminada!",
+                theme: 'material-ui',
                 text: "La especialidad ha sido eliminada con éxito.",
                 icon: "success",
                 confirmButtonColor: "#044166"
@@ -451,6 +460,7 @@ function guardarCambios(idMedico) {
     localStorage.setItem("data", JSON.stringify(data));
     Swal.fire({
         title: "Los cambios se guardaron correctamente.",
+        theme: 'material-ui',
         icon: "success",
         confirmButtonColor: "#044166"
     });
@@ -490,6 +500,7 @@ document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
     if (!nombreObraSocial) {
         Swal.fire({
             title: "Advertencia",
+            theme: 'material-ui',
             text: "Debe ingresar un nombre para la Obra Social.",
             icon: "warning",
             confirmButtonColor: "#044166"
@@ -512,6 +523,7 @@ document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
 
     Swal.fire({
         title: "Guardado!",
+        theme: 'material-ui',
         text: "El registro ha sido modificado con éxito",
         icon: "success",
         confirmButtonColor: "#044166"
@@ -530,6 +542,7 @@ function editarObraSocial(idObraSocial) {
 function eliminarObraSocial(idObraSocial) {
     Swal.fire({
         title: "¿Desea eliminar esta Obra Social?",
+        theme: 'material-ui',
         text: "La eliminación no puede ser revertida.",
         icon: "warning",
         showCancelButton: true,
@@ -552,6 +565,7 @@ function eliminarObraSocial(idObraSocial) {
 
             Swal.fire({
                 title: "Eliminada!",
+                theme: 'material-ui',
                 text: "La obra social ha sido eliminada con éxito.",
                 icon: "success",
                 confirmButtonColor: "#044166"

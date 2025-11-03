@@ -219,8 +219,8 @@
                 </div>
             </div>
             <!-- Obras Sociales -->
-            <div class="tab-pane fade" id="obras-sociales-tab-pane" role="tabpanel"
-            aria-labelledby="obras-sociales-tab" tabindex="0">
+            <div class="tab-pane fade" id="obras-sociales-tab-pane" role="tabpanel" aria-labelledby="obras-sociales-tab"
+                tabindex="0">
             </div>
             <!-- Reservas -->
             <div class="tab-pane fade" id="reservas-tab-pane" role="tabpanel" aria-labelledby="reservas-tab"
@@ -230,52 +230,48 @@
                 <form id="reservasForm" class="col-12 col-sm-10 col-md-8 col-lg-6 p-3 mb-4 mx-auto">
                     <input type="hidden" id="idReserva">
 
-                    <div class="mb-3">
-                        <label for="documentoPaciente" class="form-label">Documento del Paciente</label>
-                        <input type="text" class="form-control" id="documentoPaciente" required>
-                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-8">
+                            <label for="documento" class="form-label m-0">Documento del
+                                Paciente</label>
+                            <input type="number" class="form-control" id="documento" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="nombrePaciente" class="form-label">Nombre del Paciente</label>
-                        <input type="text" class="form-control" id="nombrePaciente" required>
-                    </div>
+                        <div class="col-sm-4">
+                            <label for="idTurno" class="form-label m-0">ID Turno</label>
+                            <input type="number" class="form-control" id="idTurno" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="idTurno" class="form-label">ID Turno</label>
-                        <input type="number" class="form-control" id="idTurno" required>
-                    </div>
+                        <div>
+                            <label for="nombrePaciente" class="form-label m-0">Nombre del Paciente</label>
+                            <input type="text" class="form-control" id="nombrePaciente" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="idEspecialidad" class="form-label">Especialidad</label>
-                        <select class="form-select" id="idEspecialidad" required>
-                            <option value="">Seleccione...</option>
-                        </select>
-                    </div>
+                        <div class="col-sm-6">
+                            <label for="idEspecialidad" class="form-label m-0">Especialidad</label>
+                            <select class="form-select mb-2" id="idEspecialidad" required>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="idObraSocial" class="form-label">Obra Social</label>
-                        <select class="form-select" id="idObraSocial" required>
-                            <option value="">Seleccione...</option>
-                        </select>
-                    </div>
+                        <div class="col-sm-6">
+                            <label for="idObraSocial" class="form-label m-0">Obra Social</label>
+                            <select class="form-select mb-2" id="idObraSocial" required>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="valorTotal" class="form-label">Valor Total</label>
-                        <input type="number" class="form-control" id="valorTotal" required>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary fw-semibold">Guardar Reserva</button>
-                        <button type="reset" class="btn btn-secondary fw-semibold ms-2">Cancelar</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary fw-semibold">Guardar Reserva</button>
+                            <button type="reset" class="btn btn-secondary fw-semibold ms-2">Cancelar</button>
+                        </div>
                     </div>
                 </form>
 
-                <h5 class="text-center mt-4">Listado de Reservas</h5>
-                <div class="table-responsive">
-                    <table class="table table-striped text-center">
-                        <thead>
+                <div class="table-responsive px-2">
+                    <table class="table table-striped text-center" id="tablaReservas">
+                        <thead class="table-success">
                             <tr>
-                                <th>ID</th>
                                 <th>Documento</th>
                                 <th>Paciente</th>
                                 <th>Turno</th>
@@ -285,7 +281,7 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="tablaReservas"></tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>

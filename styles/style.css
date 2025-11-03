@@ -210,19 +210,8 @@ header h2 {
     -webkit-filter: grayscale(1);
 }
 
-.solicitar-turno {
-    max-width: 1400px;
-    margin: 0 auto 5rem;
-}
-
-.solicitar-turno p {
-    width: clamp(300px, 70vw, 1000px);
-    margin: 0 auto 2rem;
-}
-
 .home-box h2,
-.obras-sociales h2,
-.solicitar-turno h2 {
+.obras-sociales h2 {
     margin: 1.5em 0 1rem 0; 
     font-size: 1.5rem ;  
     font-weight: 700 ;   
@@ -231,8 +220,7 @@ header h2 {
 }
 
 .home-box p, 
-.obras-sociales p,
-.solicitar-turno p {
+.obras-sociales p {
     font-size: 1rem;
     font-weight: 400;
     color: var(--color-texto);

@@ -47,6 +47,7 @@ loginForm.addEventListener('submit', async (e) => {
         if (usuario) {
             Swal.fire({
                 title: "¡Ingreso exitoso!",
+                theme: 'material-ui',
                 text: `Bienvenido, ${usuario.username}.`,
                 icon: "success",
                 confirmButtonText: "Continuar",
@@ -62,20 +63,22 @@ loginForm.addEventListener('submit', async (e) => {
             });
         } else {
             Swal.fire({
-                icon: "error",
                 title: "Oops...",
+                theme: 'material-ui',
                 text: "Usuario y/o contraseña incorrectos",
+                icon: "error",
                 confirmButtonColor: "#044166",
             });
         }
-    } catch(error) {
+    } catch (error) {
         Swal.fire({
-                icon: "error",
-                title: "Ha ocurrido un error",
-                text: "Por favor, haga una captura de pantalla de este error y póngase en contacto con la Clínica.",
-                footer: `Error: ${error}`,
-                confirmButtonColor: "#044166",
-            });
+            title: "Ha ocurrido un error",
+            theme: 'material-ui',
+            text: "Por favor, haga una captura de pantalla de este error y póngase en contacto con la Clínica.",
+            icon: "error",
+            footer: `Error: ${error}`,
+            confirmButtonColor: "#044166",
+        });
         console.error("Ha ocurrido el siguiente error:", error);
     }
 });

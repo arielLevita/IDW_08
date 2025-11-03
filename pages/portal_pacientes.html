@@ -8,7 +8,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" href="../logo-sitio.webp" type="image/x-icon">
-    <title>Bienestar Integral | Contacto</title>
+    <title>Bienestar Integral | Portal Pacientes</title>
 </head>
 
 <body>
@@ -38,11 +38,13 @@
                         <a class="nav-link px-0" href="profesionales.html">Profesionales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active px-0" aria-current="page" href="#">Contacto</a>
+                        <a class="nav-link px-0" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
                 <div class="d-flex d-lg-inline-flex m-lg-0 justify-content-lg-end align-items-lg-center flex-column flex-lg-row mb-3 mb-lg-0 gap-2">
-                    <button class="login-button mx-auto" type="button">Portal de Pacientes</button>
+                    <a href="portal_pacientes.html">
+                        <button class="login-button mx-auto" type="button">Portal de Pacientes</button>
+                    </a>
                     <a href="login.html" class="link-dark mx-auto">
                         <button class="btn mx-auto p-0 pe-1" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -60,20 +62,20 @@
     </nav>
 
     <main>
-        <section class="container-xxl my-5">
+        <section class="container my-5">
             <h2 class="mb-3">Portal Pacientes</h2>
-            <div class="row justify-content-center gap-2 px-2">
-                <div class="canales col-12 col-sm-6 col-md-4 pb-2">
-                    <h3>Nuevo turno</h3>
-                    <section class="solicitar-turno container-fluid text-center">
+            <div class="d-flex justify-content-evenly flex-wrap gap-4 px-2">
+                <div>
+                    <h4>Nuevo turno</h4>
+                    <a class="solicitar-turno" href="">
                         <button role="button">Solicitar turno</button>
-                    </section>
+                    </a>
                 </div>
-                <div class="canales col-12 col-sm-6 col-md-4 pb-2">
-                    <h3>Mis reservas</h3>
-                    <section class="solicitar-turno container-fluid text-center">
+                <div>
+                    <h4>Mis reservas</h4>
+                    <a class="solicitar-turno" href="consulta_reservas.html">
                         <button role="button">Consultar turnos</button>
-                    </section>
+                    </a>
                     
                 </div>
             </div>

@@ -60,7 +60,7 @@ function renderReservas(documento) {
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><span class="fw-semibold">Obra Social:</span> ${obraSocial ? obraSocial.nombreObraSocial : "Sin obra Social"}</li>
-                    <li class="list-group-item"><span class="fw-semibold">Día:</span> ${turno.día}</li>
+                    <li class="list-group-item"><span class="fw-semibold">dia:</span> ${turno.dia}</li>
                     <li class="list-group-item"><span class="fw-semibold">Horario:</span> ${turno.hora}</li>
                     <li class="list-group-item"><span class="fw-semibold">Valor de la consulta($):</span> ${reserva.valorConsulta}</li>
                 </ul>
@@ -98,7 +98,7 @@ function eliminarReserva(idReserva, documento) {
             <strong>Médico:</strong> ${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}<br>
             <strong>Especialidad:</strong> ${especialidad.nombreEspecialidad}<br>
             <strong>Obra Social:</strong> ${obraSocial ? obraSocial.nombreObraSocial : "Sin obra Social"}<br>
-            <strong>Día:</strong> ${turno.día}<br>
+            <strong>dia:</strong> ${turno.dia}<br>
             <strong>Horario:</strong> ${turno.hora}<br>
             <strong>Valor de la consulta($):</strong> ${reserva.valorConsulta}
         `,

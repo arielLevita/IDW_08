@@ -93,7 +93,7 @@ function toBase64(file) {
 }
 
 function generarTurnosParaMedico(idMedico) {
-    const dias = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+    const dias = ["lunes", "martes", "miercoles", "jueves", "viernes"];
     const turnos = [];
 
     let idTurno = data.turnos.length > 0
@@ -107,7 +107,7 @@ function generarTurnosParaMedico(idMedico) {
                 turnos.push({
                     idTurno: idTurno++,
                     idMedico,
-                    día: dia,
+                    dia: dia,
                     hora: horaStr,
                     disponible: true
                 });
@@ -376,7 +376,7 @@ function eliminarEspecialidad(idEspecialidad) {
 
 const tablaTurnos = document.getElementById("tablaTurnos").querySelector("tbody");
 const btnGuardar = document.getElementById("guardarCambios");
-const dias = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+const dias = ["lunes", "martes", "miercoles", "jueves", "viernes"];
 
 function generarMedicoSelect() {
     data.medicos.forEach(medico => {
@@ -421,7 +421,7 @@ function generarTablaTurnos(turnosMedico) {
         fila.innerHTML = `<td><strong>${hora}</strong></td>`;
 
         dias.forEach(dia => {
-            const turno = turnosMedico.find(turno => turno.día === dia && turno.hora === hora);
+            const turno = turnosMedico.find(turno => turno.dia === dia && turno.hora === hora);
             const disponible = turno ? turno.disponible : false;
 
             const celda = document.createElement("td");
@@ -448,7 +448,7 @@ function generarTablaTurnos(turnosMedico) {
             const hora = e.target.dataset.hora;
             const idMedico = parseInt(medicoSelect.value);
 
-            const turno = data.turnos.find(turno => turno.idMedico === idMedico && turno.día === dia && turno.hora === hora);
+            const turno = data.turnos.find(turno => turno.idMedico === idMedico && turno.dia === dia && turno.hora === hora);
             if (turno) {
                 turno.disponible = e.target.checked;
             }

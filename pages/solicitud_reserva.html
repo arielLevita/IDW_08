@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../logo-sitio.webp" type="image/x-icon">
+    <title>Bienestar Integral | Solicitud de Reserva</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-xxl">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../assets/logo-sitio.webp" alt="Logo" class="me-2">
+                <div class="d-none d-lg-block">
+                    <p>Bienestar</p>
+                    <p>Integral</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-underline justify-content-center align-items-center mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link px-0" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0" href="institucional.html">Institucional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0" href="profesionales.html">Profesionales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div
+                    class="d-flex d-lg-inline-flex m-lg-0 justify-content-lg-end align-items-lg-center flex-column flex-lg-row mb-3 mb-lg-0 gap-2">
+                    <a href="portal_pacientes.html">
+                        <button class="login-button mx-auto" type="button">Portal de Pacientes</button>
+                    </a>
+                    <a href="login.html" class="link-dark mx-auto">
+                        <button class="btn mx-auto p-0 pe-1" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class=""
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container-xxl my-5">
+            <h2 class="text-center">Solicitud de Reserva</h2>
+            <p class="text-center text-secondary m-0">Completá el formulario para solicitar una reserva.</p>
+            <p class="text-center text-secondary mb-5">Te contactaremos a la brevedad para confirmarlo.</p>
+
+            <form id="reserva-form" class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+                <input type="hidden" id="idReserva">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="nombrePaciente" class="form-label m-0">Nombre y Apellido</label>
+                        <input type="text" class="form-control" id="nombrePaciente" name="nombrePaciente" placeholder="Ej: Juan Pérez" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="obraSocial" class="form-label m-0">Obra Social</label>
+                        <select id="obraSocial" name="obraSocial" class="form-select" required>
+                            <option selected disabled value="">Seleccionar...</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="documento" class="form-label m-0">Documento</label>
+                        <input type="number" class="form-control" id="documento" name="documento" placeholder="Ej: 34567890" required>
+                        <div class="form-text m-0">Ingrese el número sin puntos.</div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label m-0">Teléfono</label>
+                        <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3454123456" required>
+                        <div class="form-text m-0">Ingrese el código de área (sin 0 y sin 15) seguidos (sin espacios ni guiones).</div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="email" class="form-label m-0">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Ej: juanperez@correo.com" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="especialidad" class="form-label m-0">Especialidad</label>
+                        <select id="especialidad" name="especialidad" class="form-select" required>
+                            <option selected disabled value="">Seleccionar...</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="medico" class="form-label m-0">Médico</label>
+                        <select id="medico" name="medico" class="form-select" required>
+                            <option selected disabled value="">Seleccionar...</option>
+                        </select>
+                        <div class="form-text m-0">Primero seleccione una especialidad.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="fecha" class="form-label m-0">Día de la reserva</label>
+                        <select name="fecha" id="fecha" class="form-select" required>
+                            <option value="" disabled selected>Seleccione...</option>
+                            <option value="lunes">Lunes</option>
+                            <option value="martes">Martes</option>
+                            <option value="miercoles">Miércoles</option>
+                            <option value="jueves">Jueves</option>
+                            <option value="viernes">Viernes</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="hora" class="form-label m-0">Hora deseada</label>
+                        <select id="hora" name="hora" class="form-select" required>
+                            <option selected disabled value="">Seleccionar un horario...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-12">
+                        <label for="mensaje" class="form-label m-0">Motivo de la consulta (opcional)</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                            placeholder="Ej: Control anual, consulta por dolor, etc."></textarea>
+                    </div>
+
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="login-button">Enviar Solicitud</button>
+                    </div>
+            </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-5">
+        <div class="container">
+            <hr class="text-secondary my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-secondary mb-0">2025 Bienestar Integral - Desarrollado por el Grupo 08 para tu salud
+                        <span class="text-danger">&hearts;</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
+    <script src="../scripts/solicitud_reserva.js"></script>
+
+</body>
+
+</html>

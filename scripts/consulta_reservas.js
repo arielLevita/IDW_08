@@ -32,7 +32,13 @@ async function getDataFromJSON() {
     }
 }
 
-function renderReservas(documento) {
+buscarReservas.addEventListener('submit', e => {
+    e.preventDefault();
+    const documento = parseInt(documentoPaciente.value.trim());
+    mostrarReservas(documento);
+});
+
+function mostrarReservas(documento) {
     const { obrasSociales, medicos, turnos, especialidades } = data;
     const reservasFiltradas = data.reservas.filter(reserva => reserva.documento === documento);
 
@@ -74,12 +80,6 @@ function renderReservas(documento) {
 
     listaReservas.appendChild(dFrag);
 }
-
-buscarReservas.addEventListener('submit', e => {
-    e.preventDefault();
-    const documento = parseInt(documentoPaciente.value.trim());
-    renderReservas(documento);
-});
 
 function eliminarReserva(idReserva, documento) {
     const { obrasSociales, medicos, turnos, especialidades } = data;

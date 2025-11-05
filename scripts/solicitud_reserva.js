@@ -102,14 +102,14 @@ function manejarEnvioFormulario(event) {
 
     const diaSeleccionado = fechaInput.value;
     const horaSeleccionada = selectHora.value;
-
-    const turnoSeleccionado = data.turnos.find(turno => turno.dia == diaSeleccionado && turno.hora == horaSeleccionada);
-
     const medicoSeleccionado = data.medicos.find(medico => medico.idMedico == selectMedico.value);
+    const turnosDelMedicoSeleccionado = data.turnos.filter(turno => turno.idMedico == medicoSeleccionado.idMedico);
+    const turnoSeleccionado = turnosDelMedicoSeleccionado.find(turno => turno.dia == diaSeleccionado && turno.hora == horaSeleccionada);
+
     const obraSocialSeleccionada = data.obrasSociales.find(os => os.idObraSocial == selectObraSocial.value);
 
     let valorReserva;
-    if (medicoSeleccionado.obrasSocialesQueAcepta.includes(obraSocialSeleccionada.idObraSocial)) {
+    if (obraSocialSeleccionada && medicoSeleccionado.obrasSocialesQueAcepta.includes(obraSocialSeleccionada.idObraSocial)) {
         valorReserva = medicoSeleccionado.valorConsulta * (1 - obraSocialSeleccionada.descuento / 100);
     } else {
         valorReserva = medicoSeleccionado.valorConsulta;
@@ -129,14 +129,14 @@ function manejarEnvioFormulario(event) {
 
             const solicitudReserva = {
                 idReserva: Date.now(),
-                documento: document.getElementById('documento').value,
+                documento: parseInt(document.getElementById('documento').value),
                 nombrePaciente: document.getElementById('nombrePaciente').value,
-                telefonoPaciente: document.getElementById('telefono').value,
+                telefonoPaciente: parseInt(document.getElementById('telefono').value),
                 emailPaciente: document.getElementById('email').value,
                 idTurno: turnoSeleccionado.idTurno,
                 idEspecialidad: parseInt(selectEspecialidad.value),
                 idMedico: medicoSeleccionado.idMedico,
-                idObraSocial: obraSocialSeleccionada.idObraSocial,
+                idObraSocial: obraSocialSeleccionada ? obraSocialSeleccionada.idObraSocial : "",
                 motivoReserva: document.getElementById('mensaje').value,
                 valorConsulta: valorReserva
             };
@@ -154,7 +154,7 @@ function manejarEnvioFormulario(event) {
                 icon: "success",
                 confirmButtonColor: "#045a29"
             }).then(() => {
-                window.scrollTo(0, 0);
+                location.reload();
             });
         }
     });

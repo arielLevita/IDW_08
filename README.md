@@ -6,7 +6,7 @@
 ### Trabajo Final Integrador - Grupo: IDW_08
 
 > [!IMPORTANT]
-**Estado: Tercera Entrega - 23 de Octubre 2025**
+**Estado: Cuarta Entrega - 13 de Noviembre 2025**
 
 ---
 
@@ -23,6 +23,11 @@
 
 # Bienestar Integral | Clínica
 
+## Descripcion General
+El sistema web busca gestionar las principales operaciones de una clínica médica, incluyendo la administración de usuarios, médicos, reservas de turnos y obras sociales.
+En esta cuarta entrega se incorporan las funcionalidades de autenticación real con API externa, protección de rutas, y manejo de usuarios conectados a DummyJSON mediante Fetch API y sessionStorage.
+
+
 ## Tecnologías Utilizadas
 
 - **HTML:** Para estructurar el contenido de las páginas.
@@ -30,25 +35,43 @@
 - **Bootstrap:** Para agregar responsividad en el sitio web.
 - **JS:** Para aportar funcionalidad.
 - **localStorage:** Para la persistencia local de datos (CRUD de médicos y turnos) sin necesidad de servidor.
-
+- **Fetch API:** Conexión con recursos externos (API pública DummyJSON).
+- **sessionStorage:** Almacenamiento del accessToken y control de sesión del usuario logueado.
 
 ---
 
 ## Próximos Pasos (Etapas Futuras)
 
-El proyecto está diseñado para evolucionar. Las siguientes etapas del desarrollo se enfocarán en la implementación de las funcionalidades clave para la clínica, las cuales serán marcadas como completadas a medida que se avancen, En esta **tercera entrega** se implementaron las principales funcionalidades del **rol Administrador**, centradas en el manejo de datos persistentes mediante `localStorage`.
+-- Integración de autenticación por roles (paciente / médico / administrador).
 
-### Funcionalidades del Rol Visitante
+-- Consumo de API para turnos médicos en tiempo real.
 
--   [ ] **Reservas:** Permitir a los usuarios crear y visualizar reservas de turnos, conociendo el costo de la consulta en función del profesional seleccionado, así como el correspondiente descuento en función de la obra social a la que estén afiliados.
+-- Reportes estadísticos y panel de métricas.
 
-### Funcionalidades del Rol Administrador (CRUD)
+-- Incorporación de framework backend (Django, Node o Laravel) para persistencia en base de datos.
 
--   [ ] **Médicos:** Leer, registrar, editar y eliminar médicos con almacenamiento en localStorage.
--   [ ] **Especialidades:** Leer, registrar, editar y eliminar especialidades.
--   [ ] **Obras Sociales:** Leer, registrar, editar y eliminar obras sociales.
--   [ ] **Turnos:** Leer, registrar, editar y eliminar turnos con filtros por fecha, especialidad, médico y estado.
--   [ ] **Reservas:** Leer, editar y eliminar reservas de turnos con filtros por fecha, especialidad, médico y estado.
+### Funcionalidades Principales
+
+**Autenticación** 
+    - Implementación de inicio de sesión real mediante la API pública de DummyJSON
+    - Validación de credenciales y almacenamiento del accessToken en sessionStorage.
+    - Protección de las secciones del panel para evitar acceso sin login.
+    - Redirección automática a la pantalla de login si no hay usuario autenticado.
+
+**Panel de Administración**
+    - Nueva sección Usuarios que consume la API
+    - Listado dinámico con paginación, búsqueda y filtrado por rol y estado.
+    - Control de visibilidad de datos sensibles según las buenas prácticas de seguridad.
+    - CRUD completo para las entidades:
+        * Usuarios
+        * Médicos
+        * Obras Sociales
+        * Reservas de Turnos
+
+**Manejo de Datos**
+    - Lectura y escritura de datos a través de fetch() hacia la API externa.
+    - Persistencia local con localStorage para datos creados en el front-end.
+    - sessionStorage para el control de sesión del usuario autenticado.
 
 ---
 
@@ -57,6 +80,7 @@ El proyecto está diseñado para evolucionar. Las siguientes etapas del desarrol
 -   **Repositorio GitHub:** [https://github.com/arielLevita/IDW_08](https://github.com/arielLevita/IDW_08)
 
 ---
-> [!NOTE]
-> Este es un trabajo en proceso.
+> [!NOTE-FINAL]
+> Este proyecto continúa en desarrollo como parte de la cuarta entrega del **Trabajo Final Integrador – Introducción al Desarrollo Web (UNER).**
+Implementa conexión real mediante **Fetch API, autenticación con DummyJSON, y manejo de sesión con sessionStorage.**
 ---

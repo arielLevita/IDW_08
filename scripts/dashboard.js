@@ -232,6 +232,10 @@ function eliminarMedico(id) {
                 });
             }
 
+            if (data.reservas && Array.isArray(data.reservas)) {
+                data.reservas = data.reservas.filter(reserva => reserva.idMedico != id);
+            }
+
             data.medicos = data.medicos.filter(medico => medico.idMedico != id);
             localStorage.setItem("data", JSON.stringify(data));
 
@@ -560,6 +564,18 @@ function eliminarObraSocial(idObraSocial) {
                     medico.obrasSocialesQueAcepta.splice(osIndex, 1);
                 }
             });
+
+            if (data.reservas && Array.isArray(data.reservas)) {
+                data.reservas = data.reservas.map(reserva => {
+                    if (reserva.idObraSocial == idObraSocial) {
+                        const medico = data.medicos.find(medico => medico.idMedico == reserva.idMedico);
+                        if (medico) {
+                            reserva.valorConsulta = medico.valorConsulta;
+                        reserva.idObraSocial = "";
+                    }
+                    return reserva;
+                }});
+            }
 
             localStorage.setItem("data", JSON.stringify(data));
 

@@ -111,13 +111,14 @@ function manejarEnvioFormulario(event) {
     let valorReserva;
     if (obraSocialSeleccionada && medicoSeleccionado.obrasSocialesQueAcepta.includes(obraSocialSeleccionada.idObraSocial)) {
         valorReserva = medicoSeleccionado.valorConsulta * (1 - obraSocialSeleccionada.descuento / 100);
+        valorReserva = valorReserva.toFixed(2);
     } else {
         valorReserva = medicoSeleccionado.valorConsulta;
     }
 
     Swal.fire({
         title: "¿Desea confirmar la reserva?",
-        text: `El valor estimado de la consulta es: $${valorReserva.toFixed(2)}`,
+        text: `El valor estimado de la consulta es: $${valorReserva}`,
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#045a29",

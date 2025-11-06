@@ -169,7 +169,7 @@
             "apellidoMedico": "Gómez",
             "nombreMedico": "Ana",
             "idEspecialidad": 1,
-            "descripcionMedico": "Experta en cardiología preventiva y rehabilitación cardíaca.",
+            "descripcionMedico": "Experta en cardiología preventiva y rehabilitación cardiaca.",
             "obrasSocialesQueAcepta": [
                 4,
                 5,
@@ -439,5125 +439,5174 @@
         {
             "idTurno": 1,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 2,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
-            "disponible": true
+            "disponible": false
         },
         {
             "idTurno": 3,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 4,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
-            "disponible": true
+            "disponible": false
         },
         {
             "idTurno": 5,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 6,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 7,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 8,
             "idMedico": 1,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 9,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 10,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 11,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 12,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 13,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 14,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 15,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 16,
             "idMedico": 1,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 17,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 18,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 19,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 20,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 21,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 22,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 23,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 24,
             "idMedico": 1,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 25,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 26,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 27,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 28,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 29,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 30,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 31,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 32,
             "idMedico": 1,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 33,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 34,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 35,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 36,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 37,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 38,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 39,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 40,
             "idMedico": 1,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 41,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 42,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 43,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 44,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 45,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 46,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 47,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 48,
             "idMedico": 2,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 49,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 50,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 51,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 52,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 53,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 54,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 55,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 56,
             "idMedico": 2,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 57,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 58,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 59,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 60,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 61,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 62,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 63,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 64,
             "idMedico": 2,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 65,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 66,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 67,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 68,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 69,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 70,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 71,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 72,
             "idMedico": 2,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 73,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 74,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 75,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 76,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 77,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 78,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 79,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 80,
             "idMedico": 2,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 81,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 82,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 83,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 84,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 85,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 86,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 87,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 88,
             "idMedico": 3,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 89,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 90,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 91,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 92,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 93,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 94,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 95,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 96,
             "idMedico": 3,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 97,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 98,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 99,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 100,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 101,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 102,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 103,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 104,
             "idMedico": 3,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 105,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 106,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 107,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 108,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 109,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 110,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 111,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 112,
             "idMedico": 3,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 113,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 114,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 115,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 116,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 117,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 118,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 119,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 120,
             "idMedico": 3,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 121,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 122,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 123,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 124,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 125,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 126,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 127,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 128,
             "idMedico": 4,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 129,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 130,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 131,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 132,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 133,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 134,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 135,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 136,
             "idMedico": 4,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 137,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 138,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 139,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 140,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 141,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 142,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 143,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 144,
             "idMedico": 4,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 145,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 146,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 147,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 148,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 149,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 150,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 151,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 152,
             "idMedico": 4,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 153,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 154,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 155,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 156,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 157,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 158,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 159,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 160,
             "idMedico": 4,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 161,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 162,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 163,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 164,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 165,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 166,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 167,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 168,
             "idMedico": 5,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 169,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 170,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 171,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 172,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 173,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 174,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 175,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 176,
             "idMedico": 5,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 177,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 178,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 179,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 180,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 181,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 182,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 183,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 184,
             "idMedico": 5,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 185,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 186,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 187,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 188,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 189,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 190,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 191,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 192,
             "idMedico": 5,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 193,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 194,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 195,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 196,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 197,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 198,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 199,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 200,
             "idMedico": 5,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 201,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 202,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 203,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 204,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 205,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 206,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 207,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 208,
             "idMedico": 6,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 209,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 210,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 211,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 212,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 213,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 214,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 215,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 216,
             "idMedico": 6,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 217,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 218,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 219,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 220,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 221,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 222,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 223,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 224,
             "idMedico": 6,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 225,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 226,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 227,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 228,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 229,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 230,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 231,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 232,
             "idMedico": 6,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 233,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 234,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 235,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 236,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 237,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 238,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 239,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 240,
             "idMedico": 6,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 241,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 242,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 243,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 244,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 245,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 246,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 247,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 248,
             "idMedico": 7,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 249,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 250,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 251,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 252,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 253,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 254,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 255,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 256,
             "idMedico": 7,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 257,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 258,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 259,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 260,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 261,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 262,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 263,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 264,
             "idMedico": 7,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 265,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 266,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 267,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 268,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 269,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 270,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 271,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 272,
             "idMedico": 7,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 273,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 274,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 275,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 276,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 277,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 278,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 279,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 280,
             "idMedico": 7,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 281,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 282,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 283,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 284,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 285,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 286,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 287,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 288,
             "idMedico": 8,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 289,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 290,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 291,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 292,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 293,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 294,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 295,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 296,
             "idMedico": 8,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 297,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 298,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 299,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 300,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 301,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 302,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 303,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 304,
             "idMedico": 8,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 305,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 306,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 307,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 308,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 309,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 310,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 311,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 312,
             "idMedico": 8,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 313,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 314,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 315,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 316,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 317,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 318,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 319,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 320,
             "idMedico": 8,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 321,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 322,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 323,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 324,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 325,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 326,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 327,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 328,
             "idMedico": 9,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 329,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 330,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 331,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 332,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 333,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 334,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 335,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 336,
             "idMedico": 9,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 337,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 338,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 339,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 340,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 341,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 342,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 343,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 344,
             "idMedico": 9,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 345,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 346,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 347,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 348,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 349,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 350,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 351,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 352,
             "idMedico": 9,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 353,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 354,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 355,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 356,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 357,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 358,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 359,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 360,
             "idMedico": 9,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 361,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 362,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 363,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 364,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 365,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 366,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 367,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 368,
             "idMedico": 10,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 369,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 370,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 371,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 372,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 373,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 374,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 375,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 376,
             "idMedico": 10,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 377,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 378,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 379,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 380,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 381,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 382,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 383,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 384,
             "idMedico": 10,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 385,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 386,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 387,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 388,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 389,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 390,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 391,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 392,
             "idMedico": 10,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 393,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 394,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 395,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 396,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 397,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 398,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 399,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 400,
             "idMedico": 10,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 401,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 402,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 403,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 404,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 405,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 406,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 407,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 408,
             "idMedico": 11,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 409,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 410,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 411,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 412,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 413,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 414,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 415,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 416,
             "idMedico": 11,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 417,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 418,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 419,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 420,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 421,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 422,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 423,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 424,
             "idMedico": 11,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 425,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 426,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 427,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 428,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 429,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 430,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 431,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 432,
             "idMedico": 11,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 433,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 434,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 435,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 436,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 437,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 438,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 439,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 440,
             "idMedico": 11,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 441,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 442,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 443,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 444,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 445,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 446,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 447,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 448,
             "idMedico": 12,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 449,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 450,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 451,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 452,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 453,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 454,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 455,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 456,
             "idMedico": 12,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 457,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 458,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 459,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 460,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 461,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 462,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 463,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 464,
             "idMedico": 12,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 465,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 466,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 467,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 468,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 469,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 470,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 471,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 472,
             "idMedico": 12,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 473,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 474,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 475,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 476,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 477,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 478,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 479,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 480,
             "idMedico": 12,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 481,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 482,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 483,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 484,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 485,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 486,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 487,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 488,
             "idMedico": 13,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 489,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 490,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 491,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 492,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 493,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 494,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 495,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 496,
             "idMedico": 13,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 497,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 498,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 499,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 500,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 501,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 502,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 503,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 504,
             "idMedico": 13,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 505,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 506,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 507,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 508,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 509,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 510,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 511,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 512,
             "idMedico": 13,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 513,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 514,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 515,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 516,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 517,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 518,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 519,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 520,
             "idMedico": 13,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 521,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 522,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 523,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 524,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 525,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 526,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 527,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 528,
             "idMedico": 14,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 529,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 530,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 531,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 532,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 533,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 534,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 535,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 536,
             "idMedico": 14,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 537,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 538,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 539,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 540,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 541,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 542,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 543,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 544,
             "idMedico": 14,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 545,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 546,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 547,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 548,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 549,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 550,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 551,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 552,
             "idMedico": 14,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 553,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 554,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 555,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 556,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 557,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 558,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 559,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 560,
             "idMedico": 14,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 561,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 562,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 563,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 564,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 565,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 566,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 567,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 568,
             "idMedico": 15,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 569,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 570,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 571,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 572,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 573,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 574,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 575,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 576,
             "idMedico": 15,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 577,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 578,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 579,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 580,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 581,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 582,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 583,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 584,
             "idMedico": 15,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 585,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 586,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 587,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 588,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 589,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 590,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 591,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 592,
             "idMedico": 15,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 593,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 594,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 595,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 596,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 597,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 598,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 599,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 600,
             "idMedico": 15,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 601,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 602,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 603,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 604,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 605,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 606,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 607,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 608,
             "idMedico": 16,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 609,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 610,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 611,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 612,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 613,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 614,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 615,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 616,
             "idMedico": 16,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 617,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 618,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 619,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 620,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 621,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 622,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 623,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 624,
             "idMedico": 16,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 625,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 626,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 627,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 628,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 629,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 630,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 631,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 632,
             "idMedico": 16,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 633,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 634,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 635,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 636,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 637,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 638,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 639,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 640,
             "idMedico": 16,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 641,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 642,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 643,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 644,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 645,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 646,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 647,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 648,
             "idMedico": 17,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 649,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 650,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 651,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 652,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 653,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 654,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 655,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 656,
             "idMedico": 17,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 657,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 658,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 659,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 660,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 661,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 662,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 663,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 664,
             "idMedico": 17,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 665,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 666,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 667,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 668,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 669,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 670,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 671,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 672,
             "idMedico": 17,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 673,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 674,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 675,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 676,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 677,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 678,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 679,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 680,
             "idMedico": 17,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 681,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 682,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 683,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 684,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 685,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 686,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 687,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 688,
             "idMedico": 18,
-            "día": "lunes",
+            "dia": "lunes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 689,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 690,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 691,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 692,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 693,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 694,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 695,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 696,
             "idMedico": 18,
-            "día": "martes",
+            "dia": "martes",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 697,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 698,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 699,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 700,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 701,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 702,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 703,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 704,
             "idMedico": 18,
-            "día": "miércoles",
+            "dia": "miercoles",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 705,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 706,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 707,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 708,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 709,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 710,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 711,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 712,
             "idMedico": 18,
-            "día": "jueves",
+            "dia": "jueves",
             "hora": "12:30",
             "disponible": true
         },
         {
             "idTurno": 713,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:00",
             "disponible": true
         },
         {
             "idTurno": 714,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "09:30",
             "disponible": true
         },
         {
             "idTurno": 715,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:00",
             "disponible": true
         },
         {
             "idTurno": 716,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "10:30",
             "disponible": true
         },
         {
             "idTurno": 717,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:00",
             "disponible": true
         },
         {
             "idTurno": 718,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "11:30",
             "disponible": true
         },
         {
             "idTurno": 719,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:00",
             "disponible": true
         },
         {
             "idTurno": 720,
             "idMedico": 18,
-            "día": "viernes",
+            "dia": "viernes",
             "hora": "12:30",
             "disponible": true
         }
     ],
     "reservas": [
         {
-            "idReserva": 1,
-            "documento": 35648902,
-            "nombrePaciente": "González, Laura",
-            "idTurno": 721,
-            "idEspecialidad": 1,
-            "idObraSocial": 2,
-            "valorConsulta": 12000
-        },
-        {
-            "idReserva": 2,
-            "documento": 987654321,
-            "nombrePaciente": "Smith, John",
-            "idTurno": 722,
+            "idReserva": 1762382155464,
+            "documento": 23456789,
+            "nombrePaciente": "Pedro González",
+            "telefonoPaciente": 2804567845,
+            "emailPaciente": "pgonzalez@gmail.com",
+            "idTurno": 216,
             "idEspecialidad": 2,
-            "idObraSocial": 1,
-            "valorConsulta": 13500
-        },
-        {
-            "idReserva": 3,
-            "documento": 40256123,
-            "nombrePaciente": "Pérez, Mariano",
-            "idTurno": 723,
-            "idEspecialidad": 1,
-            "idObraSocial": 3,
-            "valorConsulta": 11000
-        },
-        {
-            "idReserva": 4,
-            "documento": 37222440,
-            "nombrePaciente": "Fernández, Julia",
-            "idTurno": 724,
-            "idEspecialidad": 3,
+            "idMedico": 6,
             "idObraSocial": 2,
-            "valorConsulta": 9800
+            "motivoReserva": "Me duele el codo cuando me rasco.",
+            "valorConsulta": 19500
         },
         {
-            "idReserva": 5,
-            "documento": 12345678,
-            "nombreCompletoPaciente": "José Gómez",
-            "idTurno": 22,
+            "idReserva": 1762382693892,
+            "documento": 23456789,
+            "nombrePaciente": "Pedro González",
+            "telefonoPaciente": 2804567845,
+            "emailPaciente": "pgonzalez@gmail.com",
+            "idTurno": 3,
             "idEspecialidad": 1,
+            "idMedico": 1,
             "idObraSocial": 2,
+            "motivoReserva": "Tengo el corazón con agujeritos.",
             "valorConsulta": 10680
         },
         {
-            "idReserva": 6,
+            "idReserva": 1762382799813,
+            "documento": 23456789,
+            "nombrePaciente": "Pedro González",
+            "telefonoPaciente": 2804567845,
+            "emailPaciente": "pgonzalez@gmail.com",
+            "idTurno": 309,
+            "idEspecialidad": 3,
+            "idMedico": 8,
+            "idObraSocial": 2,
+            "motivoReserva": "",
+            "valorConsulta": 12300
+        },
+        {
+            "idReserva": 1762382947248,
             "documento": 34567890,
-            "nombreCompletoPaciente": "María López",
-            "idTurno": 41,
+            "nombrePaciente": "María López",
+            "telefonoPaciente": 345987444,
+            "emailPaciente": "marialopez@yahoo.com.ar",
+            "idTurno": 8,
             "idEspecialidad": 1,
-            "idObraSocial": 5,
-            "valorConsulta": 13340
+            "idMedico": 1,
+            "idObraSocial": 7,
+            "motivoReserva": "",
+            "valorConsulta": 17800
         },
         {
-            "idReserva": 7,
+            "idReserva": 1762383470281,
             "documento": 34567890,
-            "nombreCompletoPaciente": "María López",
-            "idTurno": 122,
-            "idEspecialidad": 2,
-            "idObraSocial": 5,
-            "valorConsulta": 15254
+            "nombrePaciente": "María López",
+            "telefonoPaciente": 345987444,
+            "emailPaciente": "marialopez@yahoo.com.ar",
+            "idTurno": 330,
+            "idEspecialidad": 4,
+            "idMedico": 9,
+            "idObraSocial": 7,
+            "motivoReserva": "Creo que me estoy resfriando...",
+            "valorConsulta": 11596
         },
         {
-            "idReserva": 8,
+            "idReserva": 1762383828521,
             "documento": 34567890,
-            "nombreCompletoPaciente": "María López",
-            "idTurno": 544,
-            "idEspecialidad": 2,
-            "idObraSocial": 6,
-            "valorConsulta": 17052
+            "nombrePaciente": "María López",
+            "telefonoPaciente": 345987444,
+            "emailPaciente": "marialopez@yahoo.com.ar",
+            "idTurno": 529,
+            "idEspecialidad": 6,
+            "idMedico": 14,
+            "idObraSocial": 7,
+            "motivoReserva": "Me pica el ojo.",
+            "valorConsulta": 15288
         },
         {
-            "idReserva": 9,
-            "documento": 34567890,
-            "nombreCompletoPaciente": "María López",
-            "idTurno": 465,
+            "idReserva": 1762384066657,
+            "documento": 29555777,
+            "nombrePaciente": "Gustavo Martínez",
+            "telefonoPaciente": 2945603366,
+            "emailPaciente": "gmgm08@hotmail.com",
+            "idTurno": 421,
             "idEspecialidad": 5,
+            "idMedico": 11,
             "idObraSocial": "",
-            "valorConsulta": 19800
+            "motivoReserva": "Para mi pibe.",
+            "valorConsulta": 26500
+        },
+        {
+            "idReserva": 1762384350962,
+            "documento": 29555777,
+            "nombrePaciente": "Gustavo Martínez",
+            "telefonoPaciente": 2945603366,
+            "emailPaciente": "gmgm08@hotmail.com",
+            "idTurno": 8,
+            "idEspecialidad": 1,
+            "idMedico": 1,
+            "idObraSocial": "",
+            "motivoReserva": "",
+            "valorConsulta": 17800
+        },
+        {
+            "idReserva": 1762384600201,
+            "documento": 29555777,
+            "nombrePaciente": "Gustavo Martínez",
+            "telefonoPaciente": 2945603366,
+            "emailPaciente": "gmgm08@hotmail.com",
+            "idTurno": 678,
+            "idEspecialidad": 7,
+            "idMedico": 17,
+            "idObraSocial": "",
+            "motivoReserva": "",
+            "valorConsulta": 22000
+        },
+        {
+            "idReserva": 1762384922861,
+            "documento": 92663790,
+            "nombrePaciente": "David Bowie",
+            "telefonoPaciente": 3749071366,
+            "emailPaciente": "starman@gmail.com",
+            "idTurno": 50,
+            "idEspecialidad": 1,
+            "idMedico": 2,
+            "idObraSocial": 5,
+            "motivoReserva": "El corazón está a la izquierda, ¿no?",
+            "valorConsulta": 13340
         }
     ]
 }

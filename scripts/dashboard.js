@@ -15,6 +15,7 @@ async function iniciarPagina() {
         generarCheckboxesObrasSociales();
         generarTablaMedicos();
         generarTablaEspecialidades();
+        generarTablaObrasSociales()
         generarMedicoSelect();
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
@@ -27,7 +28,7 @@ async function cargarDatos() {
     if (localStorage.getItem("data")) {
         data = JSON.parse(localStorage.getItem("data"));
     } else {
-        const response = await fetch("mock_data.json");
+        const response = await fetch("../mockData.json");
         data = await response.json();
         localStorage.setItem("data", JSON.stringify(data));
     }
@@ -59,7 +60,7 @@ function generarTablaMedicos() {
 }
 
 function generarOpcionesEspecialidades() {
-    const select = document.getElementById("idEspecialidad");
+    const select = document.getElementById("idEspecialidadMedico");
     select.innerHTML = '<option value="">Seleccione...</option>';
     data.especialidades.forEach(especialidad => {
         const option = document.createElement("option");
@@ -128,7 +129,7 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     const matricula = parseInt(document.getElementById("matricula").value);
     const valorConsulta = parseFloat(document.getElementById("valorConsulta").value);
     const descripcionMedico = document.getElementById("descripcionMedico").value;
-    const idEspecialidad = parseInt(document.getElementById("idEspecialidad").value);
+    const idEspecialidad = parseInt(document.getElementById("idEspecialidadMedico").value);
 
     const obrasSeleccionadas = [...document.querySelectorAll("#obrasSocialesContainer input:checked")]
         .map(checked => parseInt(checked.value));
@@ -203,7 +204,7 @@ function editarMedico(id) {
     document.getElementById("matricula").value = medico.matricula;
     document.getElementById("valorConsulta").value = medico.valorConsulta;
     document.getElementById("descripcionMedico").value = medico.descripcionMedico;
-    document.getElementById("idEspecialidad").value = medico.idEspecialidad;
+    document.getElementById("idEspecialidadMedico").value = medico.idEspecialidad;
 
     document.querySelectorAll("#obrasSocialesContainer input").forEach(checkbox => {
         checkbox.checked = medico.obrasSocialesQueAcepta.includes(parseInt(checkbox.value));
@@ -478,12 +479,11 @@ function guardarCambios(idMedico) {
 function generarTablaObrasSociales() {
     const tbody = document.getElementById("tablaObrasSociales").querySelector("tbody");
     tbody.innerHTML = "";
-
-    data.obrasSociales.forEach((os, index) => {
+    data.obrasSociales.forEach((os) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td>${index + 1}</td>
             <td>${os.nombreObraSocial}</td>
+            <td>${os.descuento}</td>
             <td>
                 <button class="btn btn-sm btn-editar fw-semibold me-1" onclick="editarObraSocial(${os.idObraSocial})">Editar</button>
                 <button class="btn btn-sm btn-eliminar fw-semibold" onclick="eliminarObraSocial(${os.idObraSocial})">Eliminar</button>
@@ -500,6 +500,8 @@ document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
         ? parseInt(document.getElementById("idObraSocial").value)
         : Date.now();
     const nombreObraSocial = document.getElementById("nombreObraSocial").value.trim();
+    const descripcionObraSocial = document.getElementById("descripcionObraSocial").value.trim();
+    const descuento = document.getElementById("descuento").value.trim();
 
     if (!nombreObraSocial) {
         Swal.fire({
@@ -516,8 +518,10 @@ document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
 
     if (index > -1) {
         data.obrasSociales[index].nombreObraSocial = nombreObraSocial;
+        data.obrasSociales[index].descripcionObraSocial = descripcionObraSocial;
+        data.obrasSociales[index].descuento = descuento;
     } else {
-        data.obrasSociales.push({ idObraSocial, nombreObraSocial });
+        data.obrasSociales.push({ idObraSocial, nombreObraSocial, descripcionObraSocial, descuento });
     }
 
     localStorage.setItem("data", JSON.stringify(data));
@@ -541,6 +545,8 @@ function editarObraSocial(idObraSocial) {
 
     document.getElementById("idObraSocial").value = obraSocial.idObraSocial;
     document.getElementById("nombreObraSocial").value = obraSocial.nombreObraSocial;
+    document.getElementById("descripcionObraSocial").value = obraSocial.descripcionObraSocial;
+    document.getElementById("descuento").value = obraSocial.descuento;
 }
 
 function eliminarObraSocial(idObraSocial) {
@@ -556,26 +562,24 @@ function eliminarObraSocial(idObraSocial) {
         cancelButtonText: "No, cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
-            data.obrasSociales = data.obrasSociales.filter(os => os.idObraSocial !== idObraSocial);
-
             data.medicos.forEach(medico => {
-                osIndex = medico.obrasSocialesQueAcepta.indexOf(idObraSocial);
-                if (index > -1) {
+                let osIndex = medico.obrasSocialesQueAcepta.indexOf(idObraSocial);
+                if (osIndex > -1) {
                     medico.obrasSocialesQueAcepta.splice(osIndex, 1);
                 }
             });
 
-            if (data.reservas && Array.isArray(data.reservas)) {
-                data.reservas = data.reservas.map(reserva => {
-                    if (reserva.idObraSocial == idObraSocial) {
-                        const medico = data.medicos.find(medico => medico.idMedico == reserva.idMedico);
-                        if (medico) {
-                            reserva.valorConsulta = medico.valorConsulta;
+            data.reservas.forEach(reserva => {
+                if (reserva.idObraSocial == idObraSocial) {
+                    const medico = data.medicos.find(medico => medico.idMedico == reserva.idMedico);
+                    if (medico) {
+                        reserva.valorConsulta = medico.valorConsulta;
                         reserva.idObraSocial = "";
                     }
-                    return reserva;
-                }});
-            }
+                }
+            });
+
+            data.obrasSociales = data.obrasSociales.filter(os => os.idObraSocial !== idObraSocial);
 
             localStorage.setItem("data", JSON.stringify(data));
 

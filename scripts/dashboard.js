@@ -18,6 +18,7 @@ async function iniciarPagina() {
         generarTablaObrasSociales();
         generarMedicoSelect();
         generarTablaUsuarios();
+        generarTablaReservas();
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
     }
@@ -597,11 +598,183 @@ function eliminarObraSocial(idObraSocial) {
     });
 
 };
+
 /* --------------------------- */
-/* --- CRUD Usuarios --- */
+/* --- CRUD Reservas --- */
 /* --------------------------- */
 
-function generarTablaUsuarios() {
+
+function generarTablaReservas() {
+    const tbody = document.getElementById("tablaReservas").querySelector("tbody");
+    tbody.innerHTML = "";
+
+    data.reservas.forEach((reserva) => {
+        const especialidad = data.especialidades.find(
+            (e) => e.idEspecialidad == reserva.idEspecialidad
+        );
+
+        const nombreEspecialidad = especialidad.nombreEspecialidad
+
+        const medicos = data.medicos.find(
+            (e) => e.idMedico == reserva.idMedico
+        );
+
+        const nombreMedico = `${medicos.apellidoMedico} ${medicos.nombreMedico}`
+
+        const obraSocial = data.obrasSociales.find(
+            (e) => e.idObraSocial == reserva.idObraSocial
+        );
+
+        const nombreOS = obraSocial.nombreObraSocial
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${reserva.idReserva}</td>
+            <td>${reserva.documento}</td>
+            <td>${reserva.nombrePaciente}</td>
+            <td>${reserva.telefonoPaciente}</td>
+            <td>${reserva.emailPaciente}</td>
+            <td>${reserva.idTurno}</td>
+            <td>${nombreEspecialidad}</td>
+            <td>${nombreMedico}</td>
+            <td>${nombreOS}</td>
+            <td>$ ${reserva.valorConsulta}</td>
+            <td>
+                <button class="btn btn-sm btn-editar fw-semibold me-1" onclick="editarReserva(${reserva.idReserva})">Editar</button>
+                <button class="btn btn-sm btn-eliminar fw-semibold" onclick="eliminarReserva(${reserva.idReserva})">Eliminar</button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+document.getElementById("reservasForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const idReservas = document.getElementById("idReservas").value
+        ? parseInt(document.getElementById("idReservas").value)
+        : Date.now();
+    const nombrePaciente = document.getElementById("nombrePaciente").value.trim();
+    const documentoReservas = document.getElementById("documento").value.trim();
+    const telefono = document.getElementById("idTelefono").value.trim();
+    const emailPaciente = document.getElementById("idMail").value.trim();
+    const obraSocialReservas = document.getElementById("idObraSocialReservas").value.trim();
+    const especialidadReservas = document.getElementById("idEspecialidadReservas").value.trim();
+    const medicoReservas = document.getElementById("idMedicoReservas").value.trim();
+
+    if (!nombrePaciente) {
+        Swal.fire({
+            title: "Advertencia",
+            theme: 'material-ui',
+            text: "Debe ingresar un nombre para la reserva.",
+            icon: "warning",
+            confirmButtonColor: "#044166"
+        });
+        return;
+    }
+
+    const index = data.reservas.findIndex(reserva => reserva.idReserva === idReservas);
+
+
+
+    if (index > -1) {
+        data.reservas[index].documento = documentoReservas;
+        data.reservas[index].nombrePaciente = nombrePaciente;
+        data.reservas[index].telefonoPaciente = telefono;
+        data.reservas[index].emailPaciente = emailPaciente;
+        data.reservas[index].idObraSocial = obraSocialReservas;
+        data.reservas[index].idEspecialidad = especialidadReservas;
+        data.reservas[index].idMedico = medicoReservas;
+
+        const medicoConsultar = data.medicos.find(
+            (e) => e.idMedico == data.reserva[index].idMedico
+        );
+        const descuentoConsultar = data.obrasSociales.find(
+            (e) => e.idObraSocial == data.reserva[index].idObraSocial
+        );
+        const calcularPrecio = (1 - descuentoConsultar.descuento / 100) * medicoConsultar.valorConsulta
+
+
+        data.reservas[index].valorConsulta = calcularPrecio;
+
+
+    } else {
+        data.reservas.push({ documentoReservas, nombrePaciente, telefono, emailPaciente, obraSocialReservas, especialidadReservas, medicoReservas, valorConsulta });
+    }
+
+    localStorage.setItem("data", JSON.stringify(data));
+
+    e.target.reset();
+    document.getElementById("idReservas").value = "";
+
+    Swal.fire({
+        title: "Guardado!",
+        theme: 'material-ui',
+        text: "El registro ha sido modificado con éxito",
+        icon: "success",
+        confirmButtonColor: "#044166"
+    });
+    iniciarPagina();
+});
+
+
+function editarReserva(idReserva) {
+    const reserva = data.reservas.find(reserva => reserva.idReserva === idReserva);
+    if (!reserva) return;
+
+    document.getElementById("idReservas").value = reserva.idReserva;
+    document.getElementById("nombrePaciente").value = reserva.nombrePaciente;
+    document.getElementById("documento").value = reserva.documento;
+    document.getElementById("idTelefono").value = reserva.telefonoPaciente;
+    document.getElementById("idMail").value = reserva.emailPaciente;
+    document.getElementById("idObraSocialReservas").value = reserva.idObraSocial;
+    document.getElementById("idEspecialidadReservas").value = reserva.idEspecialidad;
+    document.getElementById("idMedicoReservas").value = reserva.idMedico;
+
+}
+
+function eliminarReserva(idReserva) {
+    Swal.fire({
+        title: "¿Desea eliminar esta reserva?",
+        theme: 'material-ui',
+        text: "La eliminación no puede ser revertida.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#045a29",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No, cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const reservaAEliminar = data.reservas.find((reserva) => reserva.idReserva == idReserva);
+
+            if (reservaAEliminar) {
+                const turno = data.turnos.find((turno) => turno.idTurno == reservaAEliminar.idTurno);
+                if (turno) turno.disponible = true;
+
+                data.reservas = data.reservas.filter(reserva => reserva.idReserva !== idReserva);
+
+                localStorage.setItem("data", JSON.stringify(data));
+
+                Swal.fire({
+                    title: "Eliminada!",
+                    theme: 'material-ui',
+                    text: "La reserva ha sido eliminada con éxito.",
+                    icon: "success",
+                    confirmButtonColor: "#044166"
+                });
+
+                iniciarPagina();
+            }
+        }
+    });
+}
+/* --------------------------- */
+/* ---  Usuarios --- */
+/* --------------------------- */
+
+
+async function generarTablaUsuarios() {
     const tbody = document.getElementById("tablaUsuarios").querySelector("tbody");
     tbody.innerHTML = "";
 
@@ -615,22 +788,27 @@ function generarTablaUsuarios() {
         tr.innerHTML = `
             <td>${reserva.documento}</td>
             <td>${reserva.nombrePaciente}</td>
+            <td>${reserva.telefonoPaciente}</td>
+            <td>${reserva.emailPaciente}</td>
             <td>Paciente</td>
         `;
         tbody.appendChild(tr);
     });
 
 
-        data.medicos.forEach((medico) => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-            <td>${medico.idMedico}</td>
-            <td>${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}</td>
-            <p>
-                Medico
-            </p>
-            `;
-            tbody.appendChild(tr);
-        });
-    }
+    const res = await fetch("https://dummyjson.com/users");
+    const usuariosDummy = await res.json();
 
+    usuariosDummy.users.forEach((user) => {
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.firstName} ${user.lastName}</td>
+            <td>${user.phone}</td>
+            <td>${user.email}</td>
+            <td>${user.role}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+}

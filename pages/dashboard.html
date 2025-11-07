@@ -273,9 +273,7 @@
             <div class="tab-pane fade" id="reservas-tab-pane" role="tabpanel" aria-labelledby="reservas-tab"
                 tabindex="0">
                 <h4 class="pt-5 mt-0">Editar reservas</h4>
-
                 <form id="reservasForm" class="col-12 col-sm-10 col-md-8 col-lg-6 p-3 mb-4 mx-auto">
-
                     <div class="row g-3">
                         <div class="col-sm-8">
                             <label for="documento" class="form-label m-0">Documento del
@@ -283,14 +281,26 @@
                             <input type="number" class="form-control" id="documento" required>
                         </div>
 
-                        <div class="col-sm-4">
-                            <label for="idTurno" class="form-label m-0">ID Turno</label>
-                            <input type="number" class="form-control" id="idTurno" required>
-                        </div>
-
                         <div>
                             <label for="nombrePaciente" class="form-label m-0">Nombre del Paciente</label>
                             <input type="text" class="form-control" id="nombrePaciente" required>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="idTelefono" class="form-label m-0">Teléfono</label>
+                            <input type="number" class="form-control" id="idTelefono" required>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="idMail" class="form-label m-0">Mail</label>
+                            <input type="email" class="form-control" id="idMail" required>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="idObraSocialReservas" class="form-label m-0">Obra Social</label>
+                            <select class="form-select mb-2" id="idObraSocialReservas" required>
+                                <option value="">Seleccione...</option>
+                            </select>
                         </div>
 
                         <div class="col-sm-6">
@@ -301,14 +311,14 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label for="idObraSocialReservas" class="form-label m-0">Obra Social</label>
-                            <select class="form-select mb-2" id="idObraSocialReservas" required>
+                            <label for="idMedicoReservas" class="form-label m-0">Médico</label>
+                            <select class="form-select mb-2" id="idMedicoReservas" required>
                                 <option value="">Seleccione...</option>
                             </select>
                         </div>
 
                         <div class="col-12 d-flex justify-content-center gap-2 mt-4">
-                            <button class="btn btn-primary m-0" type="submit">Guardar reserva</button>
+                            <button class="btn btn-primary m-0" type="submit">Guardar cambios</button>
                             <button type="reset" class="btn btn-secondary rounded-3 text-uppercase">Cancelar</button>
                         </div>
                     </div>
@@ -318,10 +328,14 @@
                     <table class="table table-striped text-center" id="tablaReservas">
                         <thead class="table-success">
                             <tr>
+                                <th>ID Reserva</th>
                                 <th>Documento</th>
                                 <th>Paciente</th>
+                                <th>Teléfono</th>
+                                <th>Mail</th>
                                 <th>Turno</th>
                                 <th>Especialidad</th>
+                                <th>Médico</th>
                                 <th>Obra Social</th>
                                 <th>Valor</th>
                                 <th>Acciones</th>
@@ -335,12 +349,14 @@
             <div class="tab-pane fade" id="usuarios-tab-pane" role="tabpanel" aria-labelledby="usuarios-tab"
                 tabindex="0">
                 <h4 class="pt-5 mt-0">Usuarios</h4>
-                <div class="table-responsive col-12 col-sm-10 col-md-8 col-lg-6 mb-4 mx-auto">
+                <div class="table-responsive px-3 mb-4 mx-auto">
                     <table class="table table-striped align-middle" id="tablaUsuarios">
                         <thead class="table-success">
                             <tr>
-                                <th>ID</th>
+                                <th>Documento</th>
                                 <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Mail</th>
                                 <th>Rol</th>
                             </tr>
                         </thead>

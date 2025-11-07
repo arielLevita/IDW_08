@@ -1,5 +1,5 @@
 const auth = JSON.parse(localStorage.getItem("auth"));
-if (!auth || !auth.isAdmin) {
+if (!auth || !auth.esAdmin) {
     window.location.href = "../index.html";
 }
 

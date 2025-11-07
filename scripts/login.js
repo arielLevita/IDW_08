@@ -36,7 +36,7 @@ loginForm.addEventListener('submit', async (e) => {
                 confirmButtonText: "Continuar",
                 confirmButtonColor: "#044166",
             }).then(() => {
-                localStorage.setItem("auth", JSON.stringify({
+                sessionStorage.setItem("accessToken", JSON.stringify({
                     id: data.id,
                     usuario: data.username,
                     email: data.email,

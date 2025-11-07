@@ -1,10 +1,10 @@
-const auth = JSON.parse(localStorage.getItem("auth"));
+const auth = JSON.parse(sessionStorage.getItem("accessToken"));
 if (!auth || !auth.esAdmin) {
     window.location.href = "../index.html";
 }
 
 function cerrarSesion() {
-    localStorage.removeItem("auth");
+    sessionStorage.removeItem("accessToken");
     window.location.href = "../index.html";
 }
 

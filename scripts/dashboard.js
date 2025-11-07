@@ -15,8 +15,9 @@ async function iniciarPagina() {
         generarCheckboxesObrasSociales();
         generarTablaMedicos();
         generarTablaEspecialidades();
-        generarTablaObrasSociales()
+        generarTablaObrasSociales();
         generarMedicoSelect();
+        generarTablaUsuarios();
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
     }
@@ -594,4 +595,42 @@ function eliminarObraSocial(idObraSocial) {
             iniciarPagina();
         }
     });
+
 };
+/* --------------------------- */
+/* --- CRUD Usuarios --- */
+/* --------------------------- */
+
+function generarTablaUsuarios() {
+    const tbody = document.getElementById("tablaUsuarios").querySelector("tbody");
+    tbody.innerHTML = "";
+
+    const duplicado = new Set();
+
+    data.reservas.forEach((reserva) => {
+        if (duplicado.has(reserva.documento)) return;
+        duplicado.add(reserva.documento);
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${reserva.documento}</td>
+            <td>${reserva.nombrePaciente}</td>
+            <td>Paciente</td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+
+        data.medicos.forEach((medico) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <td>${medico.idMedico}</td>
+            <td>${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}</td>
+            <p>
+                Medico
+            </p>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+

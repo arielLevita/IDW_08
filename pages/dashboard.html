@@ -243,7 +243,8 @@
                         </div>
 
                         <div class="col-md-12">
-                            <label for="descripcionObraSocial" class="form-label m-0 mt-2">Descripción (Opcional)</label>
+                            <label for="descripcionObraSocial" class="form-label m-0 mt-2">Descripción
+                                (Opcional)</label>
                             <textarea id="descripcionObraSocial" class="form-control" rows="2"></textarea>
                         </div>
 
@@ -269,61 +270,91 @@
                     </table>
                 </div>
             </div>
+
             <!-- Reservas -->
             <div class="tab-pane fade" id="reservas-tab-pane" role="tabpanel" aria-labelledby="reservas-tab"
                 tabindex="0">
-                <h4 class="pt-5 mt-0">Editar reservas</h4>
+                <h4 class="pt-5 mt-0">Editar reserva</h4>
 
-                <form id="reservasForm" class="col-12 col-sm-10 col-md-8 col-lg-6 p-3 mb-4 mx-auto">
+                <form id="reservaForm" class="p-3 mb-4 col-12 col-lg-10 mx-auto">
+                    <input type="hidden" id="idReserva">
 
                     <div class="row g-3">
-                        <div class="col-sm-8">
-                            <label for="documento" class="form-label m-0 mt-2">Documento del
-                                Paciente</label>
-                            <input type="number" class="form-control" id="documento" required>
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Documento</label>
+                            <input id="documentoReserva" type="number" class="form-control" readonly>
                         </div>
 
-                        <div class="col-sm-4">
-                            <label for="idTurno" class="form-label m-0 mt-2">ID Turno</label>
-                            <input type="number" class="form-control" id="idTurno" required>
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Nombre paciente</label>
+                            <input id="nombrePacienteReserva" type="text" class="form-control" required>
                         </div>
 
-                        <div>
-                            <label for="nombrePaciente" class="form-label m-0 mt-2">Nombre del Paciente</label>
-                            <input type="text" class="form-control" id="nombrePaciente" required>
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Especialidad</label>
+                            <select id="especialidadReserva" class="form-select" required></select>
                         </div>
 
-                        <div class="col-sm-6">
-                            <label for="idEspecialidadReservas" class="form-label m-0 mt-2">Especialidad</label>
-                            <select class="form-select mb-2" id="idEspecialidadReservas" required>
-                                <option value="">Seleccione...</option>
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Médico</label>
+                            <select id="medicoReserva" class="form-select" required></select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Día</label>
+                            <select id="diaReserva" class="form-select" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="lunes">Lunes</option>
+                                <option value="martes">Martes</option>
+                                <option value="miercoles">Miércoles</option>
+                                <option value="jueves">Jueves</option>
+                                <option value="viernes">Viernes</option>
                             </select>
                         </div>
 
-                        <div class="col-sm-6">
-                            <label for="idObraSocialReservas" class="form-label m-0 mt-2">Obra Social</label>
-                            <select class="form-select mb-2" id="idObraSocialReservas" required>
-                                <option value="">Seleccione...</option>
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Hora</label>
+                            <select id="horaReserva" class="form-select" required>
+                                <option value="">Seleccionar...</option>
                             </select>
                         </div>
 
-                        <div class="col-12 d-flex justify-content-center gap-2 mt-4">
-                            <button class="btn btn-primary m-0" type="submit">Guardar reserva</button>
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Obra Social</label>
+                            <select id="obraSocialReserva" class="form-select">
+                                <option value="">Sin obra social</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label m-0">Valor Consulta ($)</label>
+                            <input id="valorConsultaReserva" type="number" class="form-control" readonly>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label m-0">Motivo</label>
+                            <textarea id="motivoReserva" class="form-control" rows="2"></textarea>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center gap-2">
+                            <button class="btn btn-primary m-0" type="submit">Guardar</button>
                             <button type="reset" class="btn btn-secondary rounded-3 text-uppercase">Cancelar</button>
                         </div>
                     </div>
                 </form>
 
-                <div class="table-responsive px-2">
-                    <table class="table table-striped text-center" id="tablaReservas">
+                <div class="table-responsive col-12 mb-4 mx-auto px-3">
+                    <table class="table table-striped align-middle" id="tablaReservas">
                         <thead class="table-success">
                             <tr>
-                                <th>Documento</th>
                                 <th>Paciente</th>
-                                <th>Turno</th>
+                                <th>Documento</th>
                                 <th>Especialidad</th>
+                                <th>Médico</th>
+                                <th>Día</th>
+                                <th>Hora</th>
                                 <th>Obra Social</th>
-                                <th>Valor</th>
+                                <th>Valor ($)</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -331,16 +362,20 @@
                     </table>
                 </div>
             </div>
+
+
             <!-- Usuarios -->
             <div class="tab-pane fade" id="usuarios-tab-pane" role="tabpanel" aria-labelledby="usuarios-tab"
                 tabindex="0">
-                <h4 class="pt-5 mt-0">Usuarios</h4>
-                <div class="table-responsive col-12 col-sm-10 col-md-8 col-lg-6 mb-4 mx-auto">
+                <h4 class="pt-5 mt-0 mb-4">Usuarios</h4>
+                <div class="table-responsive px-3 mb-4 mx-auto">
                     <table class="table table-striped align-middle" id="tablaUsuarios">
                         <thead class="table-success">
                             <tr>
-                                <th>ID</th>
+                                <th>Documento</th>
                                 <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Mail</th>
                                 <th>Rol</th>
                             </tr>
                         </thead>

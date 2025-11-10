@@ -19,6 +19,7 @@ async function iniciarPagina() {
         generarMedicoSelect();
         generarTablaUsuarios();
         generarTablaReservas();
+        generarSelectsReservas();
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
     }
@@ -624,8 +625,7 @@ function generarTablaReservas() {
         const obraSocial = data.obrasSociales.find(
             (e) => e.idObraSocial == reserva.idObraSocial
         );
-
-        const nombreOS = obraSocial.nombreObraSocial
+        const nombreOS = obraSocial ? obraSocial.nombreObraSocial : "Sin obra social";
 
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -654,13 +654,14 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
     const idReservas = document.getElementById("idReservas").value
         ? parseInt(document.getElementById("idReservas").value)
         : Date.now();
+    const idTurno = document.getElementById("idTurnoReservas").value.trim();
     const nombrePaciente = document.getElementById("nombrePaciente").value.trim();
     const documentoReservas = document.getElementById("documento").value.trim();
     const telefono = document.getElementById("idTelefono").value.trim();
     const emailPaciente = document.getElementById("idMail").value.trim();
-    const obraSocialReservas = document.getElementById("idObraSocialReservas").value.trim();
-    const especialidadReservas = document.getElementById("idEspecialidadReservas").value.trim();
-    const medicoReservas = document.getElementById("idMedicoReservas").value.trim();
+    const idObraSocial = document.getElementById("idObraSocialReservas").value.trim();
+    const idEspecialidad = document.getElementById("idEspecialidadReservas").value.trim();
+    const idMedico = document.getElementById("idMedicoReservas").value.trim();
 
     if (!nombrePaciente) {
         Swal.fire({
@@ -673,9 +674,18 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
         return;
     }
 
-    const index = data.reservas.findIndex(reserva => reserva.idReserva === idReservas);
+    // Calcular valorConsulta
+    const medico = data.medicos.find(m => m.idMedico == idMedico);
+    let valorConsulta = medico ? medico.valorConsulta : 0;
 
+    if (idObraSocial) {
+        const obraSocial = data.obrasSociales.find(os => os.idObraSocial == idObraSocial);
+        if (obraSocial && obraSocial.descuento) {
+            valorConsulta = valorConsulta * (1 - obraSocial.descuento / 100);
+        }
+    }
 
+    const index = data.reservas.findIndex(r => r.idReserva === idReservas);
 
     if (index > -1) {
         data.reservas[index].documento = documentoReservas;
@@ -699,7 +709,7 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
 
 
     } else {
-        data.reservas.push({ documentoReservas, nombrePaciente, telefono, emailPaciente, obraSocialReservas, especialidadReservas, medicoReservas, valorConsulta });
+        data.reservas.push({ idReservas, idTurnoReservas, documentoReservas, nombrePaciente, telefono, emailPaciente, obraSocialReservas, especialidadReservas, medicoReservas, valorConsulta });
     }
 
     localStorage.setItem("data", JSON.stringify(data));
@@ -718,11 +728,64 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
 });
 
 
+function generarSelectsReservas() {
+    // --- Especialidades ---
+    const selectEspecialidad = document.getElementById("idEspecialidadReservas");
+    if (selectEspecialidad) {
+        selectEspecialidad.innerHTML = '<option value="">Seleccione...</option>';
+        data.especialidades.forEach(especialidad => {
+            const option = document.createElement("option");
+            option.value = especialidad.idEspecialidad;
+            option.textContent = especialidad.nombreEspecialidad;
+            selectEspecialidad.appendChild(option);
+        });
+
+        selectEspecialidad.addEventListener("change", () => {
+            const especialidadId = selectEspecialidad.value;
+            actualizarMedicos(especialidadId);
+        });
+    }
+
+    // --- Médicos ---
+    const selectMedico = document.getElementById("idMedicoReservas");
+    if (selectMedico) {
+        selectMedico.innerHTML = '<option value="">Seleccione...</option>';
+    }
+
+    // --- Obra Social ---
+    const selectObraSocial = document.getElementById("idObraSocialReservas");
+    if (selectObraSocial) {
+        selectObraSocial.innerHTML = '<option value="">Seleccione...</option>';
+        data.obrasSociales.forEach(os => {
+            const option = document.createElement("option");
+            option.value = os.idObraSocial;
+            option.textContent = os.nombreObraSocial;
+            selectObraSocial.appendChild(option);
+        });
+    }
+}
+
+function actualizarMedicos(especialidadId) {
+    const selectMedico = document.getElementById("idMedicoReservas");
+    selectMedico.innerHTML = '<option value="">Seleccione...</option>';
+
+    data.medicos
+        .filter(medico => medico.idEspecialidad == especialidadId)
+        .forEach(medico => {
+            const option = document.createElement("option");
+            option.value = medico.idMedico;
+            option.textContent = `${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}`;
+            selectMedico.appendChild(option);
+        });
+}
+
+
 function editarReserva(idReserva) {
     const reserva = data.reservas.find(reserva => reserva.idReserva === idReserva);
     if (!reserva) return;
 
     document.getElementById("idReservas").value = reserva.idReserva;
+    document.getElementById("idTurnoReservas").value = reserva.idTurno;
     document.getElementById("nombrePaciente").value = reserva.nombrePaciente;
     document.getElementById("documento").value = reserva.documento;
     document.getElementById("idTelefono").value = reserva.telefonoPaciente;
@@ -769,6 +832,7 @@ function eliminarReserva(idReserva) {
         }
     });
 }
+
 /* --------------------------- */
 /* ---  Usuarios --- */
 /* --------------------------- */

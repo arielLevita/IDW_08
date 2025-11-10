@@ -275,12 +275,19 @@
                 <h4 class="pt-5 mt-0">Editar reservas</h4>
                 <form id="reservasForm" class="col-12 col-sm-10 col-md-8 col-lg-6 p-3 mb-4 mx-auto">
                     <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="idReservas" class="form-label m-0">ID Reserva</label>
+                            <input type="text" class="form-control" id="idReservas" readonly>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="idTurnoReservas" class="form-label m-0">ID Turno</label>
+                            <input type="text" class="form-control" id="idTurnoReservas" readonly>
+                        </div>
                         <div class="col-sm-8">
                             <label for="documento" class="form-label m-0">Documento del
                                 Paciente</label>
                             <input type="number" class="form-control" id="documento" required>
                         </div>
-
                         <div>
                             <label for="nombrePaciente" class="form-label m-0">Nombre del Paciente</label>
                             <input type="text" class="form-control" id="nombrePaciente" required>
@@ -297,13 +304,6 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label for="idObraSocialReservas" class="form-label m-0">Obra Social</label>
-                            <select class="form-select mb-2" id="idObraSocialReservas" required>
-                                <option value="">Seleccione...</option>
-                            </select>
-                        </div>
-
-                        <div class="col-sm-6">
                             <label for="idEspecialidadReservas" class="form-label m-0">Especialidad</label>
                             <select class="form-select mb-2" id="idEspecialidadReservas" required>
                                 <option value="">Seleccione...</option>
@@ -315,6 +315,18 @@
                             <select class="form-select mb-2" id="idMedicoReservas" required>
                                 <option value="">Seleccione...</option>
                             </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="idObraSocialReservas" class="form-label m-0">Obra Social</label>
+                            <select class="form-select mb-2" id="idObraSocialReservas" required>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="valorConsulta" class="form-label m-0">Valor Consulta</label>
+                            <input type="text" class="form-control" id="valorConsulta" readonly>
                         </div>
 
                         <div class="col-12 d-flex justify-content-center gap-2 mt-4">

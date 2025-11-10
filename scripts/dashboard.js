@@ -654,14 +654,14 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
     const idReservas = document.getElementById("idReservas").value
         ? parseInt(document.getElementById("idReservas").value)
         : Date.now();
-    const idTurno = document.getElementById("idTurnoReservas").value.trim();
+    const idTurnoReservas = document.getElementById("idTurnoReservas").value.trim();
     const nombrePaciente = document.getElementById("nombrePaciente").value.trim();
     const documentoReservas = document.getElementById("documento").value.trim();
     const telefono = document.getElementById("idTelefono").value.trim();
     const emailPaciente = document.getElementById("idMail").value.trim();
-    const idObraSocial = document.getElementById("idObraSocialReservas").value.trim();
-    const idEspecialidad = document.getElementById("idEspecialidadReservas").value.trim();
-    const idMedico = document.getElementById("idMedicoReservas").value.trim();
+    const obraSocialReservas = document.getElementById("idObraSocialReservas").value.trim();
+    const especialidadReservas = document.getElementById("idEspecialidadReservas").value.trim();
+    const medicoReservas = document.getElementById("idMedicoReservas").value.trim();
 
     if (!nombrePaciente) {
         Swal.fire({
@@ -674,18 +674,9 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
         return;
     }
 
-    // Calcular valorConsulta
-    const medico = data.medicos.find(m => m.idMedico == idMedico);
-    let valorConsulta = medico ? medico.valorConsulta : 0;
+    const index = data.reservas.findIndex(reserva => reserva.idReserva === idReservas);
 
-    if (idObraSocial) {
-        const obraSocial = data.obrasSociales.find(os => os.idObraSocial == idObraSocial);
-        if (obraSocial && obraSocial.descuento) {
-            valorConsulta = valorConsulta * (1 - obraSocial.descuento / 100);
-        }
-    }
 
-    const index = data.reservas.findIndex(r => r.idReserva === idReservas);
 
     if (index > -1) {
         data.reservas[index].documento = documentoReservas;
@@ -832,7 +823,6 @@ function eliminarReserva(idReserva) {
         }
     });
 }
-
 /* --------------------------- */
 /* ---  Usuarios --- */
 /* --------------------------- */

@@ -654,14 +654,14 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
     const idReservas = document.getElementById("idReservas").value
         ? parseInt(document.getElementById("idReservas").value)
         : Date.now();
-    const idTurnoReservas = document.getElementById("idTurnoReservas").value.trim();
+    const idTurno = document.getElementById("idTurnoReservas").value.trim();
     const nombrePaciente = document.getElementById("nombrePaciente").value.trim();
-    const documentoReservas = document.getElementById("documento").value.trim();
+    const documento = document.getElementById("documento").value.trim();
     const telefono = document.getElementById("idTelefono").value.trim();
     const emailPaciente = document.getElementById("idMail").value.trim();
-    const obraSocialReservas = document.getElementById("idObraSocialReservas").value.trim();
-    const especialidadReservas = document.getElementById("idEspecialidadReservas").value.trim();
-    const medicoReservas = document.getElementById("idMedicoReservas").value.trim();
+    const idObraSocial = document.getElementById("idObraSocialReservas").value.trim();
+    const idEspecialidad = document.getElementById("idEspecialidadReservas").value.trim();
+    const idMedico = document.getElementById("idMedicoReservas").value.trim();
 
     if (!nombrePaciente) {
         Swal.fire({
@@ -674,33 +674,31 @@ document.getElementById("reservasForm").addEventListener("submit", e => {
         return;
     }
 
+    const medicoConsultar = data.medicos.find(
+        (e) => e.idMedico == idMedico
+    );
+    const descuentoConsultar = data.obrasSociales.find(
+        (e) => e.idObraSocial == idObraSocial
+    );
+    const valorConsulta = medicoConsultar && descuentoConsultar 
+        ? (1 - descuentoConsultar.descuento / 100) * medicoConsultar.valorConsulta
+        : 0;
+
     const index = data.reservas.findIndex(reserva => reserva.idReserva === idReservas);
 
-
-
     if (index > -1) {
-        data.reservas[index].documento = documentoReservas;
+        data.reservas[index].documento = documento;
         data.reservas[index].nombrePaciente = nombrePaciente;
         data.reservas[index].telefonoPaciente = telefono;
         data.reservas[index].emailPaciente = emailPaciente;
-        data.reservas[index].idObraSocial = obraSocialReservas;
-        data.reservas[index].idEspecialidad = especialidadReservas;
-        data.reservas[index].idMedico = medicoReservas;
-
-        const medicoConsultar = data.medicos.find(
-            (e) => e.idMedico == data.reserva[index].idMedico
-        );
-        const descuentoConsultar = data.obrasSociales.find(
-            (e) => e.idObraSocial == data.reserva[index].idObraSocial
-        );
-        const calcularPrecio = (1 - descuentoConsultar.descuento / 100) * medicoConsultar.valorConsulta
-
-
-        data.reservas[index].valorConsulta = calcularPrecio;
-
+        data.reservas[index].idObraSocial = idObraSocialReservas;
+        data.reservas[index].idEspecialidad = idEspecialidadReservas;
+        data.reservas[index].idMedico = idMedicoReservas;
+        data.reservas[index].valorConsulta = valorConsulta;
 
     } else {
-        data.reservas.push({ idReservas, idTurnoReservas, documentoReservas, nombrePaciente, telefono, emailPaciente, obraSocialReservas, especialidadReservas, medicoReservas, valorConsulta });
+       
+        data.reservas.push({ idReservas, idTurno, documento, nombrePaciente, telefono, emailPaciente, idObraSocial, idEspecialidad, idMedico, valorConsulta });
     }
 
     localStorage.setItem("data", JSON.stringify(data));

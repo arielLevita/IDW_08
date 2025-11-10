@@ -48,7 +48,7 @@ function generarCardsMedicos(data) {
     let docFrag = document.createDocumentFragment();
     especialidades.forEach((esp, index) => {
         let div = document.createElement("div");
-        div.classList.add('accordion-item');
+        div.classList.add('accordion-item', 'border-0');
         div.setAttribute('id', esp)
 
         let medicosEspecialidad = medicos.filter(
@@ -70,8 +70,8 @@ function generarCardsMedicos(data) {
         `).join('');
 
         div.innerHTML =
-            `<h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            `<h2 class="accordion-header mt-4 shadow-sm">
+                <button class="accordion-button collapsed py-0 border rounded" type="button" data-bs-toggle="collapse"
                     data-bs-target=#collapse-${esp.idEspecialidad} aria-expanded="${index === 0 ? 'true' : 'false'}"
                     aria-controls="collapse-${esp.idEspecialidad}">
                     <h3>${esp.nombreEspecialidad}</h3>

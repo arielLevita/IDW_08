@@ -63,12 +63,15 @@
 
     <main>
         <section class="container-xxl my-5">
-            <h2 class="mb-3">Contactanos</h2>
-            <div class="row justify-content-center gap-2 px-2">
-                <div class="canales col-12 col-sm-6 col-md-4 pb-2">
-                    <h3>Nuestros canales</h3>
-                    <ul class="mt-5 mx-auto">
-                        <li class="d-flex align-items-center gap-1 my-2">
+            <h2>Contactanos</h2>
+            <p class="text-center text-secondary m-0">Comuníquese con nosotros o complete el formulario.</p>
+            <p class="text-center text-secondary m-0 mb-4">Nos pondremos en contacto con usted a la brevedad.</p>
+            <div class="row justify-content-center gap-4 px-2">
+                <div class="canales col-12 col-sm-10 col-md-4 rounded shadow p-3 px-sm-4">
+                    <h3 class="text-start mb-2">Nuestros canales</h3>
+                    <hr class="mt-0">
+                    <ul class="d-flex flex-column gap-3 mt-4 mx-auto p-0">
+                        <li class="d-flex align-items-center gap-1">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -77,7 +80,7 @@
                             </span>
                             +54 345 4231400
                         </li>
-                        <li class="d-flex align-items-center gap-1 my-2">
+                        <li class="d-flex align-items-center gap-1">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path
@@ -86,7 +89,7 @@
                             </span>
                             123-456-789
                         </li>
-                        <li class="d-flex align-items-center gap-1 my-2">
+                        <li class="d-flex align-items-center gap-1">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path
@@ -95,9 +98,9 @@
                                         d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
                                 </svg>
                             </span>
-                            <a href="mailto:bienestarintegral@gmail.com">bienestarintegral@gmail.com</a>
+                            <a href="mailto:bienestarintegral@gmail.com" class="text-break">bienestarintegral@gmail.com</a>
                         </li>
-                        <li class="d-flex align-items-center gap-1 my-2">
+                        <li class="d-flex align-items-center gap-1">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                     <path
@@ -108,17 +111,19 @@
                         </li>
                     </ul>
                 </div>
-                <div class="formulario col-12 col-sm-6 col-md-6 pb-3">
-                    <h3>Completa el formulario</h3>
-                    <form class="form fs-6 pt-3" action="#" method="post" autocomplete="on">
-                        <label for="etiqueta01" class="form-label"></label>
+
+                <div class="formulario col-12 col-sm-10 col-md-6 rounded shadow p-3 px-sm-4">
+                    <h3 class="text-start mb-2">Complete el formulario</h3>
+                    <hr class="mt-0">
+                    <form class="form fs-6 mt-2" action="#" method="post" autocomplete="on">
+                        <label for="etiqueta01" class="form-label m-0 mt-2">Nombre</label>
                         <input type="text" name="Nombre" placeholder="Ej: Juan Pérez" id="etiqueta01" required>
-                        <label for="etiqueta02" class="form-label"></label>
+                        <label for="etiqueta02" class="form-label m-0 mt-2">Correo electrónico</label>
                         <input type="email" name="Correo" placeholder="Ej: perez.juan@correo.com" id="etiqueta02" required>
-                        <label for="etiqueta03" class="form-label"></label>
+                        <label for="etiqueta03" class="form-label m-0 mt-2">Teléfono</label>
                         <input type="number" name="Telefono" placeholder="3456345687" id="etiqueta03" required>
-                        <label for="etiqueta04" class="form-label"></label>
-                        <textarea name="mensaje" rows="6" placeholder="Escriba aquí su consulta..." id="etiqueta04" required></textarea>
+                        <label for="etiqueta04" class="form-label m-0 mt-2">Su consulta</label>
+                        <textarea name="mensaje" rows="6" placeholder="Escriba aquí su consulta..." id="etiqueta04" class="mb-3" required></textarea>
                         <button type="submit" class="boton-enviar" role="button">Enviar</button>
                     </form>
                 </div>

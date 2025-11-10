@@ -29,6 +29,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: rgba(var(--color-seis-rgb), 1);
 }
 
 section {
@@ -68,57 +69,57 @@ nav {
 }
 
 nav img {
-    height: 3rem;                   
-    aspect-ratio: 1 / 1;            
+    height: 3rem;
+    aspect-ratio: 1 / 1;
 }
 
-nav  p {
-    margin: 0 !important;            
-    padding: 0 !important;           
-    font-weight: 700;                
-    line-height: 20px;               
+nav p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 700;
+    line-height: 20px;
 }
 
 nav p:first-of-type {
-    font-size: 1.5rem;               
-    color: var(--color-tres);        
+    font-size: 1.5rem;
+    color: var(--color-tres);
 }
 
 nav p:last-of-type {
-    font-size: 1.2rem;               
-    color: var(--color-uno);         
+    font-size: 1.2rem;
+    color: var(--color-uno);
 }
 
 nav .nav-link {
-    font-weight: 600 !important;     
-    color: var(--color-dos) !important; 
-    text-transform: uppercase !important; 
+    font-weight: 600 !important;
+    color: var(--color-dos) !important;
+    text-transform: uppercase !important;
 }
 
 nav .nav-link.active {
-    color: var(--color-tres) !important; 
+    color: var(--color-tres) !important;
     filter: drop-shadow(1px 1px 1px rgba(var(--color-tres-rgb), 0.3)) !important;
-    -webkit-filter: drop-shadow(1px 1px 1px rgba(var(--color-tres-rgb), 0.3)); 
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(var(--color-tres-rgb), 0.3));
 }
 
 nav .login-button,
 .btn-salir {
-    padding: 0.3em 0.8em !important;   
+    padding: 0.3em 0.8em !important;
     font-size: 0.9rem !important;
-    font-weight: 700 !important;            
-    text-transform: uppercase !important;   
-    color: var(--color-dos) !important;     
-    background-color: var(--color-seis) !important; 
-    border: 2px var(--color-tres) solid !important;  
-    border-radius: 1em !important;          
-    -webkit-border-radius: 1em;
-    -moz-border-radius: 1em;
-    -ms-border-radius: 1em;
-    -o-border-radius: 1em;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: var(--color-dos) !important;
+    background-color: var(--color-seis) !important;
+    border: 2px var(--color-tres) solid !important;
+    border-radius: 0.5em !important;
+    -webkit-border-radius: 0.5em !important;
+    -moz-border-radius: 0.5em !important;
+    -ms-border-radius: 0.5em !important;
+    -o-border-radius: 0.5em !important;
 }
 
 nav button:hover {
-    background-color: rgba(var(--color-tres-rgb), 0.15) !important; 
+    filter: drop-shadow(0 0 5px rgba(var(--color-tres-rgb), 0.5));
 }
 
 
@@ -134,7 +135,6 @@ header {
     background-position: center;
     height: 500px;
     width: 100%;
-    margin-bottom: 5rem;
     position: relative;
 }
 
@@ -210,16 +210,15 @@ header h2 {
     -webkit-filter: grayscale(1);
 }
 
-.home-box h2,
-.obras-sociales h2 {
-    margin: 1.5em 0 1rem 0; 
-    font-size: 1.5rem ;  
-    font-weight: 700 ;   
-    color: var(--color-texto) ;
-    line-height: 1.2rem ;
+.home-box h2 {
+    margin: 1.5em 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    line-height: 1.2rem;
 }
 
-.home-box p, 
+.home-box p,
 .obras-sociales p {
     font-size: 1rem;
     font-weight: 400;
@@ -233,6 +232,11 @@ header h2 {
 /* -------------------- */
 /* -- INSTITUCIONAL --- */
 /* -------------------- */
+
+#institucional p {
+    text-wrap: balance;
+    margin: 0 auto;
+}
 
 #header-institucional {
     background-image: url("../images/interior.jpg");
@@ -255,10 +259,8 @@ header h2 {
     background-color: rgba(var(--color-tres-rgb), 0.3);
 }
 
-article p,
-header p {
-    max-width: 1400px;
-    margin: 0 auto;
+#valores h3 {
+    color: var(--color-dos);
 }
 
 
@@ -277,6 +279,10 @@ header p {
     box-shadow: none !important;
 }
 
+#profesionales .accordion-body {
+    background-color: rgba(var(--color-seis-rgb), 1);
+}
+
 
 /* -------------------- */
 /* ----- CONTACTO ----- */
@@ -285,8 +291,7 @@ header p {
 .canales,
 .formulario {
     background-color: rgba(var(--color-cinco-rgb), 0.4);
-    border-radius: 20px;
-    min-width: 350px;
+    /* min-width: 350px; */
 }
 
 .canales ul {
@@ -319,8 +324,8 @@ form {
 }
 
 input,
+select,
 textarea {
-    margin-bottom: 10px;
     display: block;
     width: 100%;
     padding: 0.5em;
@@ -353,6 +358,10 @@ button[type='submit']:hover,
     background-color: var(--color-uno);
 }
 
+.solicitar-turno p {
+    text-wrap: balance;
+}
+
 .solicitar-turno button {
     background-color: var(--color-cinco);
     border: 3px solid var(--color-cuatro);
@@ -370,6 +379,17 @@ button[type='submit']:hover,
     background: linear-gradient(45deg, rgba(var(--color-tres-rgb), 0.2), rgba(var(--color-dos-rgb), 0.2));
 }
 
+
+
+/* -------------------- */
+/* ----- RESERVAS ----- */
+/* -------------------- */
+
+#reserva-form input,
+#reserva-form textarea,
+#reserva-form select {
+    background-color: rgba(var(--color-seis-rgb), 1);
+}
 
 
 /* -------------------- */

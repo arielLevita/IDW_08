@@ -448,7 +448,7 @@
             "idMedico": 1,
             "dia": "lunes",
             "hora": "09:30",
-            "disponible": false
+            "disponible": true
         },
         {
             "idTurno": 3,
@@ -462,7 +462,7 @@
             "idMedico": 1,
             "dia": "lunes",
             "hora": "10:30",
-            "disponible": false
+            "disponible": true
         },
         {
             "idTurno": 5,
@@ -497,7 +497,7 @@
             "idMedico": 1,
             "dia": "martes",
             "hora": "09:00",
-            "disponible": true
+            "disponible": false
         },
         {
             "idTurno": 10,
@@ -5575,7 +5575,7 @@
             "nombrePaciente": "Gustavo Martínez",
             "telefonoPaciente": 2945603366,
             "emailPaciente": "gmgm08@hotmail.com",
-            "idTurno": 8,
+            "idTurno": 9,
             "idEspecialidad": 1,
             "idMedico": 1,
             "idObraSocial": "",

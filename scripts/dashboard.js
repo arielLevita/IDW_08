@@ -450,7 +450,7 @@ function generarTablaTurnos(turnosMedico) {
         tablaTurnos.appendChild(fila);
     });
 
-    document.querySelectorAll(".turno-switch").forEach(input => {
+    /* document.querySelectorAll(".turno-switch").forEach(input => {
         input.addEventListener("change", e => {
             const dia = e.target.dataset.dia;
             const hora = e.target.dataset.hora;
@@ -459,6 +459,44 @@ function generarTablaTurnos(turnosMedico) {
             const turno = data.turnos.find(turno => turno.idMedico === idMedico && turno.dia === dia && turno.hora === hora);
             if (turno) {
                 turno.disponible = e.target.checked;
+            }
+        });
+    }); */
+    document.querySelectorAll(".turno-switch").forEach(input => {
+        input.addEventListener("change", e => {
+            const dia = e.target.dataset.dia;
+            const hora = e.target.dataset.hora;
+            const idMedico = parseInt(medicoSelect.value);
+
+            const turno = data.turnos.find(t => t.idMedico === idMedico && t.dia === dia && t.hora === hora);
+            if (!turno) return;
+
+            turno.disponible = e.target.checked;
+
+            const reservaAsociada = data.reservas.find(reserva => reserva.idTurno === turno.idTurno);
+
+            if (reservaAsociada) {
+                const paciente = reservaAsociada.nombrePaciente;
+                const documento = reservaAsociada.documento;
+                const telefono = reservaAsociada.telefonoPaciente || "No registrado";
+                const email = reservaAsociada.emailPaciente || "No registrado";
+
+                Swal.fire({
+                    title: "Turno asociado a una reserva",
+                    html: `
+                        <p>Este turno está reservado por:</p>
+                        <p><strong>${paciente}</strong></p>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Documento:</b> ${documento}</li>
+                            <li><b>Teléfono:</b> ${telefono}</li>
+                            <li><b>Email:</b> ${email}</li>
+                        </ul>
+                        <p class="mt-2">Recordá notificar al paciente sobre los cambios en el turno y, de ser necesario, borrar la reserva desde el panel correspondiente.</p>
+                    `,
+                    icon: "info",
+                    confirmButtonText: "Entendido",
+                    confirmButtonColor: "#044166"
+                });
             }
         });
     });
@@ -504,7 +542,8 @@ document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
         : Date.now();
     const nombreObraSocial = document.getElementById("nombreObraSocial").value.trim();
     const descripcionObraSocial = document.getElementById("descripcionObraSocial").value.trim();
-    const descuento = document.getElementById("descuento").value.trim();
+    let descuento = document.getElementById("descuento").value.trim();
+    descuento = parseInt(descuento);
 
     if (!nombreObraSocial) {
         Swal.fire({
@@ -523,6 +562,19 @@ document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
         data.obrasSociales[index].nombreObraSocial = nombreObraSocial;
         data.obrasSociales[index].descripcionObraSocial = descripcionObraSocial;
         data.obrasSociales[index].descuento = descuento;
+
+        const reservasConObrasSocial = data.reservas.filter(reserva => reserva.idObraSocial == data.obrasSociales[index].idObraSocial);
+        reservasConObrasSocial.forEach(reserva => {
+
+            const medico = data.medicos.find(medico => medico.idMedico === reserva.idMedico);
+            let nuevoValor = medico.valorConsulta;
+
+            if (medico.obrasSocialesQueAcepta.includes(idObraSocial)) {
+                nuevoValor = nuevoValor * (1 - descuento / 100);
+            }
+
+            reserva.valorConsulta = parseFloat(nuevoValor.toFixed(2));
+        })
     } else {
         data.obrasSociales.push({ idObraSocial, nombreObraSocial, descripcionObraSocial, descuento });
     }

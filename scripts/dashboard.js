@@ -1,10 +1,10 @@
-const auth = JSON.parse(localStorage.getItem("auth"));
-if (!auth || !auth.isAdmin) {
+const auth = JSON.parse(sessionStorage.getItem("accessToken"));
+if (!auth || !auth.esAdmin) {
     window.location.href = "../index.html";
 }
 
 function cerrarSesion() {
-    localStorage.removeItem("auth");
+    sessionStorage.removeItem("accessToken");
     window.location.href = "../index.html";
 }
 
@@ -15,7 +15,11 @@ async function iniciarPagina() {
         generarCheckboxesObrasSociales();
         generarTablaMedicos();
         generarTablaEspecialidades();
+        generarTablaObrasSociales();
         generarMedicoSelect();
+        generarTablaUsuarios();
+        generarTablaReservas();
+        generarSelectsReservas();
     } catch (error) {
         console.log("Error en la carga de la página: ", error)
     }
@@ -27,7 +31,7 @@ async function cargarDatos() {
     if (localStorage.getItem("data")) {
         data = JSON.parse(localStorage.getItem("data"));
     } else {
-        const response = await fetch("mock_data.json");
+        const response = await fetch("../mockData.json");
         data = await response.json();
         localStorage.setItem("data", JSON.stringify(data));
     }
@@ -38,7 +42,7 @@ async function cargarDatos() {
 /* -------------------------- */
 
 function generarTablaMedicos() {
-    const tbody = document.getElementById("tablaMedicos");
+    const tbody = document.getElementById("tablaMedicos").querySelector("tbody");
     tbody.innerHTML = "";
 
     data.medicos.forEach(medico => {
@@ -59,7 +63,7 @@ function generarTablaMedicos() {
 }
 
 function generarOpcionesEspecialidades() {
-    const select = document.getElementById("idEspecialidad");
+    const select = document.getElementById("idEspecialidadMedico");
     select.innerHTML = '<option value="">Seleccione...</option>';
     data.especialidades.forEach(especialidad => {
         const option = document.createElement("option");
@@ -93,7 +97,7 @@ function toBase64(file) {
 }
 
 function generarTurnosParaMedico(idMedico) {
-    const dias = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+    const dias = ["lunes", "martes", "miercoles", "jueves", "viernes"];
     const turnos = [];
 
     let idTurno = data.turnos.length > 0
@@ -107,7 +111,7 @@ function generarTurnosParaMedico(idMedico) {
                 turnos.push({
                     idTurno: idTurno++,
                     idMedico,
-                    día: dia,
+                    dia: dia,
                     hora: horaStr,
                     disponible: true
                 });
@@ -128,7 +132,7 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     const matricula = parseInt(document.getElementById("matricula").value);
     const valorConsulta = parseFloat(document.getElementById("valorConsulta").value);
     const descripcionMedico = document.getElementById("descripcionMedico").value;
-    const idEspecialidad = parseInt(document.getElementById("idEspecialidad").value);
+    const idEspecialidad = parseInt(document.getElementById("idEspecialidadMedico").value);
 
     const obrasSeleccionadas = [...document.querySelectorAll("#obrasSocialesContainer input:checked")]
         .map(checked => parseInt(checked.value));
@@ -141,6 +145,17 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     } else {
         const existente = data.medicos.find(medico => medico.idMedico == id);
         imagenMedico = existente ? existente.imagenMedico : "";
+    }
+
+    if (!matricula || !apellidoMedico || !nombreMedico || !idEspecialidad || !descripcionMedico || !valorConsulta) {
+        Swal.fire({
+            title: "Advertencia",
+            theme: 'material-ui',
+            text: "Debe completar todos los campos.",
+            icon: "warning",
+            confirmButtonColor: "#044166"
+        });
+        return;
     }
 
     const nuevoMedico = {
@@ -168,9 +183,17 @@ document.getElementById("medicoForm").addEventListener("submit", async e => {
     }
 
     localStorage.setItem("data", JSON.stringify(data));
-    e.target.reset();
-    document.getElementById("idMedico").value = "";
-    iniciarPagina();
+    Swal.fire({
+        title: "Guardado!",
+        theme: 'material-ui',
+        text: "El registro ha sido modificado con éxito",
+        icon: "success",
+        confirmButtonColor: "#044166"
+    }).then(() => {
+        e.target.reset();
+        document.getElementById("idMedico").value = "";
+        iniciarPagina();
+    });
 });
 
 function editarMedico(id) {
@@ -184,29 +207,53 @@ function editarMedico(id) {
     document.getElementById("matricula").value = medico.matricula;
     document.getElementById("valorConsulta").value = medico.valorConsulta;
     document.getElementById("descripcionMedico").value = medico.descripcionMedico;
-    document.getElementById("idEspecialidad").value = medico.idEspecialidad;
+    document.getElementById("idEspecialidadMedico").value = medico.idEspecialidad;
 
     document.querySelectorAll("#obrasSocialesContainer input").forEach(checkbox => {
         checkbox.checked = medico.obrasSocialesQueAcepta.includes(parseInt(checkbox.value));
     });
-    iniciarPagina();
 }
 
 function eliminarMedico(id) {
-    if (confirm("¿Desea eliminar este médico?")) {
-        if (data.turnos && Array.isArray(data.turnos)) {
-            data.turnos = data.turnos.map(turno => {
-                if (turno.idMedico == id) {
-                    return { ...turno, disponible: false };
-                }
-                return turno;
-            });
-        }
+    Swal.fire({
+        title: "¿Desea eliminar este médico?",
+        theme: 'material-ui',
+        text: "La eliminación no puede ser revertida.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#045a29",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No, cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (data.turnos && Array.isArray(data.turnos)) {
+                data.turnos = data.turnos.map(turno => {
+                    if (turno.idMedico == id) {
+                        return { ...turno, disponible: false };
+                    }
+                    return turno;
+                });
+            }
 
-        data.medicos = data.medicos.filter(medico => medico.idMedico != id);
-        localStorage.setItem("data", JSON.stringify(data));
-    }
-    iniciarPagina();
+            if (data.reservas && Array.isArray(data.reservas)) {
+                data.reservas = data.reservas.filter(reserva => reserva.idMedico != id);
+            }
+
+            data.medicos = data.medicos.filter(medico => medico.idMedico != id);
+            localStorage.setItem("data", JSON.stringify(data));
+
+            Swal.fire({
+                title: "Eliminado!",
+                theme: 'material-ui',
+                text: "El médico ha sido eliminado con éxito.",
+                icon: "success",
+                confirmButtonColor: "#044166"
+            });
+
+            iniciarPagina();
+        }
+    });
 }
 
 
@@ -215,7 +262,7 @@ function eliminarMedico(id) {
 /* --------------------------- */
 
 function generarTablaEspecialidades() {
-    const tbody = document.getElementById("tablaEspecialidades");
+    const tbody = document.getElementById("tablaEspecialidades").querySelector("tbody");
     tbody.innerHTML = "";
 
     data.especialidades.forEach((especialidad, index) => {
@@ -241,7 +288,13 @@ document.getElementById("especialidadesForm").addEventListener("submit", e => {
     const nombreEspecialidad = document.getElementById("nombreEspecialidad").value.trim();
 
     if (!nombreEspecialidad) {
-        alert("Debe ingresar un nombre para la especialidad.");
+        Swal.fire({
+            title: "Advertencia",
+            theme: 'material-ui',
+            text: "Debe ingresar un nombre para la especialidad.",
+            icon: "warning",
+            confirmButtonColor: "#044166"
+        });
         return;
     }
 
@@ -257,6 +310,14 @@ document.getElementById("especialidadesForm").addEventListener("submit", e => {
 
     e.target.reset();
     document.getElementById("idEspecialidad").value = "";
+
+    Swal.fire({
+        title: "Guardado!",
+        theme: 'material-ui',
+        text: "El registro ha sido modificado con éxito",
+        icon: "success",
+        confirmButtonColor: "#044166"
+    });
     iniciarPagina();
 });
 
@@ -266,43 +327,64 @@ function editarEspecialidad(idEspecialidad) {
 
     document.getElementById("idEspecialidad").value = especialidad.idEspecialidad;
     document.getElementById("nombreEspecialidad").value = especialidad.nombreEspecialidad;
-
-    iniciarPagina();
 }
 
 function eliminarEspecialidad(idEspecialidad) {
-    if (confirm("¿Desea eliminar esta especialidad?")) {
-        data.especialidades = data.especialidades.filter(e => e.idEspecialidad !== idEspecialidad);
+    Swal.fire({
+        title: "¿Desea eliminar esta especialidad?",
+        theme: 'material-ui',
+        text: "La eliminación no puede ser revertida.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#045a29",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No, cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            data.especialidades = data.especialidades.filter(especialidad => especialidad.idEspecialidad !== idEspecialidad);
 
-        let medicosAfectados = 0;
-        data.medicos.forEach(medico => {
-            if (medico.idEspecialidad === idEspecialidad) {
-                medico.idEspecialidad = 0;
-                medicosAfectados++;
+            let medicosAfectados = 0;
+            data.medicos.forEach(medico => {
+                if (medico.idEspecialidad === idEspecialidad) {
+                    medico.idEspecialidad = 0;
+                    medicosAfectados++;
+                }
+            });
+
+            localStorage.setItem("data", JSON.stringify(data));
+
+            if (medicosAfectados > 0) {
+                Swal.fire({
+                    title: "Advertencia",
+                    theme: 'material-ui',
+                    text: `La especialidad fue eliminada. ${medicosAfectados} médico(s) quedaron sin especialidad asignada.`,
+                    icon: "warning",
+                    confirmButtonColor: "#044166"
+                });
             }
-        });
 
-        localStorage.setItem("data", JSON.stringify(data));
+            Swal.fire({
+                title: "Eliminada!",
+                theme: 'material-ui',
+                text: "La especialidad ha sido eliminada con éxito.",
+                icon: "success",
+                confirmButtonColor: "#044166"
+            });
 
-        if (medicosAfectados > 0) {
-            alert(
-                `La especialidad fue eliminada. ${medicosAfectados} médico(s) quedaron sin especialidad asignada.`
-            );
+            iniciarPagina();
         }
-
-        iniciarPagina();
-    }
-}
+    });
+};
 
 
 /* --------------------------- */
 /* ------- CRUD Turnos ------- */
 /* --------------------------- */
 
-const tablaTurnos = document.getElementById("tablaTurnos");
+const tablaTurnos = document.getElementById("tablaTurnos").querySelector("tbody");
 const btnGuardar = document.getElementById("guardarCambios");
-
-const dias = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+const dias = ["lunes", "martes", "miercoles", "jueves", "viernes"];
 
 function generarMedicoSelect() {
     data.medicos.forEach(medico => {
@@ -347,12 +429,12 @@ function generarTablaTurnos(turnosMedico) {
         fila.innerHTML = `<td><strong>${hora}</strong></td>`;
 
         dias.forEach(dia => {
-            const turno = turnosMedico.find(turno => turno.día === dia && turno.hora === hora);
+            const turno = turnosMedico.find(turno => turno.dia === dia && turno.hora === hora);
             const disponible = turno ? turno.disponible : false;
 
             const celda = document.createElement("td");
             celda.innerHTML = `
-                <div class="form-check form-switch d-flex justify-content-center">
+                <div class="form-check form-switch d-flex justify-content-center pt-2">
                 <input
                     class="form-check-input turno-switch"
                     type="checkbox"
@@ -368,15 +450,53 @@ function generarTablaTurnos(turnosMedico) {
         tablaTurnos.appendChild(fila);
     });
 
+    /* document.querySelectorAll(".turno-switch").forEach(input => {
+        input.addEventListener("change", e => {
+            const dia = e.target.dataset.dia;
+            const hora = e.target.dataset.hora;
+            const idMedico = parseInt(medicoSelect.value);
+
+            const turno = data.turnos.find(turno => turno.idMedico === idMedico && turno.dia === dia && turno.hora === hora);
+            if (turno) {
+                turno.disponible = e.target.checked;
+            }
+        });
+    }); */
     document.querySelectorAll(".turno-switch").forEach(input => {
         input.addEventListener("change", e => {
             const dia = e.target.dataset.dia;
             const hora = e.target.dataset.hora;
             const idMedico = parseInt(medicoSelect.value);
 
-            const turno = data.turnos.find(turno => turno.idMedico === idMedico && turno.día === dia && turno.hora === hora);
-            if (turno) {
-                turno.disponible = e.target.checked;
+            const turno = data.turnos.find(t => t.idMedico === idMedico && t.dia === dia && t.hora === hora);
+            if (!turno) return;
+
+            turno.disponible = e.target.checked;
+
+            const reservaAsociada = data.reservas.find(reserva => reserva.idTurno === turno.idTurno);
+
+            if (reservaAsociada) {
+                const paciente = reservaAsociada.nombrePaciente;
+                const documento = reservaAsociada.documento;
+                const telefono = reservaAsociada.telefonoPaciente || "No registrado";
+                const email = reservaAsociada.emailPaciente || "No registrado";
+
+                Swal.fire({
+                    title: "Turno asociado a una reserva",
+                    html: `
+                        <p>Este turno está reservado por:</p>
+                        <p><strong>${paciente}</strong></p>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Documento:</b> ${documento}</li>
+                            <li><b>Teléfono:</b> ${telefono}</li>
+                            <li><b>Email:</b> ${email}</li>
+                        </ul>
+                        <p class="mt-2">Recordá notificar al paciente sobre los cambios en el turno y, de ser necesario, borrar la reserva desde el panel correspondiente.</p>
+                    `,
+                    icon: "info",
+                    confirmButtonText: "Entendido",
+                    confirmButtonColor: "#044166"
+                });
             }
         });
     });
@@ -384,6 +504,422 @@ function generarTablaTurnos(turnosMedico) {
 
 function guardarCambios(idMedico) {
     localStorage.setItem("data", JSON.stringify(data));
-    alert("Los cambios se guardaron correctamente.")
+    Swal.fire({
+        title: "Los cambios se guardaron correctamente.",
+        theme: 'material-ui',
+        icon: "success",
+        confirmButtonColor: "#044166"
+    });
 }
 
+
+/* --------------------------- */
+/* --- CRUD Obras Sociales --- */
+/* --------------------------- */
+
+function generarTablaObrasSociales() {
+    const tbody = document.getElementById("tablaObrasSociales").querySelector("tbody");
+    tbody.innerHTML = "";
+    data.obrasSociales.forEach((os) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${os.nombreObraSocial}</td>
+            <td>${os.descuento}</td>
+            <td>
+                <button class="btn btn-sm btn-editar fw-semibold me-1" onclick="editarObraSocial(${os.idObraSocial})">Editar</button>
+                <button class="btn btn-sm btn-eliminar fw-semibold" onclick="eliminarObraSocial(${os.idObraSocial})">Eliminar</button>
+            </td>
+            `;
+        tbody.appendChild(tr);
+    });
+}
+
+document.getElementById("obrasSocialesForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const idObraSocial = document.getElementById("idObraSocial").value
+        ? parseInt(document.getElementById("idObraSocial").value)
+        : Date.now();
+    const nombreObraSocial = document.getElementById("nombreObraSocial").value.trim();
+    const descripcionObraSocial = document.getElementById("descripcionObraSocial").value.trim();
+    let descuento = document.getElementById("descuento").value.trim();
+    descuento = parseInt(descuento);
+
+    if (!nombreObraSocial) {
+        Swal.fire({
+            title: "Advertencia",
+            theme: 'material-ui',
+            text: "Debe ingresar un nombre para la Obra Social.",
+            icon: "warning",
+            confirmButtonColor: "#044166"
+        });
+        return;
+    }
+
+    const index = data.obrasSociales.findIndex(os => os.idObraSocial === idObraSocial);
+
+    if (index > -1) {
+        data.obrasSociales[index].nombreObraSocial = nombreObraSocial;
+        data.obrasSociales[index].descripcionObraSocial = descripcionObraSocial;
+        data.obrasSociales[index].descuento = descuento;
+
+        const reservasConObrasSocial = data.reservas.filter(reserva => reserva.idObraSocial == data.obrasSociales[index].idObraSocial);
+        reservasConObrasSocial.forEach(reserva => {
+
+            const medico = data.medicos.find(medico => medico.idMedico === reserva.idMedico);
+            let nuevoValor = medico.valorConsulta;
+
+            if (medico.obrasSocialesQueAcepta.includes(idObraSocial)) {
+                nuevoValor = nuevoValor * (1 - descuento / 100);
+            }
+
+            reserva.valorConsulta = parseFloat(nuevoValor.toFixed(2));
+        })
+    } else {
+        data.obrasSociales.push({ idObraSocial, nombreObraSocial, descripcionObraSocial, descuento });
+    }
+
+    localStorage.setItem("data", JSON.stringify(data));
+
+    e.target.reset();
+    document.getElementById("idObraSocial").value = "";
+
+    Swal.fire({
+        title: "Guardado!",
+        theme: 'material-ui',
+        text: "El registro ha sido modificado con éxito",
+        icon: "success",
+        confirmButtonColor: "#044166"
+    });
+    iniciarPagina();
+});
+
+function editarObraSocial(idObraSocial) {
+    const obraSocial = data.obrasSociales.find(os => os.idObraSocial === idObraSocial);
+    if (!obraSocial) return;
+
+    document.getElementById("idObraSocial").value = obraSocial.idObraSocial;
+    document.getElementById("nombreObraSocial").value = obraSocial.nombreObraSocial;
+    document.getElementById("descripcionObraSocial").value = obraSocial.descripcionObraSocial;
+    document.getElementById("descuento").value = obraSocial.descuento;
+}
+
+function eliminarObraSocial(idObraSocial) {
+    Swal.fire({
+        title: "¿Desea eliminar esta Obra Social?",
+        theme: 'material-ui',
+        text: "La eliminación no puede ser revertida.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#045a29",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No, cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            data.medicos.forEach(medico => {
+                let osIndex = medico.obrasSocialesQueAcepta.indexOf(idObraSocial);
+                if (osIndex > -1) {
+                    medico.obrasSocialesQueAcepta.splice(osIndex, 1);
+                }
+            });
+
+            data.reservas.forEach(reserva => {
+                if (reserva.idObraSocial == idObraSocial) {
+                    const medico = data.medicos.find(medico => medico.idMedico == reserva.idMedico);
+                    if (medico) {
+                        reserva.valorConsulta = medico.valorConsulta;
+                        reserva.idObraSocial = "";
+                    }
+                }
+            });
+
+            data.obrasSociales = data.obrasSociales.filter(os => os.idObraSocial !== idObraSocial);
+
+            localStorage.setItem("data", JSON.stringify(data));
+
+            Swal.fire({
+                title: "Eliminada!",
+                theme: 'material-ui',
+                text: "La obra social ha sido eliminada con éxito.",
+                icon: "success",
+                confirmButtonColor: "#044166"
+            });
+
+            iniciarPagina();
+        }
+    });
+
+};
+
+
+/* -------------------------- */
+/* ----- CRUD Reservas ------ */
+/* -------------------------- */
+
+function generarSelectsReservas() {
+    const selectEspecialidad = document.getElementById("especialidadReserva");
+    const selectObraSocial = document.getElementById("obraSocialReserva");
+
+    selectEspecialidad.innerHTML = '<option value="">Seleccionar...</option>';
+    data.especialidades.forEach(esp => {
+        const option = document.createElement("option");
+        option.value = esp.idEspecialidad;
+        option.textContent = esp.nombreEspecialidad;
+        selectEspecialidad.appendChild(option);
+    });
+
+    selectObraSocial.innerHTML = '<option value="">Sin obra social</option>';
+    data.obrasSociales.forEach(os => {
+        const option = document.createElement("option");
+        option.value = os.idObraSocial;
+        option.textContent = os.nombreObraSocial.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+        selectObraSocial.appendChild(option);
+    });
+
+    selectEspecialidad.addEventListener("change", generarSelectMedicosReserva);
+    document.getElementById("medicoReserva").addEventListener("change", generarSelectHorariosReserva);
+    document.getElementById("diaReserva").addEventListener("change", generarSelectHorariosReserva);
+    document.getElementById("obraSocialReserva").addEventListener("change", actualizarValorConsultaReserva);
+}
+
+function generarSelectMedicosReserva() {
+    const idEspecialidad = parseInt(document.getElementById("especialidadReserva").value);
+    const selectMedico = document.getElementById("medicoReserva");
+    selectMedico.innerHTML = '<option value="">Seleccionar...</option>';
+    const medicosFiltrados = data.medicos.filter(medico => medico.idEspecialidad === idEspecialidad);
+
+    medicosFiltrados.forEach(medico => {
+        const option = document.createElement("option");
+        option.value = medico.idMedico;
+        option.textContent = `${medico.titulo} ${medico.nombreMedico} ${medico.apellidoMedico}`;
+        selectMedico.appendChild(option);
+    });
+}
+
+function generarSelectHorariosReserva() {
+    const idMedico = parseInt(document.getElementById("medicoReserva").value);
+    const dia = document.getElementById("diaReserva").value;
+    const selectHora = document.getElementById("horaReserva");
+    selectHora.innerHTML = '<option value="">Seleccionar...</option>';
+
+    if (!idMedico || !dia) return;
+
+    const turnos = data.turnos.filter(turno => turno.idMedico === idMedico && turno.dia === dia);
+    turnos.forEach(turno => {
+        const option = document.createElement("option");
+        option.value = turno.hora;
+        option.textContent = turno.hora;
+        if (!turno.disponible) option.disabled = true;
+        selectHora.appendChild(option);
+    });
+
+    actualizarValorConsultaReserva();
+}
+
+function actualizarValorConsultaReserva() {
+    const idMedico = parseInt(document.getElementById("medicoReserva").value);
+    const idObraSocial = parseInt(document.getElementById("obraSocialReserva").value);
+    const inputValor = document.getElementById("valorConsultaReserva");
+
+    if (!idMedico) {
+        inputValor.value = "";
+        return;
+    }
+
+    const medico = data.medicos.find(m => m.idMedico === idMedico);
+    const obra = data.obrasSociales.find(o => o.idObraSocial === idObraSocial);
+
+    let valor = medico.valorConsulta;
+    if (obra && medico.obrasSocialesQueAcepta.includes(obra.idObraSocial)) {
+        valor = valor * (1 - obra.descuento / 100);
+    }
+
+    inputValor.value = valor.toFixed(2);
+}
+
+function generarTablaReservas() {
+    const tbody = document.getElementById("tablaReservas").querySelector("tbody");
+    tbody.innerHTML = "";
+
+    if (!data.reservas) data.reservas = [];
+
+    data.reservas.forEach(reserva => {
+        const especialidad = data.especialidades.find(especialidad => especialidad.idEspecialidad === reserva.idEspecialidad);
+        const medico = data.medicos.find(medico => medico.idMedico === reserva.idMedico);
+        const os = data.obrasSociales.find(os => os.idObraSocial === reserva.idObraSocial);
+        const turno = data.turnos.find(turno => turno.idTurno === reserva.idTurno);
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${reserva.nombrePaciente}</td>
+            <td>${reserva.documento}</td>
+            <td>${especialidad ? especialidad.nombreEspecialidad : "—"}</td>
+            <td>${medico ? medico.nombreMedico + " " + medico.apellidoMedico : "—"}</td>
+            <td>${turno ? turno.dia : "—"}</td>
+            <td>${turno ? turno.hora : "—"}</td>
+            <td>${os ? os.nombreObraSocial : "—"}</td>
+            <td>$${reserva.valorConsulta}</td>
+            <td>
+                <button class="btn btn-sm btn-editar fw-semibold me-1" onclick="editarReserva(${reserva.idReserva})">Editar</button>
+                <button class="btn btn-sm btn-eliminar fw-semibold" onclick="eliminarReserva(${reserva.idReserva})">Eliminar</button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+document.getElementById("reservaForm").addEventListener("submit", guardarReserva);
+
+function guardarReserva(e) {
+    e.preventDefault();
+
+    const idReserva = parseInt(document.getElementById("idReserva").value);
+    const idEspecialidad = parseInt(document.getElementById("especialidadReserva").value);
+    const idMedico = parseInt(document.getElementById("medicoReserva").value);
+    const dia = document.getElementById("diaReserva").value;
+    const hora = document.getElementById("horaReserva").value;
+    const idObraSocial = document.getElementById("obraSocialReserva").value
+        ? parseInt(document.getElementById("obraSocialReserva").value)
+        : "";
+    const motivo = document.getElementById("motivoReserva").value;
+    const valor = parseFloat(document.getElementById("valorConsultaReserva").value);
+
+    const turnoNuevo = data.turnos.find(
+        turno => turno.idMedico === idMedico && turno.dia === dia && turno.hora === hora
+    );
+    if (!turnoNuevo) {
+        Swal.fire({
+            title: "Error",
+            text: "No se encontró el turno seleccionado.",
+            icon: "error",
+            confirmButtonColor: "#044166"
+        });
+        return;
+    }
+
+    const index = data.reservas.findIndex(reserva => reserva.idReserva === idReserva);
+    if (index === -1) return;
+
+    const reserva = data.reservas[index];
+
+    if (reserva.idTurno !== turnoNuevo.idTurno) {
+        const turnoAnterior = data.turnos.find(turno => turno.idTurno === reserva.idTurno);
+        if (turnoAnterior) turnoAnterior.disponible = true;
+        turnoNuevo.disponible = false;
+    }
+
+    data.reservas[index] = {
+        ...reserva,
+        idTurno: turnoNuevo.idTurno,
+        idEspecialidad,
+        idMedico,
+        idObraSocial,
+        motivoReserva: motivo,
+        valorConsulta: valor
+    };
+
+    localStorage.setItem("data", JSON.stringify(data));
+    Swal.fire({
+        title: "Guardado!",
+        text: "La reserva ha sido registrada con éxito.",
+        icon: "success",
+        confirmButtonColor: "#044166"
+    }).then(() => {
+        e.target.reset();
+        document.getElementById("idReserva").value = "";
+        document.getElementById("medicoSelect").innerHTML = '<option value="">Seleccionar...</option>';
+        tablaTurnos.innerHTML = "";
+        iniciarPagina();
+    });
+}
+
+function editarReserva(id) {
+    const reserva = data.reservas.find(reserva => reserva.idReserva == id);
+    if (!reserva) return;
+
+    document.getElementById("idReserva").value = reserva.idReserva;
+    document.getElementById("documentoReserva").value = reserva.documento;
+    document.getElementById("nombrePacienteReserva").value = reserva.nombrePaciente;
+    document.getElementById("especialidadReserva").value = reserva.idEspecialidad;
+
+    generarSelectMedicosReserva();
+    document.getElementById("medicoReserva").value = reserva.idMedico;
+
+    document.getElementById("diaReserva").value = data.turnos.find(turno => turno.idTurno === reserva.idTurno)?.dia || "";
+    generarSelectHorariosReserva();
+    document.getElementById("horaReserva").value = data.turnos.find(turno => turno.idTurno === reserva.idTurno)?.hora || "";
+
+    document.getElementById("obraSocialReserva").value = reserva.idObraSocial;
+    document.getElementById("valorConsultaReserva").value = reserva.valorConsulta;
+    document.getElementById("motivoReserva").value = reserva.motivoReserva;
+}
+
+function eliminarReserva(id) {
+    Swal.fire({
+        title: "¿Desea eliminar esta reserva?",
+        text: "La eliminación no puede ser revertida.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#045a29",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No, cancelar"
+    }).then(result => {
+        if (result.isConfirmed) {
+            const index = data.reservas.findIndex(r => r.idReserva == id);
+            if (index > -1) {
+                const reserva = data.reservas[index];
+                const turno = data.turnos.find(turno => turno.idTurno === reserva.idTurno);
+                if (turno) turno.disponible = true;
+                data.reservas.splice(index, 1);
+                localStorage.setItem("data", JSON.stringify(data));
+                generarTablaReservas();
+            }
+        }
+    });
+}
+
+/* --------------------------- */
+/* ------ CRUD  Usuarios ----- */
+/* --------------------------- */
+
+
+async function generarTablaUsuarios() {
+    const tbody = document.getElementById("tablaUsuarios").querySelector("tbody");
+    tbody.innerHTML = "";
+
+    const duplicado = new Set();
+
+    data.reservas.forEach((reserva) => {
+        if (duplicado.has(reserva.documento)) return;
+        duplicado.add(reserva.documento);
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${reserva.documento}</td>
+            <td>${reserva.nombrePaciente}</td>
+            <td>${reserva.telefonoPaciente}</td>
+            <td>${reserva.emailPaciente}</td>
+            <td>Paciente</td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+
+    const res = await fetch("https://dummyjson.com/users");
+    const usuariosDummy = await res.json();
+
+    usuariosDummy.users.forEach((user) => {
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.firstName} ${user.lastName}</td>
+            <td>${user.phone}</td>
+            <td>${user.email}</td>
+            <td>${user.role}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+}

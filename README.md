@@ -5,9 +5,6 @@
 ### Cátedra: Introducción al Desarrollo Web
 ### Trabajo Final Integrador - Grupo: IDW_08
 
-> [!IMPORTANT]
-**Estado: Tercera Entrega - 23 de Octubre 2025**
-
 ---
 
 ## Integrantes del Equipo
@@ -21,42 +18,49 @@
 
 ---
 
-# Bienestar Integral | Clínica
+# Bienestar Integral | Clínica Médica
+
+## Descripcion General
+El sistema web busca gestionar las principales operaciones de una clínica médica, incluyendo la administración de usuarios, médicos, reservas de turnos y obras sociales.
 
 ## Tecnologías Utilizadas
 
 - **HTML:** Para estructurar el contenido de las páginas.
 - **CSS:** Para definir estilos y conectar con los documentos HTML.
 - **Bootstrap:** Para agregar responsividad en el sitio web.
-- **JS:** Para aportar funcionalidad.
+- **JavaScript:** Para aportar funcionalidad.
 - **localStorage:** Para la persistencia local de datos (CRUD de médicos y turnos) sin necesidad de servidor.
-
+- **Fetch API:** Conexión con recursos externos (API pública DummyJSON).
+- **sessionStorage:** Almacenamiento del accessToken y control de sesión del usuario logueado.
 
 ---
 
-## Próximos Pasos (Etapas Futuras)
+### Funcionalidades Principales
 
-El proyecto está diseñado para evolucionar. Las siguientes etapas del desarrollo se enfocarán en la implementación de las funcionalidades clave para la clínica, las cuales serán marcadas como completadas a medida que se avancen, En esta **tercera entrega** se implementaron las principales funcionalidades del **rol Administrador**, centradas en el manejo de datos persistentes mediante `localStorage`.
+**Autenticación** 
+    - Implementación de inicio de sesión real mediante la API pública de DummyJSON
+    - Validación de credenciales y almacenamiento del accessToken en sessionStorage.
+    - Protección de las secciones del panel para evitar acceso sin login.
+    - Redirección automática a la pantalla de login si no hay usuario autenticado.
 
-### Funcionalidades del Rol Visitante
+**Panel de Administración**
+    - Panel de Usuarios que lista los pacientes que realizaron reservas junto con los usuarios de dummyJSON.
+    - Listado dinámico con paginación, búsqueda y filtrado por rol y estado.
+    - Control de visibilidad de datos sensibles según las buenas prácticas de seguridad.
+    - CRUD completo para las entidades:
+        * Médicos,
+        * Especialidades,
+        * Turnos,
+        * Obras Sociales,
+        * Reservas.
 
--   [ ] **Reservas:** Permitir a los usuarios crear y visualizar reservas de turnos, conociendo el costo de la consulta en función del profesional seleccionado, así como el correspondiente descuento en función de la obra social a la que estén afiliados.
-
-### Funcionalidades del Rol Administrador (CRUD)
-
--   [ ] **Médicos:** Leer, registrar, editar y eliminar médicos con almacenamiento en localStorage.
--   [ ] **Especialidades:** Leer, registrar, editar y eliminar especialidades.
--   [ ] **Obras Sociales:** Leer, registrar, editar y eliminar obras sociales.
--   [ ] **Turnos:** Leer, registrar, editar y eliminar turnos con filtros por fecha, especialidad, médico y estado.
--   [ ] **Reservas:** Leer, editar y eliminar reservas de turnos con filtros por fecha, especialidad, médico y estado.
+**Manejo de Datos**
+    - Lectura de datos a través de fetch() hacia la API externa.
+    - Persistencia local con localStorage para datos creados en el front-end.
+    - sessionStorage para el control de sesión del usuario autenticado.
 
 ---
 
 ## Enlaces del Proyecto
 
 -   **Repositorio GitHub:** [https://github.com/arielLevita/IDW_08](https://github.com/arielLevita/IDW_08)
-
----
-> [!NOTE]
-> Este es un trabajo en proceso.
----
